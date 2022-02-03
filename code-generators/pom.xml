@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+
+  <parent>
+    <groupId>io.github.hyq0719</groupId>
+    <artifactId>marketing-api-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>marketing-api-generators</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Marketing API - Class Generators</name>
+  <description>Marketing API 各模块类生成器</description>
+
+  <properties>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+  </properties>
+
+  <modules>
+    <module>oceanengine-code-generator</module>
+    <module>vivo-code-generator</module>
+    <module>marketing-api-generator-oceanengine</module>
+  </modules>
+
+  <dependencies>
+    <!-- selenium-java -->
+    <dependency>
+      <groupId>org.seleniumhq.selenium</groupId>
+      <artifactId>selenium-java</artifactId>
+      <version>3.4.0</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.2</version>
+      <scope>compile</scope>
+    </dependency>
+    <!-- 代码生成器 yaml转换 -->
+    <dependency>
+      <groupId>org.yaml</groupId>
+      <artifactId>snakeyaml</artifactId>
+      <version>1.26</version>
+    </dependency>
+    <!-- 代码生成器 模版引擎-->
+    <dependency>
+      <artifactId>velocity</artifactId>
+      <groupId>org.apache.velocity</groupId>
+      <version>1.7</version>
+    </dependency>
+  </dependencies>
+
+</project>

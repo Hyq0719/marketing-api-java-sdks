@@ -1,0 +1,54 @@
+/*
+ * Marketing API 巨量引擎
+ * Marketing API 巨量引擎
+ *
+ * Do not edit the class manually.
+ */
+package ${baseClassInfo.packageName};
+
+#foreach($item in $importList)
+$item;
+#end
+import com.google.gson.annotations.SerializedName;
+#if($isRequest)
+import com.hyq0719.mktapi.oceanengine.bean.TokenKey;
+#end
+import lombok.Data;
+import com.google.gson.Gson;
+
+/**
+ * ${baseClassInfo.comments}
+ * @author ${baseClassInfo.author}
+ * @email ${baseClassInfo.email}
+ * @date ${baseClassInfo.datetime}
+ */
+@Data
+public class ${className} #if($isRequest)implements TokenKey #end{
+#foreach( $item in $list)
+  /**
+   * $item.description
+   */
+  @SerializedName("$item.snakeProperty")
+  private $item.type $item.camelProperty = null;
+
+#end
+#foreach( $item in $list)
+  public ${className} $item.camelProperty ($item.type $item.camelProperty) {
+    this.$item.camelProperty = $item.camelProperty;
+    return this;
+  }
+
+#end
+  @Override
+  public String toString() {
+    Gson gson = new Gson();
+    return gson.toJson(this);
+  }
+
+#if($isRequest)
+  @Override
+  public String getTokenKey() {
+    return String.valueOf(advertiserId);
+  }
+#end
+}
