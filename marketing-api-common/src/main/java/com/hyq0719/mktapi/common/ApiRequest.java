@@ -43,7 +43,7 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     if (Objects.nonNull(apiRequestAdvice)) {
       apiRequestAdvice.before();
     }
-    ApiResponse<R> resp = businessWithHttpInfo(t, token);
+    ApiResponse<R> resp = executeWithHttp(t, token);
     if (Objects.nonNull(apiRequestAdvice)) {
       apiRequestAdvice.after();
     }
@@ -81,7 +81,8 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     final String localVarToken = StringUtils.isEmpty(token) ? getStringToken(getAccountId(t)) : token;
 
     return RequestParam.builder()
-            .baseUrl(getBaseUrl())
+            .scheme(getBaseUrl().getScheme())
+            .host(getHost())
             .path(getLocalVarPath())
             .version(getVersion())
             .method(getMethod())
@@ -181,7 +182,7 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
 
   protected abstract void updateParamsForAuth(RequestParam param);
 
-  protected ApiResponse<R> businessWithHttpInfo(T t, String token) throws ApiException {
+  protected ApiResponse<R> executeWithHttp(T t, String token) throws ApiException {
     RequestParam param = constructParameters(t, token);
     paramValidate(t);
     updateParamsForAuth(param);

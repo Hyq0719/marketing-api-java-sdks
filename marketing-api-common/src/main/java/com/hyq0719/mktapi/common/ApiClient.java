@@ -8,6 +8,7 @@ import com.hyq0719.mktapi.common.token.IToken;
 import com.hyq0719.mktapi.common.token.cache.ITokenLocalCache;
 import com.hyq0719.mktapi.common.util.JSON;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.threeten.bp.format.DateTimeFormatter;
 
 import java.lang.reflect.Type;
@@ -70,6 +71,10 @@ public abstract class ApiClient {
   }
 
   public String getToken(String accountId) {
+    //账号id判空
+    if (StringUtils.isEmpty(accountId)) {
+      return "";
+    }
     IToken iToken = iTokenLocalCache.get(accountId);
     if (iToken != null) {
       return iToken.getToken();

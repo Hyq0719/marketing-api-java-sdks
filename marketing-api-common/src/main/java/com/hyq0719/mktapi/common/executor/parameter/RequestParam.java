@@ -15,6 +15,8 @@ import java.util.Map;
 @AllArgsConstructor
 public class RequestParam {
   private String path;
+  private String scheme;
+  private String host;
   private String version;
   private BaseUrl baseUrl;
   private String method;

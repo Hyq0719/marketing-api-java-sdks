@@ -14,6 +14,8 @@ public interface ParamHandler<T> {
 
   String getVersion();
 
+  String getHost();
+
   String getStringToken(String accountId);
 
   String getAccountId(T t);

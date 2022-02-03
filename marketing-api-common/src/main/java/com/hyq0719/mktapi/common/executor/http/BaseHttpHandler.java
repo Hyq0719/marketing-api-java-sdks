@@ -1,6 +1,5 @@
 package com.hyq0719.mktapi.common.executor.http;
 
-import com.hyq0719.mktapi.common.executor.parameter.BaseUrl;
 import com.hyq0719.mktapi.common.executor.parameter.Pair;
 import com.hyq0719.mktapi.common.executor.parameter.RequestParam;
 import com.hyq0719.mktapi.common.util.JSON;
@@ -36,14 +35,13 @@ public abstract class BaseHttpHandler implements HttpHandler {
   @Override
   public String buildUrl(RequestParam requestParam) {
     StringBuilder url = new StringBuilder();
-    final BaseUrl baseUrl = requestParam.getBaseUrl();
 
-    url.append(baseUrl.getScheme()).append("://")
-            .append(baseUrl.getHost()).append("/")
+    url.append(requestParam.getScheme()).append("://")
+            .append(requestParam.getHost()).append("/")
             .append(requestParam.getVersion())
             .append(requestParam.getPath());
 
-    appendQueryParams(url, requestParam, baseUrl);
+    appendQueryParams(url, requestParam);
 
     appendCollectionQueryParams(url, requestParam);
 
@@ -74,11 +72,11 @@ public abstract class BaseHttpHandler implements HttpHandler {
     return mime != null && (mime.matches(jsonMime) || "*/*".equals(mime));
   }
 
-  private void appendQueryParams(StringBuilder url, RequestParam requestParam, BaseUrl baseUrl) {
+  private void appendQueryParams(StringBuilder url, RequestParam requestParam) {
     List<Pair> queryParams = requestParam.getQueryParams();
     if (queryParams != null && !queryParams.isEmpty()) {
       // support (constant) query string in `path`, e.g. "/posts?draft=1"
-      String prefix = baseUrl.toString().contains("?") ? "&" : "?";
+      String prefix = "?";
       for (Pair param : queryParams) {
         if (param.getValue() != null) {
           if (prefix != null) {

@@ -13,6 +13,8 @@ public @interface ApiRequestMapping {
 
   String version() default "";
 
+  String host() default "";
+
   String method();
 
   boolean usePostBody() default true;
