@@ -1,0 +1,5 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hyq0719.spring.starter.mktapi.oceanengine.config.HttpAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.oceanengine.config.OceanAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.oceanengine.config.CronJobAutoConfiguration

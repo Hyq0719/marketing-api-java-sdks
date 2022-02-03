@@ -1,0 +1,15 @@
+# 工程目录
+mainPackage: com.hyq0719.mktapi.generator.oceanengine
+
+# 使用信息
+person:
+  # 作者
+  author: hyq0719
+  # Email
+  email: yueqi.huang@qq.com
+
+
+# 自定义代码生成配置
+generatorJavaMap:
+  default:
+    packageName: com.hyq0719.mktapi.generator.oceanengine.bean
