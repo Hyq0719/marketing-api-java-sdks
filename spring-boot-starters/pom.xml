@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.hyq0719</groupId>
+    <artifactId>marketing-api-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+  <packaging>pom</packaging>
+
+  <artifactId>marketing-api-spring-boot-starters</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Marketing API - Spring Boot Starters</name>
+  <description>Marketing API 各个模块的 Spring Boot Starter</description>
+
+  <modules>
+    <module>kuaishou-spring-boot-starter</module>
+    <module>oceanengine-spring-boot-starter</module>
+    <module>tencent-spring-boot-starter</module>
+    <module>vivo-spring-boot-starter</module>
+    <module>production-spring-boot-starter</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <spring.boot.version>2.0.1.RELEASE</spring.boot.version>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-autoconfigure</artifactId>
+      <version>${spring.boot.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <version>${spring.boot.version}</version>
+      <optional>true</optional>
+    </dependency>
+  </dependencies>
+
+</project>
