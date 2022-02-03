@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>io.github.hyq0719</groupId>
+    <artifactId>marketing-api-sdk</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>marketing-api-oceanengine</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>Marketing API - Ocean Engine Java SDK</name>
+  <description>巨量引擎开放平台 Java SDK</description>
+
+  <properties>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.hyq0719</groupId>
+      <artifactId>marketing-api-common</artifactId>
+      <version>${common.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.code.gson</groupId>
+      <artifactId>gson</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.gsonfire</groupId>
+      <artifactId>gson-fire</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+</project>
