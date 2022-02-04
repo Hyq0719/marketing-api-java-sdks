@@ -83,6 +83,11 @@ public class TokenApi extends AbstractOceanApi {
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AccessTokenRequest request) {
     }
+
+    @Override
+    public String[] getLocalVarAuthNames() {
+      return new String[]{};
+    }
   }
 
   @ApiRequestMapping(value = "/refresh_token/", method = RequestConstants.POST, version = "oauth2")
@@ -90,6 +95,11 @@ public class TokenApi extends AbstractOceanApi {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 RefreshTokenRequest request) {
+    }
+
+    @Override
+    public String[] getLocalVarAuthNames() {
+      return new String[]{};
     }
   }
 
@@ -113,6 +123,11 @@ public class TokenApi extends AbstractOceanApi {
         localVarQueryParams.addAll(parameterToPair("secret", secret));
       }
     }
+
+    @Override
+    public String[] getLocalVarAuthNames() {
+      return new String[]{};
+    }
   }
 
   @ApiRequestMapping(value = "/user/info/", method = RequestConstants.GET, usePostBody =
@@ -124,5 +139,9 @@ public class TokenApi extends AbstractOceanApi {
           , version = "oauth2", host = "open.oceanengine.com")
   public class AppAccessToken extends OceanApiRequest<AppAccessTokenRequest
           , OceanResponse<AppAccessTokenResponseData>> {
+    @Override
+    public String[] getLocalVarAuthNames() {
+      return new String[]{};
+    }
   }
 }
