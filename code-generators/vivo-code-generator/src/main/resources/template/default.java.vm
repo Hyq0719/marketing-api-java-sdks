@@ -1,0 +1,68 @@
+/*
+ * Marketing API Vivo商业开放平台
+ * Marketing API Vivo商业开放平台
+ *
+ * Do not edit the class manually.
+ */
+package ${baseClassInfo.packageName};
+
+#foreach($item in $importList)
+$item;
+#end
+import com.google.gson.annotations.SerializedName;
+#if($isRequest)
+import com.hyq0719.mktapi.vivo.bean.TokenKey;
+#end
+import lombok.Data;
+import com.google.gson.Gson;
+
+/**
+ * ${baseClassInfo.comments}
+ * @author ${baseClassInfo.author}
+ * @email ${baseClassInfo.email}
+ * @date ${baseClassInfo.datetime}
+ */
+@Data
+public class ${className} #if($isRequest)implements TokenKey #end{
+#if($isRequest)
+
+  @SerializedName("advertiser_id")
+  private String advertiserId = null;
+#end
+
+#foreach( $item in $list)
+  /**
+   * $item.description
+   */
+  @SerializedName("$item.camelProperty")
+  private $item.type $item.camelProperty = null;
+
+#end
+#if($isRequest)
+  public ${className} advertiserId(String advertiserId) {
+    this.advertiserId = advertiserId;
+    return this;
+  }
+
+#end
+#foreach( $item in $list)
+  public ${className} $item.camelProperty ($item.type $item.camelProperty) {
+    this.$item.camelProperty = $item.camelProperty;
+    return this;
+  }
+
+#end
+  @Override
+  public String toString() {
+    Gson gson = new Gson();
+    return gson.toJson(this);
+  }
+
+#if($isRequest)
+  @Override
+  public String getTokenKey() {
+    return String.valueOf(advertiserId);
+  }
+
+#end
+}
