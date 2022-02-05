@@ -1,0 +1,5 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hyq0719.spring.starter.mktapi.vivo.config.HttpAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.vivo.config.VivoAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.vivo.config.CronJobAutoConfiguration

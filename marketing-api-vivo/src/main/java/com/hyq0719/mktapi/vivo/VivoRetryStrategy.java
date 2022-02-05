@@ -1,9 +1,8 @@
-package com.hyq0719.mktapi.oceanengine;
+package com.hyq0719.mktapi.vivo;
 
 import com.hyq0719.mktapi.common.RetryStrategy;
 
-
-public class OceanRetryStrategy implements RetryStrategy {
+public class VivoRetryStrategy implements RetryStrategy {
 
   private Integer retryCount = 3;
 
@@ -30,7 +29,7 @@ public class OceanRetryStrategy implements RetryStrategy {
 
   @Override
   public Boolean retryCondition(Long code) {
-    return code == 40100 || code == 50000;
+    return code == 70100 || code == 70103;
   }
 
   @Override
@@ -40,6 +39,6 @@ public class OceanRetryStrategy implements RetryStrategy {
 
   @Override
   public Boolean isTokenExpired(Long code) {
-    return code == 40105 || code == 40102;
+    return code == 60005 || code == 60002;
   }
 }

@@ -1,5 +1,4 @@
-package com.hyq0719.mktapi.oceanengine;
-
+package com.hyq0719.mktapi.vivo;
 
 import com.hyq0719.mktapi.common.ApiClient;
 import com.hyq0719.mktapi.common.ApiRequest;
@@ -10,22 +9,25 @@ import com.hyq0719.mktapi.common.annotation.ApiRequestMapping;
 import com.hyq0719.mktapi.common.constant.AuthConstants;
 import com.hyq0719.mktapi.common.exception.ApiException;
 import com.hyq0719.mktapi.common.executor.parameter.BaseUrl;
+import com.hyq0719.mktapi.common.executor.parameter.Pair;
 import com.hyq0719.mktapi.common.executor.parameter.RequestParam;
-import com.hyq0719.mktapi.oceanengine.bean.CodeKey;
-import com.hyq0719.mktapi.oceanengine.bean.TokenKey;
+import com.hyq0719.mktapi.common.util.DigestUtil;
+import com.hyq0719.mktapi.vivo.bean.CodeKey;
+import com.hyq0719.mktapi.vivo.bean.TokenKey;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
-import java.util.Map;
+import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 @Slf4j
-public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRequest<T, R> {
+public class VivoApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRequest<T, R> {
 
   private static final BaseUrl BASE_URL = BaseUrl.builder()
           .scheme("https")
-          .host("ad.oceanengine.com/open_api")
-          .version("2")
+          .host("marketing-api.vivo.com.cn/openapi")
+          .version("v1")
           .build();
 
   private final String path;
@@ -44,7 +46,7 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
 
   private RetryStrategy retryStrategy;
 
-  public OceanApiRequest() {
+  public VivoApiRequest() {
     ApiRequestMapping annotation = getClass().getAnnotation(ApiRequestMapping.class);
     if (Objects.isNull(annotation)) {
       throw new RuntimeException("must be @ApiRequestMapping");
@@ -79,12 +81,12 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
     if (data.getCodeKey() == 0) {
       return data;
     }
-    log.info("Ocean Engine result code:{}, message:{}", data.getCodeKey(), data.getMsg());
+    log.info("Vivo result code:{}, message:{}", data.getCodeKey(), data.getMsg());
 
-    if (retryStrategy.isTokenExpired(data.getCodeKey())) {
+    if (retryStrategy.isTokenExpired(data.getCodeKey()) || vivoTokenExpired(data)) {
       refreshToken(t.getTokenKey());
       data = retryRequest(t, apiRequestAdvice, null);
-      log.info("Ocean Engine after refresh token result code:{}, message:{}", data.getCodeKey(), data.getMsg());
+      log.info("Vivo after refresh token result code:{}, message:{}", data.getCodeKey(), data.getMsg());
       return data;
     }
 
@@ -96,7 +98,7 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
     Integer retryCount = retryStrategy.retryCount();
     while (count < retryCount) {
       data = retryRequest(t, apiRequestAdvice, token);
-      log.info("Ocean Engine retry result retryCount:{},code:{}, message:{}", (count + 1), data.getCodeKey(),
+      log.info("Vivo retry result retryCount:{},code:{}, message:{}", (count + 1), data.getCodeKey(),
               data.getMsg());
       count++;
       if (!retryStrategy.retryCondition(data.getCodeKey())) {
@@ -118,10 +120,20 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
 
   @Override
   protected void updateParamsForAuth(RequestParam param) {
-    Map<String, String> headerParams = param.getHeaderParams();
+    List<Pair> queryParams = param.getQueryParams();
     for (String authName : param.getAuthNames()) {
-      if ("Access-Token".equals(authName) && StringUtils.isNotEmpty(param.getAccessToken())) {
-        headerParams.put("Access-Token", param.getAccessToken());
+      switch (authName) {
+        case "accessToken":
+          queryParams.add(new Pair("access_token", param.getAccessToken()));
+          break;
+        case "nonce":
+          queryParams.add(new Pair("nonce", DigestUtil.encrypt(UUID.randomUUID().toString())));
+          break;
+        case "timestamp":
+          queryParams.add(new Pair("timestamp", String.valueOf(System.currentTimeMillis())));
+          break;
+        default:
+          break;
       }
     }
   }
@@ -138,7 +150,7 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
 
   @Override
   public String[] getLocalVarAuthNames() {
-    return AuthConstants.OCEAN_ENGINE_AUTH;
+    return AuthConstants.VIVO_AUTH;
   }
 
   @Override
@@ -172,9 +184,15 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
   }
 
   private void refreshToken(String tokenKey) {
-    log.info("Ocean Engine refresh TOKEN start·······");
+    log.info("Vivo refresh TOKEN start·······");
     apiClient.refreshSingleToken(tokenKey);
-    log.info("Ocean Engine refresh TOKEN end·······");
+    log.info("Vivo refresh TOKEN end·······");
+  }
+
+  /*
+  vivo部分接口access_token过期返回参数错误的返回码
+   */
+  private boolean vivoTokenExpired(R vivoResponse) {
+    return "70100".equals(vivoResponse.getCodeKey().toString()) && "参数access_token不合法".equals(vivoResponse.getMsg());
   }
 }
-
