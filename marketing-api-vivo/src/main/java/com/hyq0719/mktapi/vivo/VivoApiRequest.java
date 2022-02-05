@@ -82,11 +82,14 @@ public class VivoApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRe
       return data;
     }
     log.info("Vivo result code:{}, message:{}", data.getCodeKey(), data.getMsg());
-    if (retryStrategy.isTokenExpired(data.getCodeKey())) {
+
+    if (retryStrategy.isTokenExpired(data.getCodeKey()) || vivoTokenExpired(data)) {
       refreshToken(t.getTokenKey());
-      data = super.execute(t, apiRequestAdvice, token);
+      data = retryRequest(t, apiRequestAdvice, null);
       log.info("Vivo after refresh token result code:{}, message:{}", data.getCodeKey(), data.getMsg());
+      return data;
     }
+
     if (!retryStrategy.enable() || !retryStrategy.retryCondition(data.getCodeKey())) {
       return data;
     }
@@ -94,8 +97,7 @@ public class VivoApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRe
     int count = 0;
     Integer retryCount = retryStrategy.retryCount();
     while (count < retryCount) {
-      log.info("Vivo AD SDK current retry time is " + (count + 1));
-      data = super.execute(t, apiRequestAdvice);
+      data = retryRequest(t, apiRequestAdvice, token);
       log.info("Vivo retry result retryCount:{},code:{}, message:{}", (count + 1), data.getCodeKey(),
               data.getMsg());
       count++;
@@ -185,5 +187,12 @@ public class VivoApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRe
     log.info("Vivo refresh TOKEN start·······");
     apiClient.refreshSingleToken(tokenKey);
     log.info("Vivo refresh TOKEN end·······");
+  }
+
+  /*
+  vivo部分接口access_token过期返回参数错误的返回码
+   */
+  private boolean vivoTokenExpired(R vivoResponse) {
+    return "70100".equals(vivoResponse.getCodeKey().toString()) && "参数access_token不合法".equals(vivoResponse.getMsg());
   }
 }

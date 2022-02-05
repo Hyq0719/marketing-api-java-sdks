@@ -4,7 +4,7 @@ import com.hyq0719.mktapi.common.RetryStrategy;
 
 public class VivoRetryStrategy implements RetryStrategy {
 
-  private Integer retryCount = 2;
+  private Integer retryCount = 3;
 
   private Boolean enable = true;
 
