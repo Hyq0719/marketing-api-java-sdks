@@ -5,7 +5,7 @@ import com.hyq0719.mktapi.common.RetryStrategy;
 
 public class OceanRetryStrategy implements RetryStrategy {
 
-  private Integer retryCount = 10;
+  private Integer retryCount = 3;
 
   private Boolean enable = true;
 

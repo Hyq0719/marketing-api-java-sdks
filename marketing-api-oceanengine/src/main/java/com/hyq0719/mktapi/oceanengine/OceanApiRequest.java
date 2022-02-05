@@ -80,11 +80,14 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
       return data;
     }
     log.info("Ocean Engine result code:{}, message:{}", data.getCodeKey(), data.getMsg());
+
     if (retryStrategy.isTokenExpired(data.getCodeKey())) {
       refreshToken(t.getTokenKey());
-      data = super.execute(t, apiRequestAdvice, token);
+      data = retryRequest(t, apiRequestAdvice, null);
       log.info("Ocean Engine after refresh token result code:{}, message:{}", data.getCodeKey(), data.getMsg());
+      return data;
     }
+
     if (!retryStrategy.enable() || !retryStrategy.retryCondition(data.getCodeKey())) {
       return data;
     }
@@ -92,14 +95,13 @@ public class OceanApiRequest<T extends TokenKey, R extends CodeKey> extends ApiR
     int count = 0;
     Integer retryCount = retryStrategy.retryCount();
     while (count < retryCount) {
-      log.info("Ocean Engine AD SDK current retry time is " + (count + 1));
-      data = super.execute(t, apiRequestAdvice);
+      data = retryRequest(t, apiRequestAdvice, token);
       log.info("Ocean Engine retry result retryCount:{},code:{}, message:{}", (count + 1), data.getCodeKey(),
               data.getMsg());
+      count++;
       if (!retryStrategy.retryCondition(data.getCodeKey())) {
         return data;
       }
-      count++;
     }
     return data;
   }
