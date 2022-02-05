@@ -45,7 +45,7 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     }
     ApiResponse<R> resp = executeWithHttp(t, token);
     if (Objects.nonNull(apiRequestAdvice)) {
-      apiRequestAdvice.after();
+      apiRequestAdvice.after(resp);
     }
     return retry(resp, t, apiRequestAdvice, token);
   }
@@ -53,6 +53,17 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
   public R retry(ApiResponse<R> resp, T t, ApiRequestAdvice apiRequestAdvice, String token)
           throws ApiException {
     return resp.getData();
+  }
+
+  public R retryRequest(T t, ApiRequestAdvice apiRequestAdvice, String token) throws ApiException {
+    if (Objects.nonNull(apiRequestAdvice)) {
+      apiRequestAdvice.before();
+    }
+    ApiResponse<R> retryResponse = executeWithHttp(t, token);
+    if (Objects.nonNull(apiRequestAdvice)) {
+      apiRequestAdvice.after(retryResponse);
+    }
+    return retryResponse.getData();
   }
 
   @Override

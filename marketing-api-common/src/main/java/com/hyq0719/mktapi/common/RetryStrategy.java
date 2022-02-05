@@ -8,7 +8,7 @@ public interface RetryStrategy {
    * @return
    */
   default Integer retryCount() {
-    return 10;
+    return 3;
   }
 
   /**

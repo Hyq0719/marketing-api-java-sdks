@@ -1,5 +1,7 @@
 package com.hyq0719.mktapi.common.advice;
 
+import com.hyq0719.mktapi.common.ApiResponse;
+
 @FunctionalInterface
 public interface ApiRequestAdvice {
 
@@ -7,5 +9,5 @@ public interface ApiRequestAdvice {
 
   }
 
-  void after();
+  void after(ApiResponse response);
 }
