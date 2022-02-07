@@ -48,7 +48,7 @@ public class EntityTableHandler {
     crawlerResult.setClassPrefix(entityPrefix);
 
     List<WebElement> tableElements = driver.findElements(By.tagName("table"));
-    if (tableElements.size() < 2) {
+    if (tableElements.size() < Math.max(requestTableLoc, responseTableLoc)) {
       throw new RuntimeException("Crawler <table> size error");
     }
     if (requestTableLoc != -1) {
