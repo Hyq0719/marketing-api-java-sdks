@@ -11,14 +11,14 @@ public class PageResponseData<T> {
   private List<T> list = null;
 
   @SerializedName("page_info")
-  private ConfPageSize1000 pageInfo = null;
+  private PageInfo pageInfo = null;
 
-  public PageResponseData list(List<T> list) {
+  public PageResponseData<T> list(List<T> list) {
     this.list = list;
     return this;
   }
 
-  public PageResponseData pageInfo(ConfPageSize1000 pageInfo) {
+  public PageResponseData<T> pageInfo(PageInfo pageInfo) {
     this.pageInfo = pageInfo;
     return this;
   }
