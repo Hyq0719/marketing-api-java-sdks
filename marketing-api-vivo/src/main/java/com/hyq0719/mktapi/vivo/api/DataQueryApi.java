@@ -12,7 +12,8 @@ import com.hyq0719.mktapi.vivo.bean.dataQuery.*;
 import java.util.List;
 
 /**
- * vivo商业开放平台——数据洞察api
+ * @author hyq0719
+ * @description vivo商业开放平台——数据洞察
  */
 public class DataQueryApi extends AbstractVivoApi {
   private volatile AdstatementSummaryQuery adstatementSummaryQuery;

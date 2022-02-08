@@ -11,6 +11,10 @@ import com.hyq0719.mktapi.vivo.bean.dataAccess.AdvertiserBehaviorUploadRequest;
 
 import java.util.List;
 
+/**
+ * @author hyq0719
+ * @description vivo商业开放平台——数据接入
+ */
 public class DataAccessApi extends AbstractVivoApi {
   private volatile AdvertiserBehaviorUpload advertiserBehaviorUpload;
 

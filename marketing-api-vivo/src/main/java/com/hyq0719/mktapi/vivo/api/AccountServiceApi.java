@@ -11,6 +11,10 @@ import com.hyq0719.mktapi.vivo.bean.common.VivoResponse;
 
 import java.util.List;
 
+/**
+ * @author hyq0719
+ * @description vivo商业开放平台——账号服务
+ */
 public class AccountServiceApi extends AbstractVivoApi {
   private volatile AccountFetch accountFetch;
   private volatile AccountFetchAccount accountFetchAccount;

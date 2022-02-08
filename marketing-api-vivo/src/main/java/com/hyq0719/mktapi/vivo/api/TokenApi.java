@@ -14,6 +14,10 @@ import com.hyq0719.mktapi.vivo.bean.token.Oauth2TokenResponseData;
 
 import java.util.List;
 
+/**
+ * @author hyq0719
+ * @description token管理
+ */
 public class TokenApi extends AbstractVivoApi {
   private volatile Oauth2Token oauth2Token;
   private volatile Oauth2RefreshToken oauth2RefreshToken;

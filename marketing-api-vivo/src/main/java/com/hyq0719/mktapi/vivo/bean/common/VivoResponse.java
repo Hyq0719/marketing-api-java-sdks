@@ -16,6 +16,9 @@ public class VivoResponse<T> implements CodeKey {
   @SerializedName("data")
   private T data = null;
 
+  @SerializedName("requestId")
+  private String requestId = null;
+
   public VivoResponse<T> code(Long code) {
     this.code = code;
     return this;
@@ -28,6 +31,11 @@ public class VivoResponse<T> implements CodeKey {
 
   public VivoResponse<T> data(T data) {
     this.data = data;
+    return this;
+  }
+
+  public VivoResponse<T> requestId(String requestId) {
+    this.requestId = requestId;
     return this;
   }
 

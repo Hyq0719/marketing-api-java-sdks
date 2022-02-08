@@ -141,7 +141,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OBJECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type) || type.endsWith("Dto")) {
       String className = GeneratorUtils.toUpperCaseFirstOne(baseEntity.getCamelProperty() + "Struct");
 
       SingleFileEntity sfe = new SingleFileEntity();
@@ -171,7 +171,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OBJECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type) || type.endsWith("Dto")) {
       String className;
       if ("items".equals(camelProperty)) {
         className = GeneratorUtils.toUpperCaseFirstOne(classPrefix + "ItemsStruct");
