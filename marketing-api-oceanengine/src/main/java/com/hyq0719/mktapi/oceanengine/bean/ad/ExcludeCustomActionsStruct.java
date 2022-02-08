@@ -2,7 +2,7 @@ package com.hyq0719.mktapi.oceanengine.bean.ad;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
-import com.hyq0719.mktapi.oceanengine.bean.common.ConfPageSize1000;
+import com.hyq0719.mktapi.oceanengine.bean.common.PageInfo;
 
 public class ExcludeCustomActionsStruct {
   @SerializedName("days")
@@ -63,7 +63,7 @@ public class ExcludeCustomActionsStruct {
   private Float budget = null;
 
   @SerializedName("page_info")
-  private ConfPageSize1000 pageInfo = null;
+  private PageInfo pageInfo = null;
 
   public ExcludeCustomActionsStruct days(Long days) {
     this.days = days;
@@ -160,7 +160,7 @@ public class ExcludeCustomActionsStruct {
     return this;
   }
 
-  public ExcludeCustomActionsStruct pageInfo(ConfPageSize1000 pageInfo) {
+  public ExcludeCustomActionsStruct pageInfo(PageInfo pageInfo) {
     this.pageInfo = pageInfo;
     return this;
   }
@@ -317,11 +317,11 @@ public class ExcludeCustomActionsStruct {
     this.budget = budget;
   }
 
-  public ConfPageSize1000 getPageInfo() {
+  public PageInfo getPageInfo() {
     return pageInfo;
   }
 
-  public void setPageInfo(ConfPageSize1000 pageInfo) {
+  public void setPageInfo(PageInfo pageInfo) {
     this.pageInfo = pageInfo;
   }
 

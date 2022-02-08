@@ -85,11 +85,11 @@ public class DataReportApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/report/agent/get_v2/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class ReportAgentGetV2 extends OceanApiRequest<ReportAgentGetRequest,
-          OceanResponse<PageResponseData<ReportAgentGetResponseStruct>>> {
+  public class ReportAgentGetV2 extends OceanApiRequest<ReportAgentGetV2Request,
+          OceanResponse<PageResponseData<ReportAgentGetV2ResponseStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportAgentGetRequest reportRequest) {
+                                ReportAgentGetV2Request reportRequest) {
       Long agentId = reportRequest.getAgentId();
       if (agentId != null) {
         localVarQueryParams.addAll(parameterToPair("agent_id", agentId));

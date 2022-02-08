@@ -20,7 +20,7 @@ import java.util.*;
 public class CodeGenerator {
   public static final GeneratorConfigEntity GENERATOR_ENTITY = getConfig();
   public static final Map<String, String> TYPE_MAP = getTypeMap();
-  public static final Set<String> OJBECT_TYPE_SET = getObjectTypeSet();
+  public static final Set<String> OBJECT_TYPE_SET = getObjectTypeSet();
   public static final Set<String> LIST_TYPE_SET = getListTypeSet();
 
   /**
@@ -144,7 +144,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OJBECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type)) {
       String className = GeneratorUtils.toUpperCaseFirstOne(baseEntity.getCamelProperty() + "Struct");
 
       baseEntity.setType(className);
@@ -170,7 +170,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OJBECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type)) {
       String camelProperty = baseEntity.getCamelProperty();
       String className;
       if ("list".equals(camelProperty)) {
@@ -305,7 +305,9 @@ public class CodeGenerator {
     set.add("json");
     set.add("json[]");
     set.add("list");
+    set.add("List");
     set.add("array");
+    set.add("Array");
     return set;
   }
 
@@ -313,14 +315,15 @@ public class CodeGenerator {
     Set<String> set = new HashSet<>();
     set.add("[]");
     set.add("list");
+    set.add("List");
     set.add("array");
+    set.add("Array");
     return set;
   }
 
   private static void setArrayBaseEntity(String type, BaseEntity baseEntity, String className) {
     if (isListType(type)) {
       baseEntity.setType("List<" + className + ">");
-      return;
     }
   }
 

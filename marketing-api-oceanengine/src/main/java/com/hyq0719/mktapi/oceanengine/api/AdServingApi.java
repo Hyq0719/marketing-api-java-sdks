@@ -215,19 +215,18 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/campaign/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {
-                  RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class CampaignGet extends OceanApiRequest<ConfigRequest<CampaignsGetFilteringStruct>,
-          OceanResponse<PageResponseData<CampaignsGetListStruct>>> {
+          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+  public class CampaignGet extends OceanApiRequest<ConfigRequest<CampaignGetFilteringStruct>,
+          OceanResponse<PageResponseData<CampaignGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<CampaignsGetFilteringStruct> configRequest) {
+                                ConfigRequest<CampaignGetFilteringStruct> configRequest) {
       Long advertiserId = configRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      CampaignsGetFilteringStruct filtering = configRequest.getFiltering();
+      CampaignGetFilteringStruct filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
@@ -248,30 +247,30 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/campaign/create/", method = RequestConstants.POST)
-  public class CampaignCreate extends OceanApiRequest<CampaignsAddRequest, OceanResponse<CampaignsAddResponseData>> {
+  public class CampaignCreate extends OceanApiRequest<CampaignCreateRequest, OceanResponse<CampaignCreateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/campaign/update/", method = RequestConstants.POST)
-  public class CampaignUpdate extends OceanApiRequest<CampaignsUpdateRequest, OceanResponse<CampaignsUpdateResponseData>> {
+  public class CampaignUpdate extends OceanApiRequest<CampaignUpdateRequest, OceanResponse<CampaignUpdateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/campaign/update/status/ ", method = RequestConstants.POST)
   public class CampaignUpdateStatus
-          extends OceanApiRequest<CampaignsUpdateStatusRequest, OceanResponse<CampaignsUpdateStatusResponseData>> {
+          extends OceanApiRequest<CampaignUpdateStatusRequest, OceanResponse<CampaignUpdateStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/get/", method = RequestConstants.GET, usePostBody = false, contentTypes = {
           RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class AdGet extends OceanApiRequest<ConfigRequest<AdsGetFilteringStruct>,
-          OceanResponse<PageResponseData<AdsGetResponseListStruct>>> {
+  public class AdGet extends OceanApiRequest<ConfigRequest<AdGetFilteringStruct>,
+          OceanResponse<PageResponseData<AdGetResponseListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<AdsGetFilteringStruct> configRequest) {
+                                ConfigRequest<AdGetFilteringStruct> configRequest) {
       Long advertiserId = configRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      AdsGetFilteringStruct filtering = configRequest.getFiltering();
+      AdGetFilteringStruct filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
@@ -292,16 +291,16 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/ad/cost_protect_status/get/", method = RequestConstants.GET, usePostBody =
           false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class AdCostProtectStatusGet extends OceanApiRequest<AdsGetCostProtectStatusRequest,
-          OceanResponse<AdsGetCostProtectStatusResponseData>> {
+  public class AdCostProtectStatusGet extends OceanApiRequest<AdCostProtectStatusGetRequest,
+          OceanResponse<AdCostProtectStatusGetResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                AdsGetCostProtectStatusRequest adsGetCostProtectStatusRequest) {
-      Long advertiserId = adsGetCostProtectStatusRequest.getAdvertiserId();
+                                AdCostProtectStatusGetRequest request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      List<Long> adIds = adsGetCostProtectStatusRequest.getAdIds();
+      List<Long> adIds = request.getAdIds();
       if (adIds != null) {
         localVarQueryParams.addAll(parameterToPair("ad_ids", JsonUtil.toJsonString(adIds)));
       }
@@ -311,15 +310,15 @@ public class AdServingApi extends AbstractOceanApi {
   @ApiRequestMapping(value = "/ad/reject_reason/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdRejectReason
-          extends OceanApiRequest<AdsGetRejectReasonRequest, OceanResponse<AdsGetRejectReasonResponseData>> {
+          extends OceanApiRequest<AdRejectReasonRequest, OceanResponse<AdRejectReasonResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                AdsGetRejectReasonRequest adsGetRejectReasonRequest) {
-      Long advertiserId = adsGetRejectReasonRequest.getAdvertiserId();
+                                AdRejectReasonRequest request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      List<Long> adIds = adsGetRejectReasonRequest.getAdIds();
+      List<Long> adIds = request.getAdIds();
       if (adIds != null) {
         localVarQueryParams.addAll(parameterToPair("ad_ids", JsonUtil.toJsonString(adIds)));
       }
@@ -327,40 +326,39 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/ad/create/", method = RequestConstants.POST)
-  public class AdCreate extends OceanApiRequest<AdsAddRequest, OceanResponse<AdsAddResponseData>> {
+  public class AdCreate extends OceanApiRequest<AdCreateRequest, OceanResponse<AdCreateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/", method = RequestConstants.POST)
-  public class AdUpdateApi extends OceanApiRequest<AdsUpdateRequest, OceanResponse<AdsUpdateResponseData>> {
+  public class AdUpdateApi extends OceanApiRequest<AdUpdateRequest, OceanResponse<AdUpdateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/status/", method = RequestConstants.POST)
   public class AdUpdateStatus
-          extends OceanApiRequest<AdsUpdateStatusRequest, OceanResponse<AdsUpdateStatusResponseData>> {
+          extends OceanApiRequest<AdUpdateStatusRequest, OceanResponse<AdUpdateStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/budget/", method = RequestConstants.POST)
   public class AdUpdateBudget
-          extends OceanApiRequest<AdsUpdateBudgetRequest, OceanResponse<AdsUpdateBudgetResponseData>> {
+          extends OceanApiRequest<AdUpdateBudgetRequest, OceanResponse<AdUpdateBudgetResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/bid/", method = RequestConstants.POST)
-  public class AdUpdateBid extends OceanApiRequest<AdsUpdateBidRequest, OceanResponse<AdsUpdateBidResponseData>> {
+  public class AdUpdateBid extends OceanApiRequest<AdUpdateBidRequest, OceanResponse<AdUpdateBidResponseData>> {
   }
 
   @ApiRequestMapping(value = "/creative/get/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class CreativeGet
-          extends OceanApiRequest<ConfigRequest<AdcreativesGetFilteringStruct>,
-          OceanResponse<PageResponseData<AdcreativesGetListStruct>>> {
+  public class CreativeGet extends OceanApiRequest<ConfigRequest<CreativeGetFilteringStruct>,
+          OceanResponse<PageResponseData<CreativeGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<AdcreativesGetFilteringStruct> configRequest) {
+                                ConfigRequest<CreativeGetFilteringStruct> configRequest) {
       Long advertiserId = configRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      AdcreativesGetFilteringStruct filtering = configRequest.getFiltering();
+      CreativeGetFilteringStruct filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
@@ -382,12 +380,14 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/creative/custom_creative/create/", method = RequestConstants.POST)
   public class CreativeCustomCreativeCreate
-          extends OceanApiRequest<AdcreativesCustomAddRequest, OceanResponse<AdcreativesCustomAddResponseData>> {
+          extends OceanApiRequest<CreativeCustomCreativeCreateRequest,
+          OceanResponse<CreativeCustomCreativeCreateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/creative/custom_creative/update/", method = RequestConstants.POST)
   public class CreativeCustomCreativeUpdate
-          extends OceanApiRequest<AdcreativesCustomUpdateRequest, OceanResponse<AdcreativesCustomUpdateResponseData>> {
+          extends OceanApiRequest<CreativeCustomCreativeUpdateRequest,
+          OceanResponse<CreativeCustomCreativeUpdateResponseData>> {
   }
 
 }
