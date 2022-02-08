@@ -13,6 +13,10 @@ import java.io.File;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author hyq0719
+ * @description vivo商业开放平台——人群管理
+ */
 public class DmpTagApi extends AbstractVivoApi {
   private volatile AdDmpTagUpload adDmpTagUpload;
   private volatile AdDmpTagCreate adDmpTagCreate;

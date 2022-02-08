@@ -141,7 +141,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OBJECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type) || type.endsWith("Dto")) {
       String className = GeneratorUtils.toUpperCaseFirstOne(baseEntity.getCamelProperty() + "Struct");
 
       SingleFileEntity sfe = new SingleFileEntity();
@@ -171,7 +171,7 @@ public class CodeGenerator {
       baseEntity.setType(TYPE_MAP.get(type));
       return;
     }
-    if (OBJECT_TYPE_SET.contains(type)) {
+    if (OBJECT_TYPE_SET.contains(type) || type.endsWith("Dto")) {
       String className;
       if ("items".equals(camelProperty)) {
         className = GeneratorUtils.toUpperCaseFirstOne(classPrefix + "ItemsStruct");
@@ -283,6 +283,7 @@ public class CodeGenerator {
     map.put("double", "Double");
     map.put("Double", "Double");
     map.put("file", "File");
+    map.put("Decimal", "BigDecimal");
 
     // 集合
     map.put("number[]", "List<Long>");
@@ -318,6 +319,7 @@ public class CodeGenerator {
     set.add("list");
     set.add("List");
     set.add("对象列表");
+    set.add("PageInfo");
     return set;
   }
 
@@ -338,22 +340,30 @@ public class CodeGenerator {
       if (importList == null) {
         importList = new ArrayList<>();
       }
-      if (importList.contains("import java.util.List")) {
-        return;
+      if (!importList.contains("import java.util.List")) {
+        importList.add("import java.util.List");
+        sfe.importList(importList);
       }
-      importList.add("import java.util.List");
-      sfe.importList(importList);
     }
     if (entity.getType().contains("file")) {
       List<String> importList = sfe.getImportList();
       if (importList == null) {
         importList = new ArrayList<>();
       }
-      if (importList.contains("import java.io.File")) {
-        return;
+      if (!importList.contains("import java.io.File")) {
+        importList.add("import java.io.File");
+        sfe.importList(importList);
       }
-      importList.add("import java.io.File");
-      sfe.importList(importList);
+    }
+    if (entity.getType().contains("Decimal")) {
+      List<String> importList = sfe.getImportList();
+      if (importList == null) {
+        importList = new ArrayList<>();
+      }
+      if (!importList.contains("import java.math.BigDecimal")) {
+        importList.add("import java.math.BigDecimal;");
+        sfe.importList(importList);
+      }
     }
   }
 
