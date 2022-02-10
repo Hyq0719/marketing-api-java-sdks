@@ -12,10 +12,14 @@ import java.util.Objects;
 @Slf4j
 public class ITokenCronService implements CronService {
 
+  /**
+   * 外部token授权服务
+   */
   private ExternalTokenService externalTokenService;
-
+  /**
+   * tokwn本地缓存
+   */
   private volatile ITokenLocalCache iTokenLocalCache;
-
   private String cron;
 
   public ITokenCronService(ExternalTokenService externalTokenService, ITokenLocalCache iTokenLocalCache,

@@ -1,5 +1,10 @@
 package com.hyq0719.mktapi.common.constant;
 
+/**
+ * 各渠道请求中的授权参数
+ *
+ * @author hyq0719
+ */
 public interface AuthConstants {
 
   /**

@@ -9,10 +9,15 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
+/**
+ * HttpHandler抽象类，提供url构造的默认实现
+ *
+ * @author hyq0719
+ */
 public abstract class BaseHttpHandler implements HttpHandler {
 
-  private JSON json;
-  private boolean verifyingSsl;
+  private final JSON json;
+  private final boolean verifyingSsl;
 
   protected BaseHttpHandler() {
     json = new JSON();
@@ -72,6 +77,12 @@ public abstract class BaseHttpHandler implements HttpHandler {
     return mime != null && (mime.matches(jsonMime) || "*/*".equals(mime));
   }
 
+  /**
+   * 添加请求参数
+   *
+   * @param url          当前url
+   * @param requestParam 请求参数
+   */
   private void appendQueryParams(StringBuilder url, RequestParam requestParam) {
     List<Pair> queryParams = requestParam.getQueryParams();
     if (queryParams != null && !queryParams.isEmpty()) {
@@ -92,6 +103,12 @@ public abstract class BaseHttpHandler implements HttpHandler {
     }
   }
 
+  /**
+   * 添加请求参数集合
+   *
+   * @param url          当前url
+   * @param requestParam 请求参数
+   */
   private void appendCollectionQueryParams(StringBuilder url, RequestParam requestParam) {
     List<Pair> collectionQueryParams = requestParam.getCollectionQueryParams();
     if (collectionQueryParams != null && !collectionQueryParams.isEmpty()) {
