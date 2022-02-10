@@ -6,10 +6,7 @@ import com.hyq0719.mktapi.common.constant.RequestConstants;
 import com.hyq0719.mktapi.common.exception.ApiException;
 import com.hyq0719.mktapi.common.executor.parameter.RequestParam;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.http.Consts;
-import org.apache.http.Header;
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpVersion;
+import org.apache.http.*;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
@@ -84,21 +81,7 @@ public class ApacheHttpHandler extends BaseHttpHandler {
       contentType = "application/json";
     }
     if ("multipart/form-data".equals(contentType)) {
-      MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-      Map<String, File> fileMap = param.getMultipartFileMap();
-      if (fileMap != null) {
-        for (Entry<String, File> entry : fileMap.entrySet()) {
-          builder.addPart(entry.getKey(), new FileBody(entry.getValue()));
-        }
-      }
-      Map<String, Object> textMap = param.getMultipartTextMap();
-      if (textMap != null) {
-        for (Entry<String, Object> entry : textMap.entrySet()) {
-          builder.addTextBody(entry.getKey(), String.valueOf(entry.getValue()),
-                  ContentType.TEXT_PLAIN.withCharset(Consts.UTF_8));
-        }
-      }
-      httpPost.setEntity(builder.build());
+      httpPost.setEntity(buildRequestEntityMultipart(param.getFormParams()));
     } else {
       String postEntity = parameterToString(param.getPostBody());
       if (postEntity != null) {
@@ -107,6 +90,22 @@ public class ApacheHttpHandler extends BaseHttpHandler {
         httpPost.setEntity(entity);
       }
     }
+  }
+
+  public HttpEntity buildRequestEntityMultipart(Map<String, Object> formParams) {
+    MultipartEntityBuilder mpBuilder = MultipartEntityBuilder.create();
+    if (formParams != null) {
+      for (Entry<String, Object> entry : formParams.entrySet()) {
+        if (entry.getValue() instanceof File) {
+          File file = (File) entry.getValue();
+          mpBuilder.addPart(entry.getKey(), new FileBody(file));
+        } else {
+          mpBuilder.addTextBody(entry.getKey(), String.valueOf(entry.getValue()),
+                  ContentType.TEXT_PLAIN.withCharset(Consts.UTF_8));
+        }
+      }
+    }
+    return mpBuilder.build();
   }
 
   public <T> T handleResponse(HttpResponse response, Type returnType) throws ApiException {
