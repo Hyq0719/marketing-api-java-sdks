@@ -8,7 +8,7 @@ Marketing API Java SDKs 旨在对国内主流的Marketing API进行封装，帮�
 
 ```xml
 <dependency>
-  <groupId>com.github.hyq0719</groupId>
+  <groupId>io.github.hyq0719</groupId>
   <artifactId>（不同模块参考下文）</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 </dependency>

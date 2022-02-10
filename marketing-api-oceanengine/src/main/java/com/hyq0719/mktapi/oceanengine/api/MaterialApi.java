@@ -160,27 +160,26 @@ public class MaterialApi extends AbstractOceanApi {
   public class FileImageAdvertiser extends OceanApiRequest<FileImageAdvertiserRequest,
           OceanResponse<FileImageAdvertiserResponseData>> {
     @Override
-    public void setMultipartParam(Map<String, Object> textMap, Map<String, File> fileMap,
-                                  FileImageAdvertiserRequest request) {
+    public void setFormParam(Map<String, Object> formParamMap, FileImageAdvertiserRequest request) {
       Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
-        textMap.put(ADVERTISER_ID, advertiserId);
+        formParamMap.put(ADVERTISER_ID, advertiserId);
       }
       String uploadType = request.getUploadType();
       if (uploadType != null) {
-        textMap.put("upload_type", uploadType);
+        formParamMap.put("upload_type", uploadType);
       }
       String imageSignature = request.getImageSignature();
       if (imageSignature != null) {
-        textMap.put("image_signature", imageSignature);
+        formParamMap.put("image_signature", imageSignature);
       }
       String imageUrl = request.getImageUrl();
       if (imageUrl != null) {
-        textMap.put("image_url", imageUrl);
+        formParamMap.put("image_url", imageUrl);
       }
       File imageFile = request.getImageFile();
       if (imageFile != null) {
-        fileMap.put("image_file", imageFile);
+        formParamMap.put("image_file", imageFile);
       }
     }
   }
@@ -189,27 +188,26 @@ public class MaterialApi extends AbstractOceanApi {
           RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class FileImageAd extends OceanApiRequest<FileImageAdRequest, OceanResponse<FileImageAdResponseData>> {
     @Override
-    public void setMultipartParam(Map<String, Object> textMap, Map<String, File> fileMap,
-                                  FileImageAdRequest request) {
+    public void setFormParam(Map<String, Object> formParamMap, FileImageAdRequest request) {
       Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
-        textMap.put(ADVERTISER_ID, advertiserId);
+        formParamMap.put(ADVERTISER_ID, advertiserId);
       }
       String uploadType = request.getUploadType();
       if (uploadType != null) {
-        textMap.put("upload_type", uploadType);
+        formParamMap.put("upload_type", uploadType);
       }
       String imageSignature = request.getImageSignature();
       if (imageSignature != null) {
-        textMap.put("image_signature", imageSignature);
+        formParamMap.put("image_signature", imageSignature);
       }
       String imageUrl = request.getImageUrl();
       if (imageUrl != null) {
-        textMap.put("image_url", imageUrl);
+        formParamMap.put("image_url", imageUrl);
       }
       File imageFile = request.getImageFile();
       if (imageFile != null) {
-        fileMap.put("image_file", imageFile);
+        formParamMap.put("image_file", imageFile);
       }
     }
   }
@@ -218,23 +216,22 @@ public class MaterialApi extends AbstractOceanApi {
           RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class FileVideoAd extends OceanApiRequest<FileVideoAdRequest, OceanResponse<FileVideoAdResponseData>> {
     @Override
-    public void setMultipartParam(Map<String, Object> textMap, Map<String, File> fileMap,
-                                  FileVideoAdRequest request) {
+    public void setFormParam(Map<String, Object> formParamMap, FileVideoAdRequest request) {
       Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
-        textMap.put(ADVERTISER_ID, advertiserId);
+        formParamMap.put(ADVERTISER_ID, advertiserId);
       }
       String filename = request.getFilename();
       if (filename != null) {
-        textMap.put("filename", filename);
+        formParamMap.put("filename", filename);
       }
       String videoSignature = request.getVideoSignature();
       if (videoSignature != null) {
-        textMap.put("video_signature", videoSignature);
+        formParamMap.put("video_signature", videoSignature);
       }
       File videoFile = request.getVideoFile();
       if (videoFile != null) {
-        fileMap.put("video_file", videoFile);
+        formParamMap.put("video_file", videoFile);
       }
     }
   }

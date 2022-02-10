@@ -88,6 +88,10 @@ public abstract class ApiClient {
    * @param tokenKey
    */
   public String refreshSingleToken(String tokenKey) {
+    //tokenKey判空
+    if (StringUtils.isEmpty(tokenKey)) {
+      return "";
+    }
     IToken iToken = externalTokenService.refreshToken(tokenKey);
     iTokenLocalCache.put(tokenKey, iToken);
     return iToken.getToken();

@@ -85,15 +85,14 @@ public class DmpTagApi extends AbstractVivoApi {
     }
 
     @Override
-    public void setMultipartParam(Map<String, Object> textMap, Map<String, File> fileMap,
-                                  AdDmpTagUploadRequest request) {
+    public void setFormParam(Map<String, Object> formParamMap, AdDmpTagUploadRequest request) {
       String md5 = request.getMd5();
       if (md5 != null) {
-        textMap.put("md5", md5);
+        formParamMap.put("md5", md5);
       }
       File file = request.getFile();
       if (file != null) {
-        fileMap.put("file", file);
+        formParamMap.put("file", file);
       }
     }
   }

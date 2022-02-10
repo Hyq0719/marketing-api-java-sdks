@@ -76,16 +76,13 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     List<Pair> localVarCollectionQueryParams = new ArrayList<>();
     setRequestParam(localVarQueryParams, localVarCollectionQueryParams, t);
 
-    Map<String, Object> localVarMultipartTextMap = new HashMap<>();
-    Map<String, File> localVarMultipartFileMap = new HashMap<>();
-    setMultipartParam(localVarMultipartTextMap, localVarMultipartFileMap, t);
-
     Map<String, String> localVarHeaderParams = new HashMap<>();
     final String localVarAccept = selectHeaderAccept(getRequestAccept());
     if (localVarAccept != null) {
       localVarHeaderParams.put("Accept", localVarAccept);
     }
     Map<String, Object> localVarFormParams = new HashMap<>();
+    setFormParam(localVarFormParams, t);
     final String localVarContentType = selectHeaderContentType(getRequestContentTypes());
     localVarHeaderParams.put("Content-Type", localVarContentType);
 
@@ -103,8 +100,6 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
             .collectionQueryParams(localVarCollectionQueryParams)
             .headerParams(localVarHeaderParams)
             .formParams(localVarFormParams)
-            .multipartTextMap(localVarMultipartTextMap)
-            .multipartFileMap(localVarMultipartFileMap)
             .authNames(getLocalVarAuthNames())
             .accessToken(localVarToken)
             .build();
@@ -123,7 +118,7 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
   public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams, T t) {
   }
 
-  public void setMultipartParam(Map<String, Object> multipartTextMap, Map<String, File> multipartFileMap, T t) {
+  public void setFormParam(Map<String, Object> formParamMap, T t) {
   }
 
   public void paramValidate(T t) throws ApiException {

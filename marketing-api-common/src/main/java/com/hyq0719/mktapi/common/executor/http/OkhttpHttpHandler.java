@@ -23,8 +23,8 @@ import java.util.regex.Pattern;
 public class OkhttpHttpHandler extends BaseHttpHandler {
 
   private final OkHttpClient httpsClient;
-  private Map<String, String> defaultHeaderMap = new HashMap<>();
-  private String tempFolderPath = null;
+  private final Map<String, String> defaultHeaderMap = new HashMap<>();
+  private final String tempFolderPath = null;
 
   public OkhttpHttpHandler(OkHttpClient httpsClient) {
     this.httpsClient = httpsClient;
@@ -52,8 +52,6 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
   public Request buildRequest(RequestParam param) throws ApiException {
     final String url = buildUrl(param);
     final String method = param.getMethod();
-    final Request.Builder reqBuilder = new Request.Builder().url(url);
-    processHeaderParams(param.getHeaderParams(), reqBuilder);
 
     String contentType = param.getHeaderParams().get("Content-Type");
     // ensuring a default content type
@@ -66,10 +64,9 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
     if (!HttpMethod.permitsRequestBody(param.getMethod())) {
       reqBody = null;
     } else if ("application/x-www-form-urlencoded".equals(contentType)) {
-      reqBody = serialize(param.getPostBody(), contentType);
+      reqBody = buildRequestBodyFormEncoding(param.getFormParams());
     } else if ("multipart/form-data".equals(contentType)) {
-      MultipartBody multipartBody = multiSerialize(param.getMultipartTextMap(), param.getMultipartFileMap());
-      return reqBuilder.method("POST", multipartBody).build();
+      reqBody = buildRequestBodyMultipart(param.getFormParams());
     } else if (body == null) {
       if ("DELETE".equals(method)) {
         // allow calling DELETE without sending a request body
@@ -81,20 +78,44 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
     } else {
       reqBody = serialize(body, contentType);
     }
-
+    Request.Builder reqBuilder = new Request.Builder().url(url);
+    processHeaderParams(param.getHeaderParams(), reqBuilder);
     return reqBuilder.method(method, reqBody).build();
   }
 
-  public MultipartBody multiSerialize(Map<String, Object> textMap, Map<String, File> fileMap) {
-    Builder builder = new Builder().setType(MultipartBody.FORM);
-    for (Entry<String, Object> entry : textMap.entrySet()) {
-      builder.addFormDataPart(entry.getKey(), String.valueOf(entry.getValue()));
+  /**
+   * Build a form-encoding request body with the given form parameters.
+   *
+   * @param formParams Form parameters in the form of Map
+   * @return RequestBody
+   */
+  public RequestBody buildRequestBodyFormEncoding(Map<String, Object> formParams) {
+    FormBody.Builder formBuilder = new FormBody.Builder();
+    for (Entry<String, Object> param : formParams.entrySet()) {
+      formBuilder.add(param.getKey(), parameterToString(param.getValue()));
     }
-    for (Entry<String, File> entry : fileMap.entrySet()) {
-      builder.addFormDataPart(entry.getKey(), entry.getValue().getName(),
-              RequestBody.create(MediaType.parse("multipart/form-data"), entry.getValue()));
+    return formBuilder.build();
+  }
+
+  /**
+   * Build a multipart (file uploading) request body with the given form parameters, which could
+   * contain text fields and file fields.
+   *
+   * @param formParams Form parameters in the form of Map
+   * @return RequestBody
+   */
+  public MultipartBody buildRequestBodyMultipart(Map<String, Object> formParams) {
+    Builder mpBuilder = new Builder().setType(MultipartBody.FORM);
+    for (Entry<String, Object> param : formParams.entrySet()) {
+      if (param.getValue() instanceof File) {
+        File file = (File) param.getValue();
+        mpBuilder.addFormDataPart(param.getKey(), file.getName()
+                , RequestBody.create(MediaType.parse("multipart/form-data"), file));
+      } else {
+        mpBuilder.addFormDataPart(param.getKey(), String.valueOf(param.getValue()));
+      }
     }
-    return builder.build();
+    return mpBuilder.build();
   }
 
   public RequestBody serialize(Object obj, String contentType) throws ApiException {

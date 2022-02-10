@@ -132,19 +132,18 @@ public class DmpAudienceApi extends AbstractOceanApi {
   public class DmpDataSourceFileUpload extends OceanApiRequest<DmpDataSourceFileUploadRequest,
           OceanResponse<DmpDataSourceFileUploadResponseData>> {
     @Override
-    public void setMultipartParam(Map<String, Object> textMap, Map<String, File> fileMap,
-                                  DmpDataSourceFileUploadRequest request) {
+    public void setFormParam(Map<String, Object> formParamMap, DmpDataSourceFileUploadRequest request) {
       Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
-        textMap.put(ADVERTISER_ID, advertiserId);
+        formParamMap.put(ADVERTISER_ID, advertiserId);
       }
       String fileSignature = request.getFileSignature();
       if (fileSignature != null) {
-        textMap.put("image_signature", fileSignature);
+        formParamMap.put("image_signature", fileSignature);
       }
       File file = request.getFile();
       if (file != null) {
-        fileMap.put("image_file", file);
+        formParamMap.put("image_file", file);
       }
     }
   }
