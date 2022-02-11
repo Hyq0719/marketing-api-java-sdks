@@ -25,7 +25,9 @@ Marketing API Java SDKs 旨在对国内主流的Marketing API进行封装，帮�
 - 各Marketing API厂商的时间分配（会根据开发效率、使用者需求和厂商爸爸支持程度进行调整）
 
 `新增`：新增该渠道的Marketing API Java SDK
+
 `全量`：开发完成所有接口
+
 `维护`：维护开发完成且使用中的接口
 
 |                             厂商                             |    人力分配    | 全量完成时间 |
