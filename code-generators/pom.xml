@@ -8,7 +8,7 @@
   <parent>
     <groupId>io.github.hyq0719</groupId>
     <artifactId>marketing-api-sdk</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-beta.1</version>
   </parent>
 
   <artifactId>marketing-api-generators</artifactId>
@@ -19,6 +19,7 @@
   <properties>
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.deploy.skip>true</maven.deploy.skip>
   </properties>
 
   <modules>

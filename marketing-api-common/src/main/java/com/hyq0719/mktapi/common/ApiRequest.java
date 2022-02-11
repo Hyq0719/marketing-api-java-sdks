@@ -10,13 +10,15 @@ import com.hyq0719.mktapi.common.util.PairUtil;
 import com.hyq0719.mktapi.common.util.StringUtil;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.*;
 
 public abstract class ApiRequest<T, R> implements ParamHandler<T> {
 
+  /**
+   * 响应类型Type
+   */
   private Type localVarReturnType = getRType();
 
   public R execute(T t) throws ApiException {
@@ -24,21 +26,34 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
   }
 
   /**
-   * 新增钩子函数用于使用时增强
+   * 钩子函数用于使用时增强
    *
-   * @param t
-   * @param apiRequestAdvice
-   * @return
+   * @param t                请求
+   * @param apiRequestAdvice 请求增强
+   * @return 响应
    * @throws ApiException
    */
   public R execute(T t, ApiRequestAdvice apiRequestAdvice) throws ApiException {
     return execute(t, apiRequestAdvice, null);
   }
 
+  /**
+   * @param t     请求
+   * @param token access token, 传参后不去缓存中取token
+   * @return 响应
+   * @throws ApiException
+   */
   public R execute(T t, String token) throws ApiException {
     return execute(t, null, token);
   }
 
+  /**
+   * @param t                请求
+   * @param apiRequestAdvice 请求增强
+   * @param token            access token, 传参后不去缓存中取token
+   * @return
+   * @throws ApiException
+   */
   public R execute(T t, ApiRequestAdvice apiRequestAdvice, String token) throws ApiException {
     if (Objects.nonNull(apiRequestAdvice)) {
       apiRequestAdvice.before();
@@ -50,11 +65,17 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     return retry(resp, t, apiRequestAdvice, token);
   }
 
+  /**
+   * 重试机制，默认不重试
+   */
   public R retry(ApiResponse<R> resp, T t, ApiRequestAdvice apiRequestAdvice, String token)
           throws ApiException {
     return resp.getData();
   }
 
+  /**
+   * 重试请求
+   */
   public R retryRequest(T t, ApiRequestAdvice apiRequestAdvice, String token) throws ApiException {
     if (Objects.nonNull(apiRequestAdvice)) {
       apiRequestAdvice.before();
@@ -66,6 +87,13 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     return retryResponse.getData();
   }
 
+  /**
+   * 用注解和继承方法构造请求参数
+   *
+   * @param t     请求体
+   * @param token access token
+   * @return RequestParam 请求参数
+   */
   @Override
   public RequestParam constructParameters(T t, String token) {
     Object localVarPostBody = null;
@@ -195,6 +223,9 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     return getApiClient().execute(param, localVarReturnType);
   }
 
+  /**
+   * 响应类型Type
+   */
   private Type getRType() {
     return ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
   }

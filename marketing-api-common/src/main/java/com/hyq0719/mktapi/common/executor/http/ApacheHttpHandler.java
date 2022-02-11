@@ -131,6 +131,17 @@ public class ApacheHttpHandler extends BaseHttpHandler {
             code, toMultimap(response.getAllHeaders()), respBody);
   }
 
+  /**
+   * Deserialize response body to Java object, according to the return type and the Content-Type
+   * response header.
+   *
+   * @param <T>        Type
+   * @param response   HTTP response
+   * @param returnType The type of the Java object
+   * @return The deserialized Java object
+   * @throws ApiException If fail to deserialize response body, i.e. cannot read response body or
+   *                      the Content-Type of the response is not supported.
+   */
   public <T> T deserialize(HttpResponse response, Type returnType) throws ApiException {
     if (response == null || returnType == null) {
       return null;
