@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <artifactId>marketing-api-sdk</artifactId>
+    <groupId>io.github.hyq0719</groupId>
+    <version>1.0.0-beta.1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>marketing-api-kuaishou</artifactId>
+  <version>1.0.0-beta.1</version>
+  <name>Marketing API - Kuaishou Java SDK</name>
+  <description>磁力引擎开放平台 Java SDK</description>
+
+  <properties>
+    <maven.compiler.source>8</maven.compiler.source>
+    <maven.compiler.target>8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>io.github.hyq0719</groupId>
+      <artifactId>marketing-api-common</artifactId>
+      <version>${common.version}</version>
+    </dependency>
+  </dependencies>
+
+</project>
