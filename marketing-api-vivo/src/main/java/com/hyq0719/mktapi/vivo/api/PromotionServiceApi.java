@@ -60,6 +60,38 @@ public class PromotionServiceApi extends AbstractVivoApi {
   private volatile AdAdvertisementPauseToggle adAdvertisementPauseToggle;
   private volatile AdAdvertisementBatchDel adAdvertisementBatchDel;
 
+  /**
+   * 创意管理
+   */
+  private volatile AdCreativePageInfo adCreativePageInfo;
+  private volatile AdCreativePageInfoByLastId adCreativePageInfoByLastId;
+  private volatile AdCreativeDel adCreativeDel;
+  private volatile AdCreativePauseToggle adCreativePauseToggle;
+  private volatile AdCreativeQueryAuditState adCreativeQueryAuditState;
+
+  /**
+   * 定向管理
+   */
+  private volatile AdDmpTagGetNewBaseTags adDmpTagGetNewBaseTags;
+  private volatile AdDmpTagGetCrowds adDmpTagGetCrowds;
+  private volatile PurposewordList purposewordList;
+  private volatile PurposewordCategory purposewordCategory;
+  private volatile AdDmpTagGetAdvertiserTags adDmpTagGetAdvertiserTags;
+
+  /**
+   * 非商店搜索广告-关键词
+   */
+  private volatile AdSugKeywordEditPrice adSugKeywordEditPrice;
+  private volatile AdSugKeywordEditSiteUrl adSugKeywordEditSiteUrl;
+  private volatile AdSugKeywordEditMatchType adSugKeywordEditMatchType;
+  private volatile AdSugKeywordEditPauseState adSugKeywordEditPauseState;
+  private volatile AdSugKeywordDel adSugKeywordDel;
+
+  /**
+   * 非商店搜索管理
+   */
+  private volatile AdSugRecommendQuery adSugRecommendQuery;
+
   public PromotionServiceApi(ApiClient apiClient, RetryStrategy retryStrategy) {
     super(apiClient, retryStrategy);
   }
@@ -417,6 +449,182 @@ public class PromotionServiceApi extends AbstractVivoApi {
       }
     }
     return adAdvertisementBatchDel;
+  }
+
+  public AdCreativePageInfo adCreativePageInfo() {
+    if (adCreativePageInfo == null) {
+      synchronized (AdCreativePageInfo.class) {
+        if (adCreativePageInfo == null) {
+          adCreativePageInfo = (AdCreativePageInfo) init(AdCreativePageInfo.class);
+        }
+      }
+    }
+    return adCreativePageInfo;
+  }
+
+  public AdCreativePageInfoByLastId adCreativePageInfoByLastId() {
+    if (adCreativePageInfoByLastId == null) {
+      synchronized (AdCreativePageInfoByLastId.class) {
+        if (adCreativePageInfoByLastId == null) {
+          adCreativePageInfoByLastId = (AdCreativePageInfoByLastId) init(AdCreativePageInfoByLastId.class);
+        }
+      }
+    }
+    return adCreativePageInfoByLastId;
+  }
+
+  public AdCreativeDel adCreativeDel() {
+    if (adCreativeDel == null) {
+      synchronized (AdCreativeDel.class) {
+        if (adCreativeDel == null) {
+          adCreativeDel = (AdCreativeDel) init(AdCreativeDel.class);
+        }
+      }
+    }
+    return adCreativeDel;
+  }
+
+  public AdCreativePauseToggle adCreativePauseToggle() {
+    if (adCreativePauseToggle == null) {
+      synchronized (AdCreativePauseToggle.class) {
+        if (adCreativePauseToggle == null) {
+          adCreativePauseToggle = (AdCreativePauseToggle) init(AdCreativePauseToggle.class);
+        }
+      }
+    }
+    return adCreativePauseToggle;
+  }
+
+  public AdCreativeQueryAuditState adCreativeQueryAuditState() {
+    if (adCreativeQueryAuditState == null) {
+      synchronized (AdCreativeQueryAuditState.class) {
+        if (adCreativeQueryAuditState == null) {
+          adCreativeQueryAuditState = (AdCreativeQueryAuditState) init(AdCreativeQueryAuditState.class);
+        }
+      }
+    }
+    return adCreativeQueryAuditState;
+  }
+
+  public AdDmpTagGetNewBaseTags adDmpTagGetNewBaseTags() {
+    if (adDmpTagGetNewBaseTags == null) {
+      synchronized (AdDmpTagGetNewBaseTags.class) {
+        if (adDmpTagGetNewBaseTags == null) {
+          adDmpTagGetNewBaseTags = (AdDmpTagGetNewBaseTags) init(AdDmpTagGetNewBaseTags.class);
+        }
+      }
+    }
+    return adDmpTagGetNewBaseTags;
+  }
+
+  public AdDmpTagGetCrowds adDmpTagGetCrowds() {
+    if (adDmpTagGetCrowds == null) {
+      synchronized (AdDmpTagGetCrowds.class) {
+        if (adDmpTagGetCrowds == null) {
+          adDmpTagGetCrowds = (AdDmpTagGetCrowds) init(AdDmpTagGetCrowds.class);
+        }
+      }
+    }
+    return adDmpTagGetCrowds;
+  }
+
+  public PurposewordList purposewordList() {
+    if (purposewordList == null) {
+      synchronized (PurposewordList.class) {
+        if (purposewordList == null) {
+          purposewordList = (PurposewordList) init(PurposewordList.class);
+        }
+      }
+    }
+    return purposewordList;
+  }
+
+  public PurposewordCategory purposewordCategory() {
+    if (purposewordCategory == null) {
+      synchronized (PurposewordCategory.class) {
+        if (purposewordCategory == null) {
+          purposewordCategory = (PurposewordCategory) init(PurposewordCategory.class);
+        }
+      }
+    }
+    return purposewordCategory;
+  }
+
+  public AdDmpTagGetAdvertiserTags adDmpTagGetAdvertiserTags() {
+    if (adDmpTagGetAdvertiserTags == null) {
+      synchronized (AdDmpTagGetAdvertiserTags.class) {
+        if (adDmpTagGetAdvertiserTags == null) {
+          adDmpTagGetAdvertiserTags = (AdDmpTagGetAdvertiserTags) init(AdDmpTagGetAdvertiserTags.class);
+        }
+      }
+    }
+    return adDmpTagGetAdvertiserTags;
+  }
+
+  public AdSugKeywordEditPrice adSugKeywordEditPrice() {
+    if (adSugKeywordEditPrice == null) {
+      synchronized (AdSugKeywordEditPrice.class) {
+        if (adSugKeywordEditPrice == null) {
+          adSugKeywordEditPrice = (AdSugKeywordEditPrice) init(AdSugKeywordEditPrice.class);
+        }
+      }
+    }
+    return adSugKeywordEditPrice;
+  }
+
+  public AdSugKeywordEditSiteUrl adSugKeywordEditSiteUrl() {
+    if (adSugKeywordEditSiteUrl == null) {
+      synchronized (AdSugKeywordEditSiteUrl.class) {
+        if (adSugKeywordEditSiteUrl == null) {
+          adSugKeywordEditSiteUrl = (AdSugKeywordEditSiteUrl) init(AdSugKeywordEditSiteUrl.class);
+        }
+      }
+    }
+    return adSugKeywordEditSiteUrl;
+  }
+
+  public AdSugKeywordEditMatchType adSugKeywordEditMatchType() {
+    if (adSugKeywordEditMatchType == null) {
+      synchronized (AdSugKeywordEditMatchType.class) {
+        if (adSugKeywordEditMatchType == null) {
+          adSugKeywordEditMatchType = (AdSugKeywordEditMatchType) init(AdSugKeywordEditMatchType.class);
+        }
+      }
+    }
+    return adSugKeywordEditMatchType;
+  }
+
+  public AdSugKeywordEditPauseState adSugKeywordEditPauseState() {
+    if (adSugKeywordEditPauseState == null) {
+      synchronized (AdSugKeywordEditPauseState.class) {
+        if (adSugKeywordEditPauseState == null) {
+          adSugKeywordEditPauseState = (AdSugKeywordEditPauseState) init(AdSugKeywordEditPauseState.class);
+        }
+      }
+    }
+    return adSugKeywordEditPauseState;
+  }
+
+  public AdSugKeywordDel adSugKeywordDel() {
+    if (adSugKeywordDel == null) {
+      synchronized (AdSugKeywordDel.class) {
+        if (adSugKeywordDel == null) {
+          adSugKeywordDel = (AdSugKeywordDel) init(AdSugKeywordDel.class);
+        }
+      }
+    }
+    return adSugKeywordDel;
+  }
+
+  public AdSugRecommendQuery adSugRecommendQuery() {
+    if (adSugRecommendQuery == null) {
+      synchronized (AdSugRecommendQuery.class) {
+        if (adSugRecommendQuery == null) {
+          adSugRecommendQuery = (AdSugRecommendQuery) init(AdSugRecommendQuery.class);
+        }
+      }
+    }
+    return adSugRecommendQuery;
   }
 
   @ApiRequestMapping(value = "/ad/campaign/add", method = RequestConstants.POST, contentTypes = {
@@ -854,6 +1062,241 @@ public class PromotionServiceApi extends AbstractVivoApi {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AdAdvertisementBatchDelRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/creative/pageInfo",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdCreativePageInfo extends VivoApiRequest<AdCreativePageInfoRequest, VivoResponse<AdCreativePageInfoResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdCreativePageInfoRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/creative/pageInfoByLastId",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdCreativePageInfoByLastId extends VivoApiRequest<AdCreativePageInfoByLastIdRequest,
+          VivoResponse<AdCreativePageInfoByLastIdResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdCreativePageInfoByLastIdRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/creative/del",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdCreativeDel extends VivoApiRequest<AdCreativeDelRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdCreativeDelRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/creative/pause/toggle",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdCreativePauseToggle extends VivoApiRequest<AdCreativePauseToggleRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdCreativePauseToggleRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/creative/query/audit/state",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdCreativeQueryAuditState extends VivoApiRequest<AdCreativeQueryAuditStateRequest,
+          VivoResponse<AdCreativeQueryAuditStateResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdCreativeQueryAuditStateRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/dmpTag/getNewBaseTags", method = RequestConstants.GET, usePostBody =
+          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+  public class AdDmpTagGetNewBaseTags extends VivoApiRequest<AdDmpTagGetNewBaseTagsRequest,
+          VivoResponse<AdDmpTagGetNewBaseTagsResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdDmpTagGetNewBaseTagsRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+      Integer adType = request.getAdType();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair("adType", adType));
+      }
+      Integer mediaType = request.getMediaType();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair("mediaType", mediaType));
+      }
+      Integer campaignType = request.getCampaignType();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair("campaignType", campaignType));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/dmpTag/getCrowds",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdDmpTagGetCrowds extends VivoApiRequest<AdDmpTagGetCrowdsRequest,
+          VivoResponse<List<AdDmpTagGetCrowdsResponseData>>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdDmpTagGetCrowdsRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/purposeword/list",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class PurposewordList extends VivoApiRequest<PurposewordListRequest,
+          VivoResponse<PurposewordListResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                PurposewordListRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/purposeword/category",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class PurposewordCategory extends VivoApiRequest<PurposewordCategoryRequest,
+          VivoResponse<PurposewordCategoryResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                PurposewordCategoryRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/dmpTag/getAdvertiserTags", method = RequestConstants.GET, usePostBody =
+          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+  public class AdDmpTagGetAdvertiserTags extends VivoApiRequest<AdDmpTagGetAdvertiserTagsRequest,
+          VivoResponse<AdDmpTagGetAdvertiserTagsResponseData>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdDmpTagGetAdvertiserTagsRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/keyword/editPrice",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugKeywordEditPrice extends VivoApiRequest<AdSugKeywordEditPriceRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugKeywordEditPriceRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/keyword/editSiteUrl",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugKeywordEditSiteUrl extends VivoApiRequest<AdSugKeywordEditSiteUrlRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugKeywordEditSiteUrlRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/keyword/editMatchType",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugKeywordEditMatchType extends VivoApiRequest<AdSugKeywordEditMatchTypeRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugKeywordEditMatchTypeRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/keyword/editPauseState",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugKeywordEditPauseState extends VivoApiRequest<AdSugKeywordEditPauseStateRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugKeywordEditPauseStateRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/keyword/del",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugKeywordDel extends VivoApiRequest<AdSugKeywordDelRequest,
+          VivoResponse<String>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugKeywordDelRequest request) {
+      String advertiserId = request.getAdvertiserId();
+      if (advertiserId != null) {
+        localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
+      }
+    }
+  }
+
+  @ApiRequestMapping(value = "/ad/sug/recommend/query",
+          method = RequestConstants.POST, contentTypes = {RequestConstants.CONTENT_TYPE_JSON})
+  public class AdSugRecommendQuery extends VivoApiRequest<AdSugRecommendQueryRequest,
+          VivoResponse<AdSugRecommendQueryResponse>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                AdSugRecommendQueryRequest request) {
       String advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
