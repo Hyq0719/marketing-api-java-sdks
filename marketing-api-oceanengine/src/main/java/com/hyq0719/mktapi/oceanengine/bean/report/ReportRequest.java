@@ -1,4 +1,4 @@
-package com.hyq0719.mktapi.oceanengine.bean.common;
+package com.hyq0719.mktapi.oceanengine.bean.report;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
@@ -17,6 +17,9 @@ public class ReportRequest<F> implements IPage {
 
   @SerializedName("end_date")
   private String endDate = null;
+
+  @SerializedName("fields")
+  private List<String> fields = null;
 
   @SerializedName("group_by")
   private List<String> groupBy = null;
@@ -51,6 +54,11 @@ public class ReportRequest<F> implements IPage {
 
   public ReportRequest endDate(String endDate) {
     this.endDate = endDate;
+    return this;
+  }
+
+  public ReportRequest fields(List<String> fields) {
+    this.fields = fields;
     return this;
   }
 

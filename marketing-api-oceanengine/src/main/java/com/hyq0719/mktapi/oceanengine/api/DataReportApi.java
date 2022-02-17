@@ -9,7 +9,6 @@ import com.hyq0719.mktapi.common.util.JsonUtil;
 import com.hyq0719.mktapi.oceanengine.OceanApiRequest;
 import com.hyq0719.mktapi.oceanengine.bean.common.OceanResponse;
 import com.hyq0719.mktapi.oceanengine.bean.common.PageResponseData;
-import com.hyq0719.mktapi.oceanengine.bean.common.ReportRequest;
 import com.hyq0719.mktapi.oceanengine.bean.report.*;
 
 import java.util.List;
@@ -86,67 +85,79 @@ public class DataReportApi extends AbstractOceanApi {
   @ApiRequestMapping(value = "/report/agent/get_v2/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportAgentGetV2 extends OceanApiRequest<ReportAgentGetV2Request,
-          OceanResponse<PageResponseData<ReportAgentGetV2ResponseStruct>>> {
+          OceanResponse<PageResponseData<ReportAgentGetV2ListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportAgentGetV2Request reportRequest) {
-      Long agentId = reportRequest.getAgentId();
+                                ReportAgentGetV2Request request) {
+      Long agentId = request.getAgentId();
       if (agentId != null) {
         localVarQueryParams.addAll(parameterToPair("agent_id", agentId));
       }
-      String startDate = reportRequest.getStartDate();
+      String startDate = request.getStartDate();
       if (startDate != null) {
         localVarQueryParams.addAll(parameterToPair(START_DATE, startDate));
       }
-      String endDate = reportRequest.getEndDate();
+      String endDate = request.getEndDate();
       if (endDate != null) {
         localVarQueryParams.addAll(parameterToPair(END_DATE, endDate));
       }
-      Long page = reportRequest.getPage();
+      Long page = request.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = reportRequest.getPageSize();
+      Long pageSize = request.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
+      }
+      ReportAgentGetV2FilteringStruct filtering = request.getReportAgentGetV2Filtering();
+      if (filtering != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(filtering)));
       }
     }
   }
 
   @ApiRequestMapping(value = "/report/advertiser/get/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class ReportAdvertiserGet extends OceanApiRequest<ReportAdvertiserGetRequest,
-          OceanResponse<PageResponseData<ReportAdvertiserGetResponseStruct>>> {
+  public class ReportAdvertiserGet extends OceanApiRequest<ReportRequest<ReportAdvertiserGetFilteringStruct>,
+          OceanResponse<PageResponseData<ReportAdvertiserGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportAdvertiserGetRequest reportRequest) {
-      Long advertiserId = reportRequest.getAdvertiserId();
+                                ReportRequest<ReportAdvertiserGetFilteringStruct> request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      String startDate = reportRequest.getStartDate();
+      String startDate = request.getStartDate();
       if (startDate != null) {
         localVarQueryParams.addAll(parameterToPair(START_DATE, startDate));
       }
-      String endDate = reportRequest.getEndDate();
+      String endDate = request.getEndDate();
       if (endDate != null) {
         localVarQueryParams.addAll(parameterToPair(END_DATE, endDate));
       }
-      List<String> groupBy = reportRequest.getGroupBy();
+      List<String> groupBy = request.getGroupBy();
       if (groupBy != null && !groupBy.isEmpty()) {
         localVarQueryParams.addAll(parameterToPair(GROUP_BY, JsonUtil.toJsonString(groupBy)));
       }
-      String timeGranularity = reportRequest.getTimeGranularity();
+      String timeGranularity = request.getTimeGranularity();
       if (timeGranularity != null) {
         localVarQueryParams.addAll(parameterToPair(TIME_GRANULARITY, timeGranularity));
       }
-      Long page = reportRequest.getPage();
+      Long page = request.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = reportRequest.getPageSize();
+      Long pageSize = request.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
+      }
+      List<String> fields = request.getFields();
+      if (fields != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(fields)));
+      }
+      ReportAdvertiserGetFilteringStruct filtering = request.getFiltering();
+      if (filtering != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(filtering)));
       }
     }
   }
@@ -154,37 +165,45 @@ public class DataReportApi extends AbstractOceanApi {
   @ApiRequestMapping(value = "/report/campaign/get/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportCampaignGet extends OceanApiRequest<ReportRequest<ReportCampaignGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportCampaignGetResponseStruct>>> {
+          OceanResponse<PageResponseData<ReportCampaignGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportRequest<ReportCampaignGetFilteringStruct> reportRequest) {
-      Long advertiserId = reportRequest.getAdvertiserId();
+                                ReportRequest<ReportCampaignGetFilteringStruct> request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      String startDate = reportRequest.getStartDate();
+      String startDate = request.getStartDate();
       if (startDate != null) {
         localVarQueryParams.addAll(parameterToPair(START_DATE, startDate));
       }
-      String endDate = reportRequest.getEndDate();
+      String endDate = request.getEndDate();
       if (endDate != null) {
         localVarQueryParams.addAll(parameterToPair(END_DATE, endDate));
       }
-      List<String> groupBy = reportRequest.getGroupBy();
+      List<String> groupBy = request.getGroupBy();
       if (groupBy != null && !groupBy.isEmpty()) {
         localVarQueryParams.addAll(parameterToPair(GROUP_BY, JsonUtil.toJsonString(groupBy)));
       }
-      String timeGranularity = reportRequest.getTimeGranularity();
+      String timeGranularity = request.getTimeGranularity();
       if (timeGranularity != null) {
         localVarQueryParams.addAll(parameterToPair(TIME_GRANULARITY, timeGranularity));
       }
-      Long page = reportRequest.getPage();
+      Long page = request.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = reportRequest.getPageSize();
+      Long pageSize = request.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
+      }
+      List<String> fields = request.getFields();
+      if (fields != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(fields)));
+      }
+      ReportCampaignGetFilteringStruct filtering = request.getFiltering();
+      if (filtering != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(filtering)));
       }
     }
   }
@@ -192,76 +211,91 @@ public class DataReportApi extends AbstractOceanApi {
   @ApiRequestMapping(value = "/report/ad/get/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportAdGet extends OceanApiRequest<ReportRequest<ReportAdGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportAdGetResponseStruct>>> {
+          OceanResponse<PageResponseData<ReportAdGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportRequest<ReportAdGetFilteringStruct> reportRequest) {
-      Long advertiserId = reportRequest.getAdvertiserId();
+                                ReportRequest<ReportAdGetFilteringStruct> request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      String startDate = reportRequest.getStartDate();
+      String startDate = request.getStartDate();
       if (startDate != null) {
         localVarQueryParams.addAll(parameterToPair(START_DATE, startDate));
       }
-      String endDate = reportRequest.getEndDate();
+      String endDate = request.getEndDate();
       if (endDate != null) {
         localVarQueryParams.addAll(parameterToPair(END_DATE, endDate));
       }
-      List<String> groupBy = reportRequest.getGroupBy();
+      List<String> groupBy = request.getGroupBy();
       if (groupBy != null && !groupBy.isEmpty()) {
         localVarQueryParams.addAll(parameterToPair(GROUP_BY, JsonUtil.toJsonString(groupBy)));
       }
-      String timeGranularity = reportRequest.getTimeGranularity();
+      String timeGranularity = request.getTimeGranularity();
       if (timeGranularity != null) {
         localVarQueryParams.addAll(parameterToPair(TIME_GRANULARITY, timeGranularity));
       }
-      Long page = reportRequest.getPage();
+      Long page = request.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = reportRequest.getPageSize();
+      Long pageSize = request.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
+      }
+      List<String> fields = request.getFields();
+      if (fields != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(fields)));
+      }
+      ReportAdGetFilteringStruct filtering = request.getFiltering();
+      if (filtering != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(filtering)));
       }
     }
   }
 
   @ApiRequestMapping(value = "/report/creative/get/", method = RequestConstants.GET, usePostBody = false,
           contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class ReportCreativeGet
-          extends OceanApiRequest<ReportRequest<ReportCreativeGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportCreativeGetResponseStruct>>> {
+  public class ReportCreativeGet extends OceanApiRequest<ReportRequest<ReportCreativeGetFilteringStruct>,
+          OceanResponse<PageResponseData<ReportCreativeGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ReportRequest<ReportCreativeGetFilteringStruct> reportRequest) {
-      Long advertiserId = reportRequest.getAdvertiserId();
+                                ReportRequest<ReportCreativeGetFilteringStruct> request) {
+      Long advertiserId = request.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      String startDate = reportRequest.getStartDate();
+      String startDate = request.getStartDate();
       if (startDate != null) {
         localVarQueryParams.addAll(parameterToPair(START_DATE, startDate));
       }
-      String endDate = reportRequest.getEndDate();
+      String endDate = request.getEndDate();
       if (endDate != null) {
         localVarQueryParams.addAll(parameterToPair(END_DATE, endDate));
       }
-      List<String> groupBy = reportRequest.getGroupBy();
+      List<String> groupBy = request.getGroupBy();
       if (groupBy != null && !groupBy.isEmpty()) {
         localVarQueryParams.addAll(parameterToPair(GROUP_BY, JsonUtil.toJsonString(groupBy)));
       }
-      String timeGranularity = reportRequest.getTimeGranularity();
+      String timeGranularity = request.getTimeGranularity();
       if (timeGranularity != null) {
         localVarQueryParams.addAll(parameterToPair(TIME_GRANULARITY, timeGranularity));
       }
-      Long page = reportRequest.getPage();
+      Long page = request.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = reportRequest.getPageSize();
+      Long pageSize = request.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
+      }
+      List<String> fields = request.getFields();
+      if (fields != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(fields)));
+      }
+      ReportCreativeGetFilteringStruct filtering = request.getFiltering();
+      if (filtering != null) {
+        localVarQueryParams.addAll(parameterToPair(FIELDS, JsonUtil.toJsonString(filtering)));
       }
     }
   }

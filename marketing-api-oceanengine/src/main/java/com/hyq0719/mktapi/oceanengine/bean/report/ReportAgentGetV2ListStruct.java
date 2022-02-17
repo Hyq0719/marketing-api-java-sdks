@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 @Data
-public class ReportAgentGetV2ResponseStruct {
+public class ReportAgentGetV2ListStruct {
   @SerializedName("today_cost")
   private Float todayCost = null;
 
@@ -229,372 +229,372 @@ public class ReportAgentGetV2ResponseStruct {
   private String accountSource = null;
 
 
-  public ReportAgentGetV2ResponseStruct todayCost(Float todayCost) {
+  public ReportAgentGetV2ListStruct todayCost(Float todayCost) {
     this.todayCost = todayCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct xHourCpaDiff(Float xHourCpaDiff) {
+  public ReportAgentGetV2ListStruct xHourCpaDiff(Float xHourCpaDiff) {
     this.xHourCpaDiff = xHourCpaDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayBrandCashCost(Float yesterdayBrandCashCost) {
+  public ReportAgentGetV2ListStruct yesterdayBrandCashCost(Float yesterdayBrandCashCost) {
     this.yesterdayBrandCashCost = yesterdayBrandCashCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct lastRechargeTime(String lastRechargeTime) {
+  public ReportAgentGetV2ListStruct lastRechargeTime(String lastRechargeTime) {
     this.lastRechargeTime = lastRechargeTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct agentId(Long agentId) {
+  public ReportAgentGetV2ListStruct agentId(Long agentId) {
     this.agentId = agentId;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct agentName(String agentName) {
+  public ReportAgentGetV2ListStruct agentName(String agentName) {
     this.agentName = agentName;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct accountStatus(String accountStatus) {
+  public ReportAgentGetV2ListStruct accountStatus(String accountStatus) {
     this.accountStatus = accountStatus;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct lastRenewAmount(Float lastRenewAmount) {
+  public ReportAgentGetV2ListStruct lastRenewAmount(Float lastRenewAmount) {
     this.lastRenewAmount = lastRenewAmount;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct totalRenewAmount(Float totalRenewAmount) {
+  public ReportAgentGetV2ListStruct totalRenewAmount(Float totalRenewAmount) {
     this.totalRenewAmount = totalRenewAmount;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayMomCost(Float yesterdayMomCost) {
+  public ReportAgentGetV2ListStruct yesterdayMomCost(Float yesterdayMomCost) {
     this.yesterdayMomCost = yesterdayMomCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayCost(Float yesterdayCost) {
+  public ReportAgentGetV2ListStruct yesterdayCost(Float yesterdayCost) {
     this.yesterdayCost = yesterdayCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct ocpcCost(Float ocpcCost) {
+  public ReportAgentGetV2ListStruct ocpcCost(Float ocpcCost) {
     this.ocpcCost = ocpcCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct lastRenewTime(String lastRenewTime) {
+  public ReportAgentGetV2ListStruct lastRenewTime(String lastRenewTime) {
     this.lastRenewTime = lastRenewTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpc(Float cpc) {
+  public ReportAgentGetV2ListStruct cpc(Float cpc) {
     this.cpc = cpc;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct arpu3cd(Float arpu3cd) {
+  public ReportAgentGetV2ListStruct arpu3cd(Float arpu3cd) {
     this.arpu3cd = arpu3cd;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct xHourConvertDiff(Long xHourConvertDiff) {
+  public ReportAgentGetV2ListStruct xHourConvertDiff(Long xHourConvertDiff) {
     this.xHourConvertDiff = xHourConvertDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct auditPassTime(String auditPassTime) {
+  public ReportAgentGetV2ListStruct auditPassTime(String auditPassTime) {
     this.auditPassTime = auditPassTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayCashCost(Float yesterdayCashCost) {
+  public ReportAgentGetV2ListStruct yesterdayCashCost(Float yesterdayCashCost) {
     this.yesterdayCashCost = yesterdayCashCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct historyCost(Float historyCost) {
+  public ReportAgentGetV2ListStruct historyCost(Float historyCost) {
     this.historyCost = historyCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct ocpmCost(Float ocpmCost) {
+  public ReportAgentGetV2ListStruct ocpmCost(Float ocpmCost) {
     this.ocpmCost = ocpmCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct ctr(Float ctr) {
+  public ReportAgentGetV2ListStruct ctr(Float ctr) {
     this.ctr = ctr;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpm(Float cpm) {
+  public ReportAgentGetV2ListStruct cpm(Float cpm) {
     this.cpm = cpm;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct xHourCostDiff(Float xHourCostDiff) {
+  public ReportAgentGetV2ListStruct xHourCostDiff(Float xHourCostDiff) {
     this.xHourCostDiff = xHourCostDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct todayXHourCost(Float todayXHourCost) {
+  public ReportAgentGetV2ListStruct todayXHourCost(Float todayXHourCost) {
     this.todayXHourCost = todayXHourCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayXHourClick(Long yesterdayXHourClick) {
+  public ReportAgentGetV2ListStruct yesterdayXHourClick(Long yesterdayXHourClick) {
     this.yesterdayXHourClick = yesterdayXHourClick;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpaCost(Float cpaCost) {
+  public ReportAgentGetV2ListStruct cpaCost(Float cpaCost) {
     this.cpaCost = cpaCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct firstRechargeAmount(Float firstRechargeAmount) {
+  public ReportAgentGetV2ListStruct firstRechargeAmount(Float firstRechargeAmount) {
     this.firstRechargeAmount = firstRechargeAmount;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayXHourCpa(Float yesterdayXHourCpa) {
+  public ReportAgentGetV2ListStruct yesterdayXHourCpa(Float yesterdayXHourCpa) {
     this.yesterdayXHourCpa = yesterdayXHourCpa;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct historyCashCost(Float historyCashCost) {
+  public ReportAgentGetV2ListStruct historyCashCost(Float historyCashCost) {
     this.historyCashCost = historyCashCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cashBalance(Float cashBalance) {
+  public ReportAgentGetV2ListStruct cashBalance(Float cashBalance) {
     this.cashBalance = cashBalance;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct click(Long click) {
+  public ReportAgentGetV2ListStruct click(Long click) {
     this.click = click;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayXHourCpc(Float yesterdayXHourCpc) {
+  public ReportAgentGetV2ListStruct yesterdayXHourCpc(Float yesterdayXHourCpc) {
     this.yesterdayXHourCpc = yesterdayXHourCpc;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpvCost(Float cpvCost) {
+  public ReportAgentGetV2ListStruct cpvCost(Float cpvCost) {
     this.cpvCost = cpvCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayCostDiff(Float yesterdayCostDiff) {
+  public ReportAgentGetV2ListStruct yesterdayCostDiff(Float yesterdayCostDiff) {
     this.yesterdayCostDiff = yesterdayCostDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct xHourCpcDiff(Float xHourCpcDiff) {
+  public ReportAgentGetV2ListStruct xHourCpcDiff(Float xHourCpcDiff) {
     this.xHourCpcDiff = xHourCpcDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct transferAmount(Float transferAmount) {
+  public ReportAgentGetV2ListStruct transferAmount(Float transferAmount) {
     this.transferAmount = transferAmount;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct companyName(String companyName) {
+  public ReportAgentGetV2ListStruct companyName(String companyName) {
     this.companyName = companyName;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct firstIndustry(String firstIndustry) {
+  public ReportAgentGetV2ListStruct firstIndustry(String firstIndustry) {
     this.firstIndustry = firstIndustry;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpmCost(Float cpmCost) {
+  public ReportAgentGetV2ListStruct cpmCost(Float cpmCost) {
     this.cpmCost = cpmCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayAdNumber(Float yesterdayAdNumber) {
+  public ReportAgentGetV2ListStruct yesterdayAdNumber(Float yesterdayAdNumber) {
     this.yesterdayAdNumber = yesterdayAdNumber;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct customerType(String customerType) {
+  public ReportAgentGetV2ListStruct customerType(String customerType) {
     this.customerType = customerType;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct gdCost(Float gdCost) {
+  public ReportAgentGetV2ListStruct gdCost(Float gdCost) {
     this.gdCost = gdCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayXHourConvert(Long yesterdayXHourConvert) {
+  public ReportAgentGetV2ListStruct yesterdayXHourConvert(Long yesterdayXHourConvert) {
     this.yesterdayXHourConvert = yesterdayXHourConvert;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct xHourClickDiff(Long xHourClickDiff) {
+  public ReportAgentGetV2ListStruct xHourClickDiff(Long xHourClickDiff) {
     this.xHourClickDiff = xHourClickDiff;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayGrantsCost(Float yesterdayGrantsCost) {
+  public ReportAgentGetV2ListStruct yesterdayGrantsCost(Float yesterdayGrantsCost) {
     this.yesterdayGrantsCost = yesterdayGrantsCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct show(Long show) {
+  public ReportAgentGetV2ListStruct show(Long show) {
     this.show = show;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cptCost(Float cptCost) {
+  public ReportAgentGetV2ListStruct cptCost(Float cptCost) {
     this.cptCost = cptCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct todayXHourCpa(Float todayXHourCpa) {
+  public ReportAgentGetV2ListStruct todayXHourCpa(Float todayXHourCpa) {
     this.todayXHourCpa = todayXHourCpa;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct registerTime(String registerTime) {
+  public ReportAgentGetV2ListStruct registerTime(String registerTime) {
     this.registerTime = registerTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct advertiserId(Long advertiserId) {
+  public ReportAgentGetV2ListStruct advertiserId(Long advertiserId) {
     this.advertiserId = advertiserId;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cashCost(Float cashCost) {
+  public ReportAgentGetV2ListStruct cashCost(Float cashCost) {
     this.cashCost = cashCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct totalRenewNumber(Float totalRenewNumber) {
+  public ReportAgentGetV2ListStruct totalRenewNumber(Float totalRenewNumber) {
     this.totalRenewNumber = totalRenewNumber;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct registerDays(Float registerDays) {
+  public ReportAgentGetV2ListStruct registerDays(Float registerDays) {
     this.registerDays = registerDays;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct todayXHourConvert(Long todayXHourConvert) {
+  public ReportAgentGetV2ListStruct todayXHourConvert(Long todayXHourConvert) {
     this.todayXHourConvert = todayXHourConvert;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct grantsCost(Float grantsCost) {
+  public ReportAgentGetV2ListStruct grantsCost(Float grantsCost) {
     this.grantsCost = grantsCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayBidCashCost(Float yesterdayBidCashCost) {
+  public ReportAgentGetV2ListStruct yesterdayBidCashCost(Float yesterdayBidCashCost) {
     this.yesterdayBidCashCost = yesterdayBidCashCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct bidCost(Float bidCost) {
+  public ReportAgentGetV2ListStruct bidCost(Float bidCost) {
     this.bidCost = bidCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct brandCost(Float brandCost) {
+  public ReportAgentGetV2ListStruct brandCost(Float brandCost) {
     this.brandCost = brandCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct firstRechargeTime(String firstRechargeTime) {
+  public ReportAgentGetV2ListStruct firstRechargeTime(String firstRechargeTime) {
     this.firstRechargeTime = firstRechargeTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct queryEndTime(Long queryEndTime) {
+  public ReportAgentGetV2ListStruct queryEndTime(Long queryEndTime) {
     this.queryEndTime = queryEndTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cost(Float cost) {
+  public ReportAgentGetV2ListStruct cost(Float cost) {
     this.cost = cost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct companyId(Long companyId) {
+  public ReportAgentGetV2ListStruct companyId(Long companyId) {
     this.companyId = companyId;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct firstCostTime(String firstCostTime) {
+  public ReportAgentGetV2ListStruct firstCostTime(String firstCostTime) {
     this.firstCostTime = firstCostTime;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct yesterdayXHourCost(Float yesterdayXHourCost) {
+  public ReportAgentGetV2ListStruct yesterdayXHourCost(Float yesterdayXHourCost) {
     this.yesterdayXHourCost = yesterdayXHourCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct totalBalance(Float totalBalance) {
+  public ReportAgentGetV2ListStruct totalBalance(Float totalBalance) {
     this.totalBalance = totalBalance;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct cpcCost(Float cpcCost) {
+  public ReportAgentGetV2ListStruct cpcCost(Float cpcCost) {
     this.cpcCost = cpcCost;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct todayXHourCpc(Float todayXHourCpc) {
+  public ReportAgentGetV2ListStruct todayXHourCpc(Float todayXHourCpc) {
     this.todayXHourCpc = todayXHourCpc;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct transferCount(Long transferCount) {
+  public ReportAgentGetV2ListStruct transferCount(Long transferCount) {
     this.transferCount = transferCount;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct secondIndustry(String secondIndustry) {
+  public ReportAgentGetV2ListStruct secondIndustry(String secondIndustry) {
     this.secondIndustry = secondIndustry;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct todayXHourClick(Long todayXHourClick) {
+  public ReportAgentGetV2ListStruct todayXHourClick(Long todayXHourClick) {
     this.todayXHourClick = todayXHourClick;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct advertiserName(String advertiserName) {
+  public ReportAgentGetV2ListStruct advertiserName(String advertiserName) {
     this.advertiserName = advertiserName;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct validBalance(Float validBalance) {
+  public ReportAgentGetV2ListStruct validBalance(Float validBalance) {
     this.validBalance = validBalance;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct rantBalance(Float rantBalance) {
+  public ReportAgentGetV2ListStruct rantBalance(Float rantBalance) {
     this.rantBalance = rantBalance;
     return this;
   }
 
-  public ReportAgentGetV2ResponseStruct accountSource(String accountSource) {
+  public ReportAgentGetV2ListStruct accountSource(String accountSource) {
     this.accountSource = accountSource;
     return this;
   }
