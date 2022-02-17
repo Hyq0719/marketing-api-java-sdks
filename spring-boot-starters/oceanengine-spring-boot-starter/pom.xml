@@ -5,12 +5,12 @@
   <parent>
     <groupId>io.github.hyq0719</groupId>
     <artifactId>marketing-api-spring-boot-starters</artifactId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>oceanengine-spring-boot-starter</artifactId>
-  <version>1.0.0-beta.1</version>
+  <version>1.0.0-beta.2</version>
   <name>Marketing API - Spring Boot Starter for Ocean Engine</name>
   <description>巨量引擎 Spring Boot Starter</description>
 

@@ -6,11 +6,11 @@
   <parent>
     <groupId>io.github.hyq0719</groupId>
     <artifactId>marketing-api-sdk</artifactId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
   </parent>
 
   <artifactId>marketing-api-spring-boot-demo</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.0-beta.2</version>
 
   <properties>
     <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -22,7 +22,7 @@
     <dependency>
       <groupId>io.github.hyq0719</groupId>
       <artifactId>production-spring-boot-starter</artifactId>
-      <version>1.0.0-beta.1</version>
+      <version>1.0.0-beta.2</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
