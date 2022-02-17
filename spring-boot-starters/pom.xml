@@ -19,6 +19,9 @@
   <modules>
     <module>oceanengine-spring-boot-starter</module>
     <module>vivo-spring-boot-starter</module>
+    <module>tencent-spring-boot-starter</module>
+    <module>production-spring-boot-starter</module>
+    <module>kuaishou-spring-boot-starter</module>
   </modules>
 
   <properties>

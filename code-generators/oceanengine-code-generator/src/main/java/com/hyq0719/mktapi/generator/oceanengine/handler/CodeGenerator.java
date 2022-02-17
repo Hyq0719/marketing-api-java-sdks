@@ -275,7 +275,6 @@ public class CodeGenerator {
     map.put("Double", "Double");
 
     // 集合
-    map.put("list", "List");
     map.put("number[]", "List<Long>");
     map.put("num[]", "List<Long>");
     map.put("long[]", "List<Long>");
