@@ -5,12 +5,12 @@
   <parent>
     <artifactId>marketing-api-spring-boot-starters</artifactId>
     <groupId>io.github.hyq0719</groupId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>vivo-spring-boot-starter</artifactId>
-  <version>1.0.0-beta.1</version>
+  <version>1.0.0-beta.2</version>
   <name>Marketing API - Spring Boot Starter for VIVO</name>
   <description>VIVO Spring Boot Starter</description>
 

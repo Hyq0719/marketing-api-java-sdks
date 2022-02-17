@@ -5,22 +5,22 @@
   <parent>
     <artifactId>marketing-api-spring-boot-starters</artifactId>
     <groupId>io.github.hyq0719</groupId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
   <artifactId>production-spring-boot-starter</artifactId>
-  <version>1.0.0-beta.1</version>
+  <version>1.0.0-beta.2</version>
   <name>Marketing API - Spring Boot Starter for Production</name>
   <description>生产环境 Spring Boot Starter</description>
 
   <properties>
     <maven.compiler.source>8</maven.compiler.source>
     <maven.compiler.target>8</maven.compiler.target>
-    <oceanengine.version>1.0.0-beta.1</oceanengine.version>
-    <tencent.version>1.0.0-beta.1</tencent.version>
-    <kuaishou.version>1.0.0-beta.1</kuaishou.version>
-    <vivo.version>1.0.0-beta.1</vivo.version>
+    <oceanengine.version>1.0.0-beta.2</oceanengine.version>
+    <tencent.version>1.0.0-beta.2</tencent.version>
+    <kuaishou.version>1.0.0-beta.2</kuaishou.version>
+    <vivo.version>1.0.0-beta.2</vivo.version>
   </properties>
 
   <dependencies>

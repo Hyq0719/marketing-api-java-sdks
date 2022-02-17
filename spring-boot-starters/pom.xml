@@ -7,12 +7,12 @@
   <parent>
     <groupId>io.github.hyq0719</groupId>
     <artifactId>marketing-api-sdk</artifactId>
-    <version>1.0.0-beta.1</version>
+    <version>1.0.0-beta.2</version>
   </parent>
   <packaging>pom</packaging>
 
   <artifactId>marketing-api-spring-boot-starters</artifactId>
-  <version>1.0.0-beta.1</version>
+  <version>1.0.0-beta.2</version>
   <name>Marketing API - Spring Boot Starters</name>
   <description>Marketing API 各个模块的 Spring Boot Starter</description>
 

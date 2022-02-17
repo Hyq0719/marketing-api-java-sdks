@@ -6,7 +6,7 @@
 
   <groupId>io.github.hyq0719</groupId>
   <artifactId>marketing-api-sdk</artifactId>
-  <version>1.0.0-beta.1</version>
+  <version>1.0.0-beta.2</version>
   <name>Marketing API Java SDK</name>
   <description>Marketing API Java SDK</description>
   <url>https://github.com/Hyq0719/marketing-api-java-sdks</url>
@@ -124,7 +124,7 @@
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-    <common.version>1.0.0-beta.1</common.version>
+    <common.version>1.0.0-beta.2</common.version>
     <gson-fire-version>1.8.0</gson-fire-version>
     <okhttp-version>4.5.0</okhttp-version>
     <apache.http-version>4.5.13</apache.http-version>
