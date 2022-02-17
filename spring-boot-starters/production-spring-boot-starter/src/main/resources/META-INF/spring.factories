@@ -1,0 +1,8 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.hyq0719.spring.starter.mktapi.production.config.HttpAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.production.config.TencentAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.production.config.OceanAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.production.config.KshAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.production.config.VivoAutoConfiguration,\
+com.hyq0719.spring.starter.mktapi.production.config.CronJobAutoConfiguration
