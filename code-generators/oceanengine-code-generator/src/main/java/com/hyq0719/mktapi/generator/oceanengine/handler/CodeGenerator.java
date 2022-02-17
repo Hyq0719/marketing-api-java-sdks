@@ -153,6 +153,9 @@ public class CodeGenerator {
       SingleFileEntity sfe = new SingleFileEntity();
       sfe.className(className).isRequest(false);
       List<BaseEntity> entityList = map.get(snakeProperty);
+      if (CollectionUtils.isEmpty(entityList)) {
+        return;
+      }
       for (BaseEntity entity : entityList) {
         addImportList(entity, sfe);
         parseBaseEntity(map, entity, singleFileList);
@@ -185,6 +188,9 @@ public class CodeGenerator {
       SingleFileEntity sfe = new SingleFileEntity();
       sfe.className(className).isRequest(false);
       List<BaseEntity> entityList = map.get(snakeProperty);
+      if (CollectionUtils.isEmpty(entityList)) {
+        return;
+      }
       for (BaseEntity entity : entityList) {
         addImportList(entity, sfe);
         parseBaseEntity(map, entity, singleFileList);

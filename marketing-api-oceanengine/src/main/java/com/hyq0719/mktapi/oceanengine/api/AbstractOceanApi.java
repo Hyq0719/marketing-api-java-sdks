@@ -17,6 +17,7 @@ public abstract class AbstractOceanApi {
   public static final String END_DATE = "end_date";
   public static final String GROUP_BY = "group_by";
   public static final String TIME_GRANULARITY = "time_granularity";
+  public static final String FIELDS = "fields";
 
   private final ApiClient apiClient;
   private final RetryStrategy retryStrategy;
