@@ -22,7 +22,7 @@ Marketing API Java SDKs 对国内主流的Marketing API进行封装，提供了�
 
 ### 22年计划
 
-- 本人对各Marketing API厂商的人力分配（会根据开发效率、使用者需求和厂商爸爸支持程度进行调整）
+- 本人对各Marketing API厂商的人力分配（会根据开发效率、使用者需求和厂商支持程度进行调整）
 
 `新增`：新增该渠道SDK `全量`：开发完成所有接口 `维护`：维护开发完成且使用中的接口
 
@@ -39,14 +39,15 @@ Marketing API Java SDKs 对国内主流的Marketing API进行封装，提供了�
 - 补全使用文档
 - 建立使用者社区和社区代码贡献机制
 
+### 其他说明
+
+1. SDK使用文档请查阅 [【开发文档Wiki】](https://github.com/Hyq0719/marketing-api-java-sdks/wiki)，部分文档可能未能及时更新，如有发现，可以及时上报或者自行修改。
+2. 如有新功能需求，发现BUG，或者由于Markering API官方调整导致的代码问题，可以直接在[【Issues】](https://github.com/Hyq0719/marketing-api-java-sdks/issues)页提出issue，便于讨论追踪问题；
+3. 如果需要贡献代码，请务必在提交PR之前先仔细阅读[【代码贡献指南】](https://github.com/Hyq0719/marketing-api-java-sdks/blob/develop/CONTRIBUTING.md)，谢谢理解配合；
+4. 阅读源码的同学请注意，本SDK为简化代码编译时加入了`lombok`支持，如果不了解`lombok`的话，请先学习下相关知识，比如可以阅读[此文章](https://mp.weixin.qq.com/s/cUc-bUcprycADfNepnSwZQ)；
+
 ### 致谢
 
 - 感谢 [TencentAd](https://github.com/TencentAd)/**[marketing-api-java-sdk ](https://github.com/TencentAd/marketing-api-java-sdk)**，该项目使用了部分腾讯广告Marketing APi Java SDK的源码，通过学习腾讯广告源码大大减小了开发成本
 - 感谢 [Wechat-Group](https://github.com/Wechat-Group)/**[WxJava](https://github.com/Wechat-Group/WxJava)**，该项目参考了WxJava的开源建设规范
-
-### 其他说明
-
-1. 阅读源码的同学请注意，本SDK为简化代码编译时加入了`lombok`支持，如果不了解`lombok`的话，请先学习下相关知识，比如可以阅读[此文章](https://mp.weixin.qq.com/s/cUc-bUcprycADfNepnSwZQ)；
-2. 如有新功能需求，发现BUG，或者由于Markering API官方调整导致的代码问题，可以直接在[【Issues】](https://github.com/Hyq0719/marketing-api-java-sdks/issues)页提出issue，便于讨论追踪问题；
-3. 如果需要贡献代码，请务必在提交PR之前先仔细阅读[【代码贡献指南】](https://github.com/Hyq0719/marketing-api-java-sdks/blob/develop/CONTRIBUTING.md)，谢谢理解配合；
 
