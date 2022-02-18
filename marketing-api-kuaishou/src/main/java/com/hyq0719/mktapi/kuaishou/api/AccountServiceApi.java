@@ -44,11 +44,11 @@ public class AccountServiceApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/advertiser/info", method = RequestConstants.POST)
   public class AdvertiserInfo
-          extends KshApiRequest<AdvertiserInfoRequest, KshResponse<AdvertiserInfoResponseStruct>> {
+    extends KshApiRequest<AdvertiserInfoRequest, KshResponse<AdvertiserInfoResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/advertiser/fund/get", method = RequestConstants.POST)
   public class AdvertiserFund
-          extends KshApiRequest<AdvertiserFundGetRequest, KshResponse<AdvertiserFundGetResponseStruct>> {
+    extends KshApiRequest<AdvertiserFundGetRequest, KshResponse<AdvertiserFundGetResponseStruct>> {
   }
 }

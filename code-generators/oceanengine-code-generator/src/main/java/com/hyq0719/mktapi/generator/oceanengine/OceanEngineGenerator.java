@@ -34,7 +34,7 @@ public class OceanEngineGenerator {
 
   public static void main(String[] args) {
     String url = "https://open.oceanengine.com/doc/index.html?key=ad&type=api&id=1696710552261644#item-link-%"
-            + "E5%9F%BA%E7%A1%80%E5%88%9B%E6%84%8F%E4%BF%A1%E6%81%AF";
+      + "E5%9F%BA%E7%A1%80%E5%88%9B%E6%84%8F%E4%BF%A1%E6%81%AF";
     genRequestAndResponse(url);
 //        genByTableLocation(url, "BaseCreativeStruct", 4);
   }

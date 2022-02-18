@@ -78,31 +78,31 @@ public class DataReportApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/report/account_report", method = RequestConstants.POST)
   public class ReportAccountReport
-          extends KshApiRequest<ReportAccountReportRequest,
-          KshResponse<PageResponseData<ReportAccountReportResponseStruct>>> {
+    extends KshApiRequest<ReportAccountReportRequest,
+    KshResponse<PageResponseData<ReportAccountReportResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/report/campaign_report", method = RequestConstants.POST)
   public class ReportCampaignReport
-          extends KshApiRequest<ReportCampaignReportRequest,
-          KshResponse<PageResponseData<ReportCampaignReportResponseStruct>>> {
+    extends KshApiRequest<ReportCampaignReportRequest,
+    KshResponse<PageResponseData<ReportCampaignReportResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/report/unit_report", method = RequestConstants.POST)
   public class ReportUnitReport
-          extends KshApiRequest<ReportUnitReportRequest,
-          KshResponse<PageResponseData<ReportUnitReportResponseStruct>>> {
+    extends KshApiRequest<ReportUnitReportRequest,
+    KshResponse<PageResponseData<ReportUnitReportResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/report/creative_report", method = RequestConstants.POST)
   public class ReportCreativeReport
-          extends KshApiRequest<ReportCreativeReportRequest,
-          KshResponse<PageResponseData<ReportCreativeReportResponseStruct>>> {
+    extends KshApiRequest<ReportCreativeReportRequest,
+    KshResponse<PageResponseData<ReportCreativeReportResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/agent/report", method = RequestConstants.POST)
   public class AgentReport
-          extends KshApiRequest<AgentReportRequest, KshResponse<PageResponseData<AgentReportResponseStruct>>> {
+    extends KshApiRequest<AgentReportRequest, KshResponse<PageResponseData<AgentReportResponseStruct>>> {
   }
 
 }

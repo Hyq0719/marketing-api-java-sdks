@@ -32,11 +32,11 @@ public class ApiException extends Exception {
   }
 
   public ApiException(
-          String message,
-          Throwable throwable,
-          int code,
-          Map<String, List<String>> responseHeaders,
-          String responseBody) {
+    String message,
+    Throwable throwable,
+    int code,
+    Map<String, List<String>> responseHeaders,
+    String responseBody) {
     super(message, throwable);
     this.code = code;
     this.responseHeaders = responseHeaders;
@@ -44,12 +44,12 @@ public class ApiException extends Exception {
   }
 
   public ApiException(
-          String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
+    String message, int code, Map<String, List<String>> responseHeaders, String responseBody) {
     this(message, (Throwable) null, code, responseHeaders, responseBody);
   }
 
   public ApiException(
-          String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders) {
+    String message, Throwable throwable, int code, Map<String, List<String>> responseHeaders) {
     this(message, throwable, code, responseHeaders, null);
   }
 
@@ -62,8 +62,7 @@ public class ApiException extends Exception {
     this.code = code;
   }
 
-  public ApiException(
-          int code, String message, Map<String, List<String>> responseHeaders, String responseBody) {
+  public ApiException(int code, String message, Map<String, List<String>> responseHeaders, String responseBody) {
     this(code, message);
     this.responseHeaders = responseHeaders;
     this.responseBody = responseBody;

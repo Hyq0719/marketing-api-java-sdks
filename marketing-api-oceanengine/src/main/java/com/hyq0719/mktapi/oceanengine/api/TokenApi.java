@@ -104,9 +104,9 @@ public class TokenApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/advertiser/get/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "oauth2")
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "oauth2")
   public class AdvertiserGet extends OceanApiRequest<AdvertiserGetRequest,
-          OceanResponse<AdvertiserGetResponseData>> {
+    OceanResponse<AdvertiserGetResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AdvertiserGetRequest request) {
@@ -131,14 +131,14 @@ public class TokenApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/user/info/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class UserInfo extends OceanApiRequest<UserInfoRequest, OceanResponse<UserInfoResponseData>> {
   }
 
   @ApiRequestMapping(value = "/app_access_token/", method = RequestConstants.POST
-          , version = "oauth2", host = "open.oceanengine.com")
+    , version = "oauth2", host = "open.oceanengine.com")
   public class AppAccessToken extends OceanApiRequest<AppAccessTokenRequest
-          , OceanResponse<AppAccessTokenResponseData>> {
+    , OceanResponse<AppAccessTokenResponseData>> {
     @Override
     public String[] getLocalVarAuthNames() {
       return new String[]{};

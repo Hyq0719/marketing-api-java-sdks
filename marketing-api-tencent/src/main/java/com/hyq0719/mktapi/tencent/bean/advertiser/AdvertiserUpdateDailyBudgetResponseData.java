@@ -26,13 +26,13 @@ public class AdvertiserUpdateDailyBudgetResponseData {
   private List<AdvertiserUpdateDailyBudgetListStruct> list = null;
 
   public AdvertiserUpdateDailyBudgetResponseData list(
-          List<AdvertiserUpdateDailyBudgetListStruct> list) {
+    List<AdvertiserUpdateDailyBudgetListStruct> list) {
     this.list = list;
     return this;
   }
 
   public AdvertiserUpdateDailyBudgetResponseData addListItem(
-          AdvertiserUpdateDailyBudgetListStruct listItem) {
+    AdvertiserUpdateDailyBudgetListStruct listItem) {
     if (this.list == null) {
       this.list = new ArrayList<AdvertiserUpdateDailyBudgetListStruct>();
     }

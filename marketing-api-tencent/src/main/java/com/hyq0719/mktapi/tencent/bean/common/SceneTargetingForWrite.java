@@ -148,13 +148,13 @@ public class SceneTargetingForWrite {
   }
 
   public SceneTargetingForWrite excludeUnionPositionPackage(
-          List<Long> excludeUnionPositionPackage) {
+    List<Long> excludeUnionPositionPackage) {
     this.excludeUnionPositionPackage = excludeUnionPositionPackage;
     return this;
   }
 
   public SceneTargetingForWrite addExcludeUnionPositionPackageItem(
-          Long excludeUnionPositionPackageItem) {
+    Long excludeUnionPositionPackageItem) {
     if (this.excludeUnionPositionPackage == null) {
       this.excludeUnionPositionPackage = new ArrayList<Long>();
     }

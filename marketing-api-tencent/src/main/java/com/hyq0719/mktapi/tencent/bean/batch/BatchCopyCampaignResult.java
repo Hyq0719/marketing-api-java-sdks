@@ -72,7 +72,7 @@ public class BatchCopyCampaignResult {
   }
 
   public void setDetailedInformationList(
-          List<BatchCopyDetailedInformation> detailedInformationList) {
+    List<BatchCopyDetailedInformation> detailedInformationList) {
     this.detailedInformationList = detailedInformationList;
   }
 }

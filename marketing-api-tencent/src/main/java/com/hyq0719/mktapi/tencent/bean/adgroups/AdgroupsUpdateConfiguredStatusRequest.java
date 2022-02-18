@@ -28,7 +28,7 @@ public class AdgroupsUpdateConfiguredStatusRequest implements TokenKey {
 
   @SerializedName("update_configured_status_spec")
   private List<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
-          updateConfiguredStatusSpec = null;
+    updateConfiguredStatusSpec = null;
 
   public AdgroupsUpdateConfiguredStatusRequest accountId(Long accountId) {
     this.accountId = accountId;
@@ -49,16 +49,16 @@ public class AdgroupsUpdateConfiguredStatusRequest implements TokenKey {
   }
 
   public AdgroupsUpdateConfiguredStatusRequest updateConfiguredStatusSpec(
-          List<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct> updateConfiguredStatusSpec) {
+    List<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct> updateConfiguredStatusSpec) {
     this.updateConfiguredStatusSpec = updateConfiguredStatusSpec;
     return this;
   }
 
   public AdgroupsUpdateConfiguredStatusRequest addUpdateConfiguredStatusSpecItem(
-          AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct updateConfiguredStatusSpecItem) {
+    AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct updateConfiguredStatusSpecItem) {
     if (this.updateConfiguredStatusSpec == null) {
       this.updateConfiguredStatusSpec =
-              new ArrayList<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct>();
+        new ArrayList<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct>();
     }
     this.updateConfiguredStatusSpec.add(updateConfiguredStatusSpecItem);
     return this;
@@ -75,7 +75,7 @@ public class AdgroupsUpdateConfiguredStatusRequest implements TokenKey {
   }
 
   public void setUpdateConfiguredStatusSpec(
-          List<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct> updateConfiguredStatusSpec) {
+    List<AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct> updateConfiguredStatusSpec) {
     this.updateConfiguredStatusSpec = updateConfiguredStatusSpec;
   }
 

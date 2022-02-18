@@ -230,7 +230,7 @@ public class CreativeListResponseStruct {
   }
 
   public CreativeListResponseStruct programmedCreativeMaterial(
-          ProgrammedCreativeMaterialStruct programmedCreativeMaterial) {
+    ProgrammedCreativeMaterialStruct programmedCreativeMaterial) {
     this.programmedCreativeMaterial = programmedCreativeMaterial;
     return this;
   }

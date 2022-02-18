@@ -42,9 +42,9 @@ public abstract class BaseHttpHandler implements HttpHandler {
     StringBuilder url = new StringBuilder();
 
     url.append(requestParam.getScheme()).append("://")
-            .append(requestParam.getHost()).append("/")
-            .append(requestParam.getVersion())
-            .append(requestParam.getPath());
+      .append(requestParam.getHost()).append("/")
+      .append(requestParam.getVersion())
+      .append(requestParam.getPath());
 
     appendQueryParams(url, requestParam);
 

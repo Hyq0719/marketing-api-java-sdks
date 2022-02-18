@@ -47,7 +47,7 @@ public class DeepConversionSpec {
   }
 
   public DeepConversionSpec deepConversionBehaviorSpec(
-          DeepConversionBehaviorSpec deepConversionBehaviorSpec) {
+    DeepConversionBehaviorSpec deepConversionBehaviorSpec) {
     this.deepConversionBehaviorSpec = deepConversionBehaviorSpec;
     return this;
   }
@@ -66,7 +66,7 @@ public class DeepConversionSpec {
   }
 
   public DeepConversionSpec deepConversionWorthSpec(
-          DeepConversionWorthSpec deepConversionWorthSpec) {
+    DeepConversionWorthSpec deepConversionWorthSpec) {
     this.deepConversionWorthSpec = deepConversionWorthSpec;
     return this;
   }

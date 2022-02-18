@@ -70,7 +70,7 @@ public class TencentAutoConfiguration implements CommandLineRunner {
       throw new RuntimeException("tencent cron is null");
     }
     ITokenCronService simpleCronService = new ITokenCronService(tencentExternalTokenService, tencentCache(),
-            sdkProperties.getTencent().getCron());
+      sdkProperties.getTencent().getCron());
     simpleCronService.run();
     tencentTrigger = simpleCronService;
     return simpleCronService;

@@ -69,7 +69,7 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
    * 重试机制，默认不重试
    */
   public R retry(ApiResponse<R> resp, T t, ApiRequestAdvice apiRequestAdvice, String token)
-          throws ApiException {
+    throws ApiException {
     return resp.getData();
   }
 
@@ -117,20 +117,20 @@ public abstract class ApiRequest<T, R> implements ParamHandler<T> {
     final String localVarToken = StringUtils.isEmpty(token) ? getStringToken(getAccountId(t)) : token;
 
     return RequestParam.builder()
-            .scheme(getBaseUrl().getScheme())
-            .host(getHost())
-            .path(getLocalVarPath())
-            .version(getVersion())
-            .method(getMethod())
-            .usePostBody(isUsePostBody())
-            .postBody(localVarPostBody)
-            .queryParams(localVarQueryParams)
-            .collectionQueryParams(localVarCollectionQueryParams)
-            .headerParams(localVarHeaderParams)
-            .formParams(localVarFormParams)
-            .authNames(getLocalVarAuthNames())
-            .accessToken(localVarToken)
-            .build();
+      .scheme(getBaseUrl().getScheme())
+      .host(getHost())
+      .path(getLocalVarPath())
+      .version(getVersion())
+      .method(getMethod())
+      .usePostBody(isUsePostBody())
+      .postBody(localVarPostBody)
+      .queryParams(localVarQueryParams)
+      .collectionQueryParams(localVarCollectionQueryParams)
+      .headerParams(localVarHeaderParams)
+      .formParams(localVarFormParams)
+      .authNames(getLocalVarAuthNames())
+      .accessToken(localVarToken)
+      .build();
   }
 
   @Override

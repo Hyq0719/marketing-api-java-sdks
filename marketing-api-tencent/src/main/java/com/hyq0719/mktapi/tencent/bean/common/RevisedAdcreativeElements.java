@@ -328,13 +328,13 @@ public class RevisedAdcreativeElements {
   }
 
   public RevisedAdcreativeElements elementStory(
-          List<AdcreativeElementStoryArrayItem> elementStory) {
+    List<AdcreativeElementStoryArrayItem> elementStory) {
     this.elementStory = elementStory;
     return this;
   }
 
   public RevisedAdcreativeElements addElementStoryItem(
-          AdcreativeElementStoryArrayItem elementStoryItem) {
+    AdcreativeElementStoryArrayItem elementStoryItem) {
     if (this.elementStory == null) {
       this.elementStory = new ArrayList<AdcreativeElementStoryArrayItem>();
     }

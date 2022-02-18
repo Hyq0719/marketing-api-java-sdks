@@ -9,9 +9,9 @@ import lombok.Getter;
 
 @Getter
 public class KshSdkService {
-  private AccountServiceApi accountServiceApi;
-  private AdServingApi adServingApi;
-  private DataReportApi dataReportApi;
+  private final AccountServiceApi accountServiceApi;
+  private final AdServingApi adServingApi;
+  private final DataReportApi dataReportApi;
 
   public KshSdkService(ApiClient apiClient, RetryStrategy retryStrategy) {
     accountServiceApi = new AccountServiceApi(apiClient, retryStrategy);

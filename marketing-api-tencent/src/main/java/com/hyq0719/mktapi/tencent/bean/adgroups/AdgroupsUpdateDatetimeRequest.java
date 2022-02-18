@@ -48,13 +48,13 @@ public class AdgroupsUpdateDatetimeRequest implements TokenKey {
   }
 
   public AdgroupsUpdateDatetimeRequest updateDatetimeSpec(
-          List<UpdateDatetimeStruct> updateDatetimeSpec) {
+    List<UpdateDatetimeStruct> updateDatetimeSpec) {
     this.updateDatetimeSpec = updateDatetimeSpec;
     return this;
   }
 
   public AdgroupsUpdateDatetimeRequest addUpdateDatetimeSpecItem(
-          UpdateDatetimeStruct updateDatetimeSpecItem) {
+    UpdateDatetimeStruct updateDatetimeSpecItem) {
     if (this.updateDatetimeSpec == null) {
       this.updateDatetimeSpec = new ArrayList<UpdateDatetimeStruct>();
     }

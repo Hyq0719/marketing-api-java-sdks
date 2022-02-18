@@ -30,7 +30,8 @@ public class VivoGenerator {
   }
 
   public static void main(String[] args) {
-    String url = "https://open-ad.vivo.com.cn/doc/index?id=217";
+    String url = "https://open-ad.vivo.com.cn/doc/index?id=424";
     genRequestAndResponse(url);
+//    genByTableLocation(url,"BaseTagResDto",3);
   }
 }

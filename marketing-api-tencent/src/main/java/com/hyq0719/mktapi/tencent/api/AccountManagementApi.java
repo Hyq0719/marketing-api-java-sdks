@@ -52,8 +52,8 @@ public class AccountManagementApi extends AbstractTencentApi {
   }
 
   @ApiRequestMapping(value = "/funds/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {
-                  RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {
+      RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class FundsGet extends TencentApiRequest<ConfigRequest, ConfigResponse<ListResponse<FundsGetListStruct>>> {
 
     @Override
@@ -72,7 +72,7 @@ public class AccountManagementApi extends AbstractTencentApi {
   }
 
   @ApiRequestMapping(value = "/wechat_funds/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class WechatFundsGet extends TencentApiRequest<ConfigRequest, ConfigResponse<WechatFundsGetResponseData>> {
 
     @Override

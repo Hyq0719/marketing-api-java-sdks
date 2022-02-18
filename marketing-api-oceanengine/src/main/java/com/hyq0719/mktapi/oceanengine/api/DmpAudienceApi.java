@@ -128,9 +128,9 @@ public class DmpAudienceApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/dmp/data_source/file/upload/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
+    RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class DmpDataSourceFileUpload extends OceanApiRequest<DmpDataSourceFileUploadRequest,
-          OceanResponse<DmpDataSourceFileUploadResponseData>> {
+    OceanResponse<DmpDataSourceFileUploadResponseData>> {
     @Override
     public void setFormParam(Map<String, Object> formParamMap, DmpDataSourceFileUploadRequest request) {
       Long advertiserId = request.getAdvertiserId();
@@ -150,18 +150,18 @@ public class DmpAudienceApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/dmp/data_source/create/", method = RequestConstants.POST)
   public class DmpDataSourceCreate extends OceanApiRequest<DmpDataSourceCreateRequest,
-          OceanResponse<DmpDataSourceCreateResponseData>> {
+    OceanResponse<DmpDataSourceCreateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/dmp/data_source/update/", method = RequestConstants.POST)
   public class DmpDataSourceUpdate extends OceanApiRequest<DmpDataSourceUpdateRequest,
-          OceanResponse<Object>> {
+    OceanResponse<Object>> {
   }
 
   @ApiRequestMapping(value = "/dmp/data_source/read/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class DmpDataSourceRead extends OceanApiRequest<DmpDataSourceReadRequest,
-          OceanResponse<DmpDataSourceReadResponseData>> {
+    OceanResponse<DmpDataSourceReadResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 DmpDataSourceReadRequest request) {
@@ -172,15 +172,15 @@ public class DmpAudienceApi extends AbstractOceanApi {
       List<String> dataSourceIdList = request.getDataSourceIdList();
       if (dataSourceIdList != null) {
         localVarCollectionQueryParams.addAll(parameterToPairs("multi",
-                "data_source_id_list", dataSourceIdList));
+          "data_source_id_list", dataSourceIdList));
       }
     }
   }
 
   @ApiRequestMapping(value = "/dmp/custom_audience/select/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class DmpCustomAudienceSelect extends OceanApiRequest<DmpCustomAudienceSelectRequest,
-          OceanResponse<DmpCustomAudienceSelectResponseData>> {
+    OceanResponse<DmpCustomAudienceSelectResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 DmpCustomAudienceSelectRequest request) {
@@ -204,9 +204,9 @@ public class DmpAudienceApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/dmp/custom_audience/read/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class DmpCustomAudienceRead extends OceanApiRequest<DmpCustomAudienceReadRequest,
-          OceanResponse<DmpCustomAudienceReadResponseData>> {
+    OceanResponse<DmpCustomAudienceReadResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 DmpCustomAudienceReadRequest request) {
@@ -217,23 +217,23 @@ public class DmpAudienceApi extends AbstractOceanApi {
       List<Long> customAudienceIds = request.getCustomAudienceIds();
       if (customAudienceIds != null) {
         localVarCollectionQueryParams.addAll(parameterToPairs("multi",
-                "custom_audience_ids", customAudienceIds));
+          "custom_audience_ids", customAudienceIds));
       }
     }
   }
 
   @ApiRequestMapping(value = "/dmp/custom_audience/publish/", method = RequestConstants.POST)
   public class DmpCustomAudiencePublish extends OceanApiRequest<DmpCustomAudiencePublishRequest,
-          OceanResponse<Object>> {
+    OceanResponse<Object>> {
   }
 
   @ApiRequestMapping(value = "/dmp/custom_audience/push_v2/", method = RequestConstants.POST)
   public class DmpCustomAudiencePushV2 extends OceanApiRequest<DmpCustomAudiencePushV2Request,
-          OceanResponse<Object>> {
+    OceanResponse<Object>> {
   }
 
   @ApiRequestMapping(value = "/dmp/custom_audience/delete/", method = RequestConstants.POST)
   public class DmpCustomAudienceDelete extends OceanApiRequest<DmpCustomAudienceDeleteRequest,
-          OceanResponse<DmpCustomAudienceDeleteResponseData>> {
+    OceanResponse<DmpCustomAudienceDeleteResponseData>> {
   }
 }

@@ -48,13 +48,13 @@ public class AdgroupsUpdateBidAmountRequest implements TokenKey {
   }
 
   public AdgroupsUpdateBidAmountRequest updateBidAmountSpec(
-          List<UpdateBidAmountStruct> updateBidAmountSpec) {
+    List<UpdateBidAmountStruct> updateBidAmountSpec) {
     this.updateBidAmountSpec = updateBidAmountSpec;
     return this;
   }
 
   public AdgroupsUpdateBidAmountRequest addUpdateBidAmountSpecItem(
-          UpdateBidAmountStruct updateBidAmountSpecItem) {
+    UpdateBidAmountStruct updateBidAmountSpecItem) {
     if (this.updateBidAmountSpec == null) {
       this.updateBidAmountSpec = new ArrayList<UpdateBidAmountStruct>();
     }

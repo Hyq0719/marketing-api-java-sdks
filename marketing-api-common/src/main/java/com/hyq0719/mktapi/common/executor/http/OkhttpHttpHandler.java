@@ -44,7 +44,7 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
   }
 
   public Call buildCall(RequestParam param)
-          throws ApiException {
+    throws ApiException {
     Request request = buildRequest(param);
     return httpsClient.newCall(request);
   }
@@ -110,7 +110,7 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
       if (param.getValue() instanceof File) {
         File file = (File) param.getValue();
         mpBuilder.addFormDataPart(param.getKey(), file.getName()
-                , RequestBody.create(MediaType.parse("multipart/form-data"), file));
+          , RequestBody.create(MediaType.parse("multipart/form-data"), file));
       } else {
         mpBuilder.addFormDataPart(param.getKey(), String.valueOf(param.getValue()));
       }
@@ -194,10 +194,10 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
       return (T) respBody;
     } else {
       throw new ApiException(
-              "Content type \"" + contentType + "\" is not supported for type: " + returnType,
-              response.code(),
-              response.headers().toMultimap(),
-              respBody);
+        "Content type \"" + contentType + "\" is not supported for type: " + returnType,
+        response.code(),
+        response.headers().toMultimap(),
+        respBody);
     }
   }
 
@@ -280,7 +280,7 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
             response.body().close();
           } catch (Exception e) {
             throw new ApiException(
-                    response.message(), e, response.code(), response.headers().toMultimap());
+              response.message(), e, response.code(), response.headers().toMultimap());
           }
         }
         return null;
@@ -294,11 +294,11 @@ public class OkhttpHttpHandler extends BaseHttpHandler {
           respBody = response.body().string();
         } catch (IOException e) {
           throw new ApiException(
-                  response.message(), e, response.code(), response.headers().toMultimap());
+            response.message(), e, response.code(), response.headers().toMultimap());
         }
       }
       throw new ApiException(
-              response.message(), response.code(), response.headers().toMultimap(), respBody);
+        response.message(), response.code(), response.headers().toMultimap(), respBody);
     }
   }
 

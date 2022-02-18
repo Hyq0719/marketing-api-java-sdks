@@ -71,7 +71,7 @@ public class KshAutoConfiguration implements CommandLineRunner {
       throw new RuntimeException("kuaishou cron is null");
     }
     ITokenCronService simpleCronService = new ITokenCronService(kshExternalTokenService, kuaishouCache(),
-            sdkProperties.getKuaishou().getCron());
+      sdkProperties.getKuaishou().getCron());
     simpleCronService.run();
     clTrigger = simpleCronService;
     return simpleCronService;

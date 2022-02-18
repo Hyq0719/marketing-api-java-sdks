@@ -195,7 +195,7 @@ public class AdServingApi extends AbstractOceanApi {
       synchronized (CreativeCustomCreativeCreate.class) {
         if (creativeCustomCreativeCreate == null) {
           creativeCustomCreativeCreate = (CreativeCustomCreativeCreate) init(
-                  CreativeCustomCreativeCreate.class);
+            CreativeCustomCreativeCreate.class);
         }
       }
     }
@@ -207,7 +207,7 @@ public class AdServingApi extends AbstractOceanApi {
       synchronized (CreativeCustomCreativeUpdate.class) {
         if (creativeCustomCreativeUpdate == null) {
           creativeCustomCreativeUpdate = (CreativeCustomCreativeUpdate) init(
-                  CreativeCustomCreativeUpdate.class);
+            CreativeCustomCreativeUpdate.class);
         }
       }
     }
@@ -215,9 +215,9 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/campaign/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class CampaignGet extends OceanApiRequest<ConfigRequest<CampaignGetFilteringStruct>,
-          OceanResponse<PageResponseData<CampaignGetListStruct>>> {
+    OceanResponse<PageResponseData<CampaignGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -256,13 +256,13 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/campaign/update/status/ ", method = RequestConstants.POST)
   public class CampaignUpdateStatus
-          extends OceanApiRequest<CampaignUpdateStatusRequest, OceanResponse<CampaignUpdateStatusResponseData>> {
+    extends OceanApiRequest<CampaignUpdateStatusRequest, OceanResponse<CampaignUpdateStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/get/", method = RequestConstants.GET, usePostBody = false, contentTypes = {
-          RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdGet extends OceanApiRequest<ConfigRequest<AdGetFilteringStruct>,
-          OceanResponse<PageResponseData<AdGetResponseListStruct>>> {
+    OceanResponse<PageResponseData<AdGetResponseListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest<AdGetFilteringStruct> configRequest) {
@@ -290,9 +290,9 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/ad/cost_protect_status/get/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdCostProtectStatusGet extends OceanApiRequest<AdCostProtectStatusGetRequest,
-          OceanResponse<AdCostProtectStatusGetResponseData>> {
+    OceanResponse<AdCostProtectStatusGetResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AdCostProtectStatusGetRequest request) {
@@ -308,9 +308,9 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/ad/reject_reason/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdRejectReason
-          extends OceanApiRequest<AdRejectReasonRequest, OceanResponse<AdRejectReasonResponseData>> {
+    extends OceanApiRequest<AdRejectReasonRequest, OceanResponse<AdRejectReasonResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AdRejectReasonRequest request) {
@@ -335,12 +335,12 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/ad/update/status/", method = RequestConstants.POST)
   public class AdUpdateStatus
-          extends OceanApiRequest<AdUpdateStatusRequest, OceanResponse<AdUpdateStatusResponseData>> {
+    extends OceanApiRequest<AdUpdateStatusRequest, OceanResponse<AdUpdateStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/budget/", method = RequestConstants.POST)
   public class AdUpdateBudget
-          extends OceanApiRequest<AdUpdateBudgetRequest, OceanResponse<AdUpdateBudgetResponseData>> {
+    extends OceanApiRequest<AdUpdateBudgetRequest, OceanResponse<AdUpdateBudgetResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ad/update/bid/", method = RequestConstants.POST)
@@ -348,9 +348,9 @@ public class AdServingApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/creative/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class CreativeGet extends OceanApiRequest<ConfigRequest<CreativeGetFilteringStruct>,
-          OceanResponse<PageResponseData<CreativeGetListStruct>>> {
+    OceanResponse<PageResponseData<CreativeGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest<CreativeGetFilteringStruct> configRequest) {
@@ -380,14 +380,14 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/creative/custom_creative/create/", method = RequestConstants.POST)
   public class CreativeCustomCreativeCreate
-          extends OceanApiRequest<CreativeCustomCreativeCreateRequest,
-          OceanResponse<CreativeCustomCreativeCreateResponseData>> {
+    extends OceanApiRequest<CreativeCustomCreativeCreateRequest,
+    OceanResponse<CreativeCustomCreativeCreateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/creative/custom_creative/update/", method = RequestConstants.POST)
   public class CreativeCustomCreativeUpdate
-          extends OceanApiRequest<CreativeCustomCreativeUpdateRequest,
-          OceanResponse<CreativeCustomCreativeUpdateResponseData>> {
+    extends OceanApiRequest<CreativeCustomCreativeUpdateRequest,
+    OceanResponse<CreativeCustomCreativeUpdateResponseData>> {
   }
 
 }

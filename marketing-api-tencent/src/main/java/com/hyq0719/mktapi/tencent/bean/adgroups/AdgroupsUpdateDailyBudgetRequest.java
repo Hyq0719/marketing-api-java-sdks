@@ -48,16 +48,16 @@ public class AdgroupsUpdateDailyBudgetRequest implements TokenKey {
   }
 
   public AdgroupsUpdateDailyBudgetRequest updateDailyBudgetSpec(
-          List<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
+    List<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
     this.updateDailyBudgetSpec = updateDailyBudgetSpec;
     return this;
   }
 
   public AdgroupsUpdateDailyBudgetRequest addUpdateDailyBudgetSpecItem(
-          AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct updateDailyBudgetSpecItem) {
+    AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct updateDailyBudgetSpecItem) {
     if (this.updateDailyBudgetSpec == null) {
       this.updateDailyBudgetSpec =
-              new ArrayList<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct>();
+        new ArrayList<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct>();
     }
     this.updateDailyBudgetSpec.add(updateDailyBudgetSpecItem);
     return this;
@@ -73,7 +73,7 @@ public class AdgroupsUpdateDailyBudgetRequest implements TokenKey {
   }
 
   public void setUpdateDailyBudgetSpec(
-          List<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
+    List<AdgroupsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
     this.updateDailyBudgetSpec = updateDailyBudgetSpec;
   }
 

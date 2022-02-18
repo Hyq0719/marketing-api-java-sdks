@@ -48,16 +48,16 @@ public class CampaignsUpdateDailyBudgetRequest implements TokenKey {
   }
 
   public CampaignsUpdateDailyBudgetRequest updateDailyBudgetSpec(
-          List<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
+    List<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
     this.updateDailyBudgetSpec = updateDailyBudgetSpec;
     return this;
   }
 
   public CampaignsUpdateDailyBudgetRequest addUpdateDailyBudgetSpecItem(
-          CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct updateDailyBudgetSpecItem) {
+    CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct updateDailyBudgetSpecItem) {
     if (this.updateDailyBudgetSpec == null) {
       this.updateDailyBudgetSpec =
-              new ArrayList<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct>();
+        new ArrayList<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct>();
     }
     this.updateDailyBudgetSpec.add(updateDailyBudgetSpecItem);
     return this;
@@ -73,7 +73,7 @@ public class CampaignsUpdateDailyBudgetRequest implements TokenKey {
   }
 
   public void setUpdateDailyBudgetSpec(
-          List<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
+    List<CampaignsUpdateDailyBudgetUpdateDailyBudgetStruct> updateDailyBudgetSpec) {
     this.updateDailyBudgetSpec = updateDailyBudgetSpec;
   }
 

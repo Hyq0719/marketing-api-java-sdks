@@ -295,13 +295,13 @@ public class AdcreativeCreativeElementsMp {
   }
 
   public AdcreativeCreativeElementsMp elementStory(
-          List<AdcreativeElementStoryArrayItem> elementStory) {
+    List<AdcreativeElementStoryArrayItem> elementStory) {
     this.elementStory = elementStory;
     return this;
   }
 
   public AdcreativeCreativeElementsMp addElementStoryItem(
-          AdcreativeElementStoryArrayItem elementStoryItem) {
+    AdcreativeElementStoryArrayItem elementStoryItem) {
     if (this.elementStory == null) {
       this.elementStory = new ArrayList<AdcreativeElementStoryArrayItem>();
     }
@@ -591,7 +591,7 @@ public class AdcreativeCreativeElementsMp {
   }
 
   public AdcreativeCreativeElementsMp videoPopupButton(
-          AdcreativeVideoPopupButton videoPopupButton) {
+    AdcreativeVideoPopupButton videoPopupButton) {
     this.videoPopupButton = videoPopupButton;
     return this;
   }

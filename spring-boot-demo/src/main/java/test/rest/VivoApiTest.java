@@ -1,7 +1,6 @@
 package test.rest;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
-import com.hyq0719.mktapi.vivo.api.PromotionServiceApi;
 import com.hyq0719.mktapi.vivo.bean.common.VivoResponse;
 import com.hyq0719.mktapi.vivo.bean.dataQuery.AdstatementSummaryQueryItemsStruct;
 import com.hyq0719.mktapi.vivo.bean.dataQuery.AdstatementSummaryQueryRequest;
@@ -18,19 +17,19 @@ import java.util.List;
 @RestController
 @RequestMapping("vivo")
 public class VivoApiTest {
+  private final String advertiserId = "00000000";
   @Resource
   private VivoSdkService vivoSdkService;
-  private String advertiserId = "00000000";
 
   @GetMapping("/adstatement/summary/query/fetch")
   public List<AdstatementSummaryQueryItemsStruct> adstatementSummaryQuery() {
     List<AdstatementSummaryQueryItemsStruct> details = null;
     AdstatementSummaryQueryRequest request = new AdstatementSummaryQueryRequest()
-            .advertiserId(advertiserId).summaryType("Hour").startDate("20211014").endDate("20211014")
-            .pageSize(100);
+      .advertiserId(advertiserId).summaryType("Hour").startDate("20211014").endDate("20211014")
+      .pageSize(100);
     try {
       AdstatementSummaryQueryResponseData data = vivoSdkService.getDataQueryApi().adstatementSummaryQuery()
-              .execute(request).getData();
+        .execute(request).getData();
       details = data.getItems();
       String lastId = data.getLastId();
       while (null != lastId) {
@@ -57,7 +56,7 @@ public class VivoApiTest {
   @GetMapping("/ad/creative/pageInfoByLastId")
   public VivoResponse adCreativePageInfoByLastId() throws ApiException {
     AdCreativePageInfoByLastIdRequest request = new AdCreativePageInfoByLastIdRequest().advertiserId(advertiserId)
-            .lastId(0L).pageSize(100);
+      .lastId(0L).pageSize(100);
     return vivoSdkService.getPromotionServiceApi().adCreativePageInfoByLastId().execute(request);
   }
 

@@ -26,7 +26,7 @@ public class RevisedAdcreativeSpec {
   private RevisedPageSpec revisedPageSpec = null;
 
   public RevisedAdcreativeSpec revisedAdcreativeElements(
-          RevisedAdcreativeElements revisedAdcreativeElements) {
+    RevisedAdcreativeElements revisedAdcreativeElements) {
     this.revisedAdcreativeElements = revisedAdcreativeElements;
     return this;
   }

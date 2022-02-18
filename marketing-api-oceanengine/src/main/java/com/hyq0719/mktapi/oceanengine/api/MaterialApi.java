@@ -156,9 +156,9 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/image/advertiser/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
+    RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class FileImageAdvertiser extends OceanApiRequest<FileImageAdvertiserRequest,
-          OceanResponse<FileImageAdvertiserResponseData>> {
+    OceanResponse<FileImageAdvertiserResponseData>> {
     @Override
     public void setFormParam(Map<String, Object> formParamMap, FileImageAdvertiserRequest request) {
       Long advertiserId = request.getAdvertiserId();
@@ -185,7 +185,7 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/image/ad/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
+    RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class FileImageAd extends OceanApiRequest<FileImageAdRequest, OceanResponse<FileImageAdResponseData>> {
     @Override
     public void setFormParam(Map<String, Object> formParamMap, FileImageAdRequest request) {
@@ -213,7 +213,7 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/video/ad/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
+    RequestConstants.CONTENT_TYPE_MULTIPART_FORM_DATA})
   public class FileVideoAd extends OceanApiRequest<FileVideoAdRequest, OceanResponse<FileVideoAdResponseData>> {
     @Override
     public void setFormParam(Map<String, Object> formParamMap, FileVideoAdRequest request) {
@@ -237,9 +237,9 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/image/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class FileImageGet extends OceanApiRequest<ConfigRequest<FileImageGetFilteringStruct>,
-          OceanResponse<PageResponseData<FileImageGetListStruct>>> {
+    OceanResponse<PageResponseData<FileImageGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest<FileImageGetFilteringStruct> configRequest) {
@@ -263,9 +263,9 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/video/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class FileVideoGet extends OceanApiRequest<ConfigRequest<FileVideoGetFilteringStruct>,
-          OceanResponse<PageResponseData<FileVideoGetListStruct>>> {
+    OceanResponse<PageResponseData<FileVideoGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest<FileVideoGetFilteringStruct> configRequest) {
@@ -289,10 +289,10 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/tools/video_cover/suggest/", method = RequestConstants.GET, usePostBody =
-          false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false,
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ToolsVideoCoverSuggest extends OceanApiRequest<ToolsVideoCoverSuggestRequest,
-          OceanResponse<ToolsVideoCoverSuggestResponseData>> {
+    OceanResponse<ToolsVideoCoverSuggestResponseData>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ToolsVideoCoverSuggestRequest request) {
@@ -311,9 +311,9 @@ public class MaterialApi extends AbstractOceanApi {
    * 官方文档response有误
    */
   @ApiRequestMapping(value = "/file/image/ad/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class FileImageAdGet extends OceanApiRequest<FileImageAdGetRequest,
-          OceanResponse<PageResponseData<FileImageGetListStruct>>> {
+    OceanResponse<PageResponseData<FileImageGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 FileImageAdGetRequest request) {
@@ -332,9 +332,9 @@ public class MaterialApi extends AbstractOceanApi {
    * 官方文档response有误
    */
   @ApiRequestMapping(value = "/file/video/ad/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class FileVideoAdGet extends OceanApiRequest<FileVideoAdGetRequest,
-          OceanResponse<PageResponseData<FileVideoGetListStruct>>> {
+    OceanResponse<PageResponseData<FileVideoGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 FileVideoAdGetRequest request) {
@@ -350,20 +350,20 @@ public class MaterialApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/file/material/bind/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_JSON})
+    RequestConstants.CONTENT_TYPE_JSON})
   public class FileMaterialBind extends OceanApiRequest<FileMaterialBindRequest,
-          OceanResponse<FileMaterialBindResponseData>> {
+    OceanResponse<FileMaterialBindResponseData>> {
   }
 
   @ApiRequestMapping(value = "/file/video/delete/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_JSON})
+    RequestConstants.CONTENT_TYPE_JSON})
   public class FileVideoDelete extends OceanApiRequest<FileVideoDeleteRequest,
-          OceanResponse<FileVideoDeleteResponseData>> {
+    OceanResponse<FileVideoDeleteResponseData>> {
   }
 
   @ApiRequestMapping(value = "/file/video/update/", method = RequestConstants.POST, contentTypes = {
-          RequestConstants.CONTENT_TYPE_JSON})
+    RequestConstants.CONTENT_TYPE_JSON})
   public class FileVideoUpdate extends OceanApiRequest<FileVideoUpdateRequest,
-          OceanResponse<FileVideoUpdateResponseData>> {
+    OceanResponse<FileVideoUpdateResponseData>> {
   }
 }

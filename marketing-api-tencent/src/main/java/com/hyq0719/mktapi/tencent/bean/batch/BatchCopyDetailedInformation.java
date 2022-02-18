@@ -67,7 +67,7 @@ public class BatchCopyDetailedInformation {
   }
 
   public void setErrorMap(
-          Map<Integer, BatchCopyDetailedInformationStruct> errorMap) {
+    Map<Integer, BatchCopyDetailedInformationStruct> errorMap) {
     this.errorMap = errorMap;
   }
 }

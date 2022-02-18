@@ -44,7 +44,7 @@ public class CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct {
   }
 
   public CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct configuredStatus(
-          String configuredStatus) {
+    String configuredStatus) {
     this.configuredStatus = configuredStatus;
     return this;
   }

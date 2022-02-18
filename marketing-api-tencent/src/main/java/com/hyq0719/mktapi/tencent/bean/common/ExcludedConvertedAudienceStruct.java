@@ -47,13 +47,13 @@ public class ExcludedConvertedAudienceStruct {
   }
 
   public ExcludedConvertedAudienceStruct conversionBehaviorList(
-          List<String> conversionBehaviorList) {
+    List<String> conversionBehaviorList) {
     this.conversionBehaviorList = conversionBehaviorList;
     return this;
   }
 
   public ExcludedConvertedAudienceStruct addConversionBehaviorListItem(
-          String conversionBehaviorListItem) {
+    String conversionBehaviorListItem) {
     if (this.conversionBehaviorList == null) {
       this.conversionBehaviorList = new ArrayList<String>();
     }

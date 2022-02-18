@@ -119,7 +119,7 @@ public class AdServingApi extends AbstractKshApi {
       synchronized (CreativeAdvancedProgramReviewDetail.class) {
         if (creativeAdvancedProgramReviewDetail == null) {
           creativeAdvancedProgramReviewDetail = (CreativeAdvancedProgramReviewDetail) init(
-                  CreativeAdvancedProgramReviewDetail.class);
+            CreativeAdvancedProgramReviewDetail.class);
         }
       }
     }
@@ -318,7 +318,7 @@ public class AdServingApi extends AbstractKshApi {
       synchronized (CreativeCreateCreativeTagAdvise.class) {
         if (creativeCreateCreativeTagAdvise == null) {
           creativeCreateCreativeTagAdvise = (CreativeCreateCreativeTagAdvise) init(
-                  CreativeCreateCreativeTagAdvise.class);
+            CreativeCreateCreativeTagAdvise.class);
         }
       }
     }
@@ -331,25 +331,25 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/ad_unit/list", method = RequestConstants.POST)
   public class AdUnitList
-          extends KshApiRequest<AdUnitListRequest, KshResponse<PageResponseData<AdUnitListResponseStruct>>> {
+    extends KshApiRequest<AdUnitListRequest, KshResponse<PageResponseData<AdUnitListResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/creative/list", method = RequestConstants.POST)
   public class CreativeList
-          extends KshApiRequest<CreativeListRequest, KshResponse<PageResponseData<CreativeListResponseStruct>>> {
+    extends KshApiRequest<CreativeListRequest, KshResponse<PageResponseData<CreativeListResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/creative/advanced/program/list", method = RequestConstants.POST, version = "v2")
   public class CreativeAdvancedProgramList
-          extends KshApiRequest<CreativeAdvancedProgramListRequest,
-          KshResponse<PageResponseData<CreativeAdvancedProgramListResponseStruct>>> {
+    extends KshApiRequest<CreativeAdvancedProgramListRequest,
+    KshResponse<PageResponseData<CreativeAdvancedProgramListResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/creative/advanced/program/review_detail", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "v2")
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "v2")
   public class CreativeAdvancedProgramReviewDetail
-          extends KshApiRequest<CreativeAdvancedProgramReviewDetailRequest,
-          KshResponse<CreativeAdvancedProgramReviewDetailResponseStruct>> {
+    extends KshApiRequest<CreativeAdvancedProgramReviewDetailRequest,
+    KshResponse<CreativeAdvancedProgramReviewDetailResponseStruct>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 CreativeAdvancedProgramReviewDetailRequest creativeAdvancedProgramReviewDetailRequest) {
@@ -366,18 +366,18 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/tool/operation_record/list", method = RequestConstants.POST)
   public class ToolOperationRecordList
-          extends KshApiRequest<ToolOperationRecordListRequest,
-          KshResponse<PageResponseData<ToolOperationRecordListResponseStruct>>> {
+    extends KshApiRequest<ToolOperationRecordListRequest,
+    KshResponse<PageResponseData<ToolOperationRecordListResponseStruct>>> {
   }
 
   @ApiRequestMapping(value = "/tool/audience/prediction", method = RequestConstants.POST)
   public class ToolAudiencePrediction
-          extends KshApiRequest<ToolAudiencePredictionRequest, KshResponse<ToolAudiencePredictionResponseStruct>> {
+    extends KshApiRequest<ToolAudiencePredictionRequest, KshResponse<ToolAudiencePredictionResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/advertiser/budget/get", method = RequestConstants.POST)
   public class AdvertiserBudgetGet
-          extends KshApiRequest<AdvertiserBudgetGetRequest, KshResponse<AdvertiserBudgetGetResponseStruct>> {
+    extends KshApiRequest<AdvertiserBudgetGetRequest, KshResponse<AdvertiserBudgetGetResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/advertiser/update/budget", method = RequestConstants.POST)
@@ -386,17 +386,17 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/campaign/create", method = RequestConstants.POST)
   public class CampaignCreate
-          extends KshApiRequest<CampaignCreateRequest, KshResponse<CampaignCreateResponseStruct>> {
+    extends KshApiRequest<CampaignCreateRequest, KshResponse<CampaignCreateResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/campaign/update", method = RequestConstants.POST)
   public class CampaignUpdate
-          extends KshApiRequest<CampaignUpdateRequest, KshResponse<CampaignUpdateResponseStruct>> {
+    extends KshApiRequest<CampaignUpdateRequest, KshResponse<CampaignUpdateResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/campaign/update/status", method = RequestConstants.POST, version = "v2")
   public class CampaignUpdateStatus
-          extends KshApiRequest<CampaignUpdateStatusRequest, KshResponse<CampaignUpdateStatusResponseStruct>> {
+    extends KshApiRequest<CampaignUpdateStatusRequest, KshResponse<CampaignUpdateStatusResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/ad_unit/create", method = RequestConstants.POST, version = "v2")
@@ -413,7 +413,7 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/ad_unit/update/status", method = RequestConstants.POST)
   public class AdUnitUpdateStatus
-          extends KshApiRequest<AdUnitUpdateStatusRequest, KshResponse<AdUnitUpdateStatusResponseStruct>> {
+    extends KshApiRequest<AdUnitUpdateStatusRequest, KshResponse<AdUnitUpdateStatusResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/ad_unit/update/bid", method = RequestConstants.POST)
@@ -422,22 +422,22 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/creative/create", method = RequestConstants.POST, version = "v2")
   public class CreativeCreate
-          extends KshApiRequest<CreativeCreateRequest, KshResponse<CreativeCreateResponseStruct>> {
+    extends KshApiRequest<CreativeCreateRequest, KshResponse<CreativeCreateResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/creative/batch/update", method = RequestConstants.POST, version = "v2")
   private class CreativeBatchUpdate
-          extends KshApiRequest<CreativeBatchUpdateRequest, KshResponse<CreativeBatchUpdateResponseStruct>> {
+    extends KshApiRequest<CreativeBatchUpdateRequest, KshResponse<CreativeBatchUpdateResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/creative/update", method = RequestConstants.POST, version = "v2")
   private class CreativeUpdate
-          extends KshApiRequest<CreativeUpdateRequest, KshResponse<CreativeUpdateResponseStruct>> {
+    extends KshApiRequest<CreativeUpdateRequest, KshResponse<CreativeUpdateResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/creative/update/status", method = RequestConstants.POST)
   private class CreativeUpdateStatus
-          extends KshApiRequest<CreativeUpdateStatusRequest, KshResponse<CreativeUpdateStatusResponseStruct>> {
+    extends KshApiRequest<CreativeUpdateStatusRequest, KshResponse<CreativeUpdateStatusResponseStruct>> {
   }
 
   @ApiRequestMapping(value = "/creative/create/preview", method = RequestConstants.POST)
@@ -446,7 +446,7 @@ public class AdServingApi extends AbstractKshApi {
 
   @ApiRequestMapping(value = "/creative/create/creative_tag/advise", method = RequestConstants.POST)
   public class CreativeCreateCreativeTagAdvise
-          extends KshApiRequest<CreativeCreateCreativeTagAdviseRequest,
-          KshResponse<CreativeCreateCreativeTagAdviseResponseStruct>> {
+    extends KshApiRequest<CreativeCreateCreativeTagAdviseRequest,
+    KshResponse<CreativeCreateCreativeTagAdviseResponseStruct>> {
   }
 }

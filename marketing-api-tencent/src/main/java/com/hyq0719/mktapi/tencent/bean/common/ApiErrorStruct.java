@@ -44,7 +44,7 @@ public class ApiErrorStruct {
   }
 
   public ApiErrorStruct commonParamExceptionSpec(
-          CommonParamExceptionSpec commonParamExceptionSpec) {
+    CommonParamExceptionSpec commonParamExceptionSpec) {
     this.commonParamExceptionSpec = commonParamExceptionSpec;
     return this;
   }

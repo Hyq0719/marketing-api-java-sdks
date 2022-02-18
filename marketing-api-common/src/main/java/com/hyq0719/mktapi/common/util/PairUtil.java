@@ -20,8 +20,8 @@ public class PairUtil {
     if (param == null) {
       return "";
     } else if (param instanceof Date
-            || param instanceof OffsetDateTime
-            || param instanceof LocalDate) {
+      || param instanceof OffsetDateTime
+      || param instanceof LocalDate) {
       // Serialize to json string and remove the " enclosing characters
       String jsonStr = json.serialize(param);
       return jsonStr.substring(1, jsonStr.length() - 1);

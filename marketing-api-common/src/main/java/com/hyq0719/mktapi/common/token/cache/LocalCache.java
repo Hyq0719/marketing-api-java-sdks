@@ -12,7 +12,8 @@ public class LocalCache<K, V> {
 
   /**
    * 存token
-   * @param key token key
+   *
+   * @param key   token key
    * @param value token值
    */
   public void put(K key, V value) {
@@ -21,6 +22,7 @@ public class LocalCache<K, V> {
 
   /**
    * 取token
+   *
    * @param key token key
    * @return token值
    */

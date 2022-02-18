@@ -131,14 +131,14 @@ public class ConfigRequest implements IPage {
   @Override
   public String toString() {
     return "ConfigRequest{"
-            + "accountId=" + accountId
-            + ", filtering=" + filtering
-            + ", page=" + page
-            + ", pageSize=" + pageSize
-            + ", isDeleted=" + isDeleted
-            + ", linkPageTypeCompatible=" + linkPageTypeCompatible
-            + ", fields=" + fields
-            + '}';
+      + "accountId=" + accountId
+      + ", filtering=" + filtering
+      + ", page=" + page
+      + ", pageSize=" + pageSize
+      + ", isDeleted=" + isDeleted
+      + ", linkPageTypeCompatible=" + linkPageTypeCompatible
+      + ", fields=" + fields
+      + '}';
   }
 
   @Override

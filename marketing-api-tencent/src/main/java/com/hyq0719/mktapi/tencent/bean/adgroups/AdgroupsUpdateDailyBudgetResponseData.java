@@ -26,13 +26,13 @@ public class AdgroupsUpdateDailyBudgetResponseData {
   private List<AdgroupsUpdateDailyBudgetListStruct> list = null;
 
   public AdgroupsUpdateDailyBudgetResponseData list(
-          List<AdgroupsUpdateDailyBudgetListStruct> list) {
+    List<AdgroupsUpdateDailyBudgetListStruct> list) {
     this.list = list;
     return this;
   }
 
   public AdgroupsUpdateDailyBudgetResponseData addListItem(
-          AdgroupsUpdateDailyBudgetListStruct listItem) {
+    AdgroupsUpdateDailyBudgetListStruct listItem) {
     if (this.list == null) {
       this.list = new ArrayList<AdgroupsUpdateDailyBudgetListStruct>();
     }

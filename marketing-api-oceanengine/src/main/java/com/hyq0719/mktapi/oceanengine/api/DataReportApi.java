@@ -83,9 +83,9 @@ public class DataReportApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/report/agent/get_v2/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportAgentGetV2 extends OceanApiRequest<ReportAgentGetV2Request,
-          OceanResponse<PageResponseData<ReportAgentGetV2ListStruct>>> {
+    OceanResponse<PageResponseData<ReportAgentGetV2ListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ReportAgentGetV2Request request) {
@@ -117,9 +117,9 @@ public class DataReportApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/report/advertiser/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportAdvertiserGet extends OceanApiRequest<ReportRequest<ReportAdvertiserGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportAdvertiserGetListStruct>>> {
+    OceanResponse<PageResponseData<ReportAdvertiserGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ReportRequest<ReportAdvertiserGetFilteringStruct> request) {
@@ -163,9 +163,9 @@ public class DataReportApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/report/campaign/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportCampaignGet extends OceanApiRequest<ReportRequest<ReportCampaignGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportCampaignGetListStruct>>> {
+    OceanResponse<PageResponseData<ReportCampaignGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ReportRequest<ReportCampaignGetFilteringStruct> request) {
@@ -209,9 +209,9 @@ public class DataReportApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/report/ad/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportAdGet extends OceanApiRequest<ReportRequest<ReportAdGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportAdGetListStruct>>> {
+    OceanResponse<PageResponseData<ReportAdGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ReportRequest<ReportAdGetFilteringStruct> request) {
@@ -255,9 +255,9 @@ public class DataReportApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/report/creative/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class ReportCreativeGet extends OceanApiRequest<ReportRequest<ReportCreativeGetFilteringStruct>,
-          OceanResponse<PageResponseData<ReportCreativeGetListStruct>>> {
+    OceanResponse<PageResponseData<ReportCreativeGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ReportRequest<ReportCreativeGetFilteringStruct> request) {

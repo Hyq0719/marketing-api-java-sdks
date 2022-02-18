@@ -44,7 +44,7 @@ public class AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct {
   }
 
   public AdgroupsUpdateConfiguredStatusUpdateConfiguredStatusStruct configuredStatus(
-          String configuredStatus) {
+    String configuredStatus) {
     this.configuredStatus = configuredStatus;
     return this;
   }

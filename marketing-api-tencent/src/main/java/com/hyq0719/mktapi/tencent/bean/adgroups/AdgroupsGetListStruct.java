@@ -299,7 +299,7 @@ public class AdgroupsGetListStruct {
   }
 
   public AdgroupsGetListStruct isIncludeUnsupportedTargeting(
-          Boolean isIncludeUnsupportedTargeting) {
+    Boolean isIncludeUnsupportedTargeting) {
     this.isIncludeUnsupportedTargeting = isIncludeUnsupportedTargeting;
     return this;
   }
@@ -373,13 +373,13 @@ public class AdgroupsGetListStruct {
   }
 
   public AdgroupsGetListStruct additionalUserActionSets(
-          List<UserActionSetStruct> additionalUserActionSets) {
+    List<UserActionSetStruct> additionalUserActionSets) {
     this.additionalUserActionSets = additionalUserActionSets;
     return this;
   }
 
   public AdgroupsGetListStruct addAdditionalUserActionSetsItem(
-          UserActionSetStruct additionalUserActionSetsItem) {
+    UserActionSetStruct additionalUserActionSetsItem) {
     if (this.additionalUserActionSets == null) {
       this.additionalUserActionSets = new ArrayList<UserActionSetStruct>();
     }
@@ -459,7 +459,7 @@ public class AdgroupsGetListStruct {
   }
 
   public AdgroupsGetListStruct deepOptimizationActionType(
-          String deepOptimizationActionType) {
+    String deepOptimizationActionType) {
     this.deepOptimizationActionType = deepOptimizationActionType;
     return this;
   }
@@ -493,7 +493,7 @@ public class AdgroupsGetListStruct {
   }
 
   public AdgroupsGetListStruct androidChannelPackageAuditMessage(
-          String androidChannelPackageAuditMessage) {
+    String androidChannelPackageAuditMessage) {
     this.androidChannelPackageAuditMessage = androidChannelPackageAuditMessage;
     return this;
   }

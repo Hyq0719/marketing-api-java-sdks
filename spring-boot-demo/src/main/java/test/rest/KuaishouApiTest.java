@@ -19,26 +19,26 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("ksh")
 public class KuaishouApiTest {
+  private final Long advertiserId = 0000000L;
   @Resource
   private KshSdkService kshSdkService;
-  private Long advertiserId = 0000000L;
 
   @GetMapping("/report/campaign_report")
   public KshResponse<PageResponseData<ReportCampaignReportResponseStruct>> test1() throws ApiException {
     return kshSdkService.getDataReportApi().reportCampaignReport().execute(new ReportCampaignReportRequest()
-            .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23"));
+      .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23"));
   }
 
   @GetMapping("/report/unit_report")
   public KshResponse<PageResponseData<ReportUnitReportResponseStruct>> test2() throws ApiException {
     return kshSdkService.getDataReportApi().reportUnitReport()
-            .execute(new ReportUnitReportRequest()
-                    .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23").page(1));
+      .execute(new ReportUnitReportRequest()
+        .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23").page(1));
   }
 
   @GetMapping("/report/creative_report")
   public KshResponse<AdvertiserInfoResponseStruct> test3() throws ApiException {
     return kshSdkService.getAccountServiceApi().advertiserInfo().execute(
-            new AdvertiserInfoRequest().advertiserId(advertiserId));
+      new AdvertiserInfoRequest().advertiserId(advertiserId));
   }
 }

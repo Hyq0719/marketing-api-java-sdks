@@ -45,7 +45,7 @@ public class HttpAutoConfiguration {
     builder.readTimeout(sdkProperties.getNet().getReadTimeout(), TimeUnit.SECONDS);
     builder.writeTimeout(sdkProperties.getNet().getWriteTimeout(), TimeUnit.SECONDS);
     builder.connectionPool(new ConnectionPool(sdkProperties.getNet().getConnectionPool().getMaxIdleConnections(),
-            sdkProperties.getNet().getConnectionPool().getKeepAliveDuration(), TimeUnit.MINUTES));
+      sdkProperties.getNet().getConnectionPool().getKeepAliveDuration(), TimeUnit.MINUTES));
     log.info("结束构建httpClients");
     return builder.build();
   }
