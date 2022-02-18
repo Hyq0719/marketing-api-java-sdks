@@ -354,7 +354,7 @@ public class AdcreativesGetListStruct {
   }
 
   public AdcreativesGetListStruct qqMiniGameTrackingQueryString(
-          String qqMiniGameTrackingQueryString) {
+    String qqMiniGameTrackingQueryString) {
     this.qqMiniGameTrackingQueryString = qqMiniGameTrackingQueryString;
     return this;
   }
@@ -597,7 +597,7 @@ public class AdcreativesGetListStruct {
   }
 
   public AdcreativesGetListStruct dynamicAdcreativeSpec(
-          DynamicAdcreativeSpec dynamicAdcreativeSpec) {
+    DynamicAdcreativeSpec dynamicAdcreativeSpec) {
     this.dynamicAdcreativeSpec = dynamicAdcreativeSpec;
     return this;
   }
@@ -688,7 +688,7 @@ public class AdcreativesGetListStruct {
   }
 
   public AdcreativesGetListStruct revisedAdcreativeSpec(
-          RevisedAdcreativeSpec revisedAdcreativeSpec) {
+    RevisedAdcreativeSpec revisedAdcreativeSpec) {
     this.revisedAdcreativeSpec = revisedAdcreativeSpec;
     return this;
   }
@@ -957,7 +957,7 @@ public class AdcreativesGetListStruct {
   }
 
   public AdcreativesGetListStruct adcreativeElements(
-          AdcreativeCreativeElementsReadMp adcreativeElements) {
+    AdcreativeCreativeElementsReadMp adcreativeElements) {
     this.adcreativeElements = adcreativeElements;
     return this;
   }

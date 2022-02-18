@@ -28,7 +28,7 @@ public class CampaignsUpdateConfiguredStatusRequest implements TokenKey {
 
   @SerializedName("update_configured_status_spec")
   private List<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
-          updateConfiguredStatusSpec = null;
+    updateConfiguredStatusSpec = null;
 
   public CampaignsUpdateConfiguredStatusRequest accountId(Long accountId) {
     this.accountId = accountId;
@@ -49,17 +49,17 @@ public class CampaignsUpdateConfiguredStatusRequest implements TokenKey {
   }
 
   public CampaignsUpdateConfiguredStatusRequest updateConfiguredStatusSpec(
-          List<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
-                  updateConfiguredStatusSpec) {
+    List<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
+      updateConfiguredStatusSpec) {
     this.updateConfiguredStatusSpec = updateConfiguredStatusSpec;
     return this;
   }
 
   public CampaignsUpdateConfiguredStatusRequest addUpdateConfiguredStatusSpecItem(
-          CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct updateConfiguredStatusSpecItem) {
+    CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct updateConfiguredStatusSpecItem) {
     if (this.updateConfiguredStatusSpec == null) {
       this.updateConfiguredStatusSpec =
-              new ArrayList<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>();
+        new ArrayList<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>();
     }
     this.updateConfiguredStatusSpec.add(updateConfiguredStatusSpecItem);
     return this;
@@ -76,8 +76,8 @@ public class CampaignsUpdateConfiguredStatusRequest implements TokenKey {
   }
 
   public void setUpdateConfiguredStatusSpec(
-          List<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
-                  updateConfiguredStatusSpec) {
+    List<CampaignsUpdateConfiguredStatusUpdateConfiguredStatusStruct>
+      updateConfiguredStatusSpec) {
     this.updateConfiguredStatusSpec = updateConfiguredStatusSpec;
   }
 

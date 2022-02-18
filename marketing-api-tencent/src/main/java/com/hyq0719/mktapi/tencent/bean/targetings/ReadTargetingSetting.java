@@ -697,13 +697,13 @@ public class ReadTargetingSetting {
   }
 
   public ReadTargetingSetting residentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
     return this;
   }
 
   public ReadTargetingSetting addResidentialCommunityPriceItem(
-          ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
+    ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
     if (this.residentialCommunityPrice == null) {
       this.residentialCommunityPrice = new ArrayList<ResidentialCommunityPriceStruct>();
     }
@@ -721,7 +721,7 @@ public class ReadTargetingSetting {
   }
 
   public void setResidentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
   }
 
@@ -866,13 +866,13 @@ public class ReadTargetingSetting {
   }
 
   public ReadTargetingSetting wechatOfficialAccountCategory(
-          List<Long> wechatOfficialAccountCategory) {
+    List<Long> wechatOfficialAccountCategory) {
     this.wechatOfficialAccountCategory = wechatOfficialAccountCategory;
     return this;
   }
 
   public ReadTargetingSetting addWechatOfficialAccountCategoryItem(
-          Long wechatOfficialAccountCategoryItem) {
+    Long wechatOfficialAccountCategoryItem) {
     if (this.wechatOfficialAccountCategory == null) {
       this.wechatOfficialAccountCategory = new ArrayList<Long>();
     }
@@ -1034,13 +1034,13 @@ public class ReadTargetingSetting {
   }
 
   public ReadTargetingSetting deprecatedExcludedCustomAudience(
-          List<Long> deprecatedExcludedCustomAudience) {
+    List<Long> deprecatedExcludedCustomAudience) {
     this.deprecatedExcludedCustomAudience = deprecatedExcludedCustomAudience;
     return this;
   }
 
   public ReadTargetingSetting addDeprecatedExcludedCustomAudienceItem(
-          Long deprecatedExcludedCustomAudienceItem) {
+    Long deprecatedExcludedCustomAudienceItem) {
     if (this.deprecatedExcludedCustomAudience == null) {
       this.deprecatedExcludedCustomAudience = new ArrayList<Long>();
     }
@@ -1088,7 +1088,7 @@ public class ReadTargetingSetting {
   }
 
   public ReadTargetingSetting excludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
     return this;
   }
@@ -1103,7 +1103,7 @@ public class ReadTargetingSetting {
   }
 
   public void setExcludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
   }
 

@@ -274,13 +274,13 @@ public class AdgroupsAddRequest implements TokenKey {
   }
 
   public AdgroupsAddRequest additionalUserActionSets(
-          List<UserActionSetStruct> additionalUserActionSets) {
+    List<UserActionSetStruct> additionalUserActionSets) {
     this.additionalUserActionSets = additionalUserActionSets;
     return this;
   }
 
   public AdgroupsAddRequest addAdditionalUserActionSetsItem(
-          UserActionSetStruct additionalUserActionSetsItem) {
+    UserActionSetStruct additionalUserActionSetsItem) {
     if (this.additionalUserActionSets == null) {
       this.additionalUserActionSets = new ArrayList<UserActionSetStruct>();
     }
@@ -345,7 +345,7 @@ public class AdgroupsAddRequest implements TokenKey {
   }
 
   public AdgroupsAddRequest deepOptimizationActionType(
-          String deepOptimizationActionType) {
+    String deepOptimizationActionType) {
     this.deepOptimizationActionType = deepOptimizationActionType;
     return this;
   }

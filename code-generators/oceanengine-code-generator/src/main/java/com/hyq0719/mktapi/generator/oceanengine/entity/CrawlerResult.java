@@ -16,6 +16,6 @@ public class CrawlerResult {
   public String toString() {
     Gson gson = new Gson();
     return "classPrefix: " + classPrefix + "\n" + "requestEntityMap： " + gson.toJson(requestEntityMap) + "\n"
-            + "responseEntityMap： " + gson.toJson(responseEntityMap);
+      + "responseEntityMap： " + gson.toJson(responseEntityMap);
   }
 }

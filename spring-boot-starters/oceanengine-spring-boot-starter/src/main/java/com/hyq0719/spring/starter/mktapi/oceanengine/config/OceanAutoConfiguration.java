@@ -70,7 +70,7 @@ public class OceanAutoConfiguration implements CommandLineRunner {
       throw new RuntimeException("oceanengine cron is null");
     }
     ITokenCronService simpleCronService = new ITokenCronService(oceanExternalTokenService, oceanCache(),
-            sdkProperties.getOceanengine().getCron());
+      sdkProperties.getOceanengine().getCron());
     simpleCronService.run(); // 注册定时器
     oceanTrigger = simpleCronService;
     return simpleCronService;

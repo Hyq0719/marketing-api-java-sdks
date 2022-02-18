@@ -101,7 +101,7 @@ public class ApacheHttpHandler extends BaseHttpHandler {
           mpBuilder.addPart(entry.getKey(), new FileBody(file));
         } else {
           mpBuilder.addTextBody(entry.getKey(), String.valueOf(entry.getValue()),
-                  ContentType.TEXT_PLAIN.withCharset(Consts.UTF_8));
+            ContentType.TEXT_PLAIN.withCharset(Consts.UTF_8));
         }
       }
     }
@@ -128,7 +128,7 @@ public class ApacheHttpHandler extends BaseHttpHandler {
       }
     }
     throw new ApiException(response.getStatusLine().getReasonPhrase(),
-            code, toMultimap(response.getAllHeaders()), respBody);
+      code, toMultimap(response.getAllHeaders()), respBody);
   }
 
   /**
@@ -174,10 +174,10 @@ public class ApacheHttpHandler extends BaseHttpHandler {
       return (T) respBody;
     } else {
       throw new ApiException(
-              "Content type \"" + contentType + "\" is not supported for type: " + returnType,
-              response.getStatusLine().getStatusCode(),
-              toMultimap(response.getAllHeaders()),
-              respBody);
+        "Content type \"" + contentType + "\" is not supported for type: " + returnType,
+        response.getStatusLine().getStatusCode(),
+        toMultimap(response.getAllHeaders()),
+        respBody);
     }
   }
 

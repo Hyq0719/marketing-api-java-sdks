@@ -24,7 +24,7 @@ public class CreativeAdvancedProgramReviewDetailResponseStruct {
   }
 
   public CreativeAdvancedProgramReviewDetailResponseStruct combineDetailViews(
-          List<CombineDetailsViewStruct> combineDetailViews) {
+    List<CombineDetailsViewStruct> combineDetailViews) {
     this.combineDetailViews = combineDetailViews;
     return this;
   }

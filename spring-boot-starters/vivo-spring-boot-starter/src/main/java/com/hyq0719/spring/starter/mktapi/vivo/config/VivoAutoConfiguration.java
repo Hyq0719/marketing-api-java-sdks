@@ -74,7 +74,7 @@ public class VivoAutoConfiguration implements CommandLineRunner {
       throw new RuntimeException("vivo cron is null");
     }
     ITokenCronService simpleCronService = new ITokenCronService(vivoExternalTokenService, vivoCache(),
-            sdkProperties.getVivo().getCron());
+      sdkProperties.getVivo().getCron());
     simpleCronService.run();
     vivoTrigger = simpleCronService;
     return simpleCronService;

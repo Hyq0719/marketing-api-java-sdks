@@ -410,13 +410,13 @@ public class AdgroupsUpdateRequest implements TokenKey {
   }
 
   public AdgroupsUpdateRequest additionalUserActionSets(
-          List<UserActionSetStruct> additionalUserActionSets) {
+    List<UserActionSetStruct> additionalUserActionSets) {
     this.additionalUserActionSets = additionalUserActionSets;
     return this;
   }
 
   public AdgroupsUpdateRequest addAdditionalUserActionSetsItem(
-          UserActionSetStruct additionalUserActionSetsItem) {
+    UserActionSetStruct additionalUserActionSetsItem) {
     if (this.additionalUserActionSets == null) {
       this.additionalUserActionSets = new ArrayList<UserActionSetStruct>();
     }

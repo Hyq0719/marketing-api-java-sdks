@@ -44,7 +44,7 @@ public enum AdLockStatus {
   public static class Adapter extends TypeAdapter<AdLockStatus> {
     @Override
     public void write(final JsonWriter jsonWriter, final AdLockStatus enumeration)
-            throws IOException {
+      throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 

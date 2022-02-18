@@ -22,10 +22,10 @@ import java.util.Objects;
 public class KshApiRequest<T extends TokenKey, R extends CodeKey> extends ApiRequest<T, R> {
 
   private static final BaseUrl BASE_URL = BaseUrl.builder()
-          .scheme("https")
-          .host("ad.e.kuaishou.com/rest/openapi")
-          .version("v1")
-          .build();
+    .scheme("https")
+    .host("ad.e.kuaishou.com/rest/openapi")
+    .version("v1")
+    .build();
 
   private final String path;
 
@@ -56,7 +56,7 @@ public class KshApiRequest<T extends TokenKey, R extends CodeKey> extends ApiReq
     contentTypes = annotation.contentTypes();
 
     log.info("[load ApiRequestMapping] method:{},path:{},version:{},host:{},usePostBody:{},contentTypes:{}", method,
-            path, version, host, usePostBody, contentTypes);
+      path, version, host, usePostBody, contentTypes);
 
     if (StringUtils.isEmpty(method)) {
       throw new RuntimeException("@BusinessRequestMapping -> method is not null");
@@ -73,7 +73,7 @@ public class KshApiRequest<T extends TokenKey, R extends CodeKey> extends ApiReq
 
   @Override
   public R retry(ApiResponse<R> resp, T t, ApiRequestAdvice apiRequestAdvice, String token)
-          throws ApiException {
+    throws ApiException {
     R data = resp.getData();
     if (data.getCodeKey() == 0) {
       return data;
@@ -96,7 +96,7 @@ public class KshApiRequest<T extends TokenKey, R extends CodeKey> extends ApiReq
     while (count < retryCount) {
       data = retryRequest(t, apiRequestAdvice, token);
       log.info("Kuaishou retry result retryCount:{},code:{}, message:{}", (count + 1), data.getCodeKey(),
-              data.getMsg());
+        data.getMsg());
       count++;
       if (!retryStrategy.retryCondition(data.getCodeKey())) {
         return data;

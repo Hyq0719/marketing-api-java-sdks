@@ -11,7 +11,6 @@ import com.google.gson.annotations.SerializedName;
 import lombok.Data;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 12:50:51
@@ -1020,837 +1019,837 @@ public class ReportAdvertiserGetListStruct {
   @SerializedName("commute_first_pay_count")
   private Long commuteFirstPayCount = null;
 
-  public ReportAdvertiserGetListStruct advertiserId (Long advertiserId) {
+  public ReportAdvertiserGetListStruct advertiserId(Long advertiserId) {
     this.advertiserId = advertiserId;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct statDatetime (String statDatetime) {
+  public ReportAdvertiserGetListStruct statDatetime(String statDatetime) {
     this.statDatetime = statDatetime;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inventory (String inventory) {
+  public ReportAdvertiserGetListStruct inventory(String inventory) {
     this.inventory = inventory;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct creativeMaterialMode (String creativeMaterialMode) {
+  public ReportAdvertiserGetListStruct creativeMaterialMode(String creativeMaterialMode) {
     this.creativeMaterialMode = creativeMaterialMode;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct landingType (String landingType) {
+  public ReportAdvertiserGetListStruct landingType(String landingType) {
     this.landingType = landingType;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct pricing (String pricing) {
+  public ReportAdvertiserGetListStruct pricing(String pricing) {
     this.pricing = pricing;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct imageMode (String imageMode) {
+  public ReportAdvertiserGetListStruct imageMode(String imageMode) {
     this.imageMode = imageMode;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct provinceName (String provinceName) {
+  public ReportAdvertiserGetListStruct provinceName(String provinceName) {
     this.provinceName = provinceName;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct cityName (String cityName) {
+  public ReportAdvertiserGetListStruct cityName(String cityName) {
     this.cityName = cityName;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gender (String gender) {
+  public ReportAdvertiserGetListStruct gender(String gender) {
     this.gender = gender;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct age (String age) {
+  public ReportAdvertiserGetListStruct age(String age) {
     this.age = age;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct platform (String platform) {
+  public ReportAdvertiserGetListStruct platform(String platform) {
     this.platform = platform;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct ac (String ac) {
+  public ReportAdvertiserGetListStruct ac(String ac) {
     this.ac = ac;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct cost (Float cost) {
+  public ReportAdvertiserGetListStruct cost(Float cost) {
     this.cost = cost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct show (Long show) {
+  public ReportAdvertiserGetListStruct show(Long show) {
     this.show = show;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct avgShowCost (Float avgShowCost) {
+  public ReportAdvertiserGetListStruct avgShowCost(Float avgShowCost) {
     this.avgShowCost = avgShowCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct click (Long click) {
+  public ReportAdvertiserGetListStruct click(Long click) {
     this.click = click;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct avgClickCost (Float avgClickCost) {
+  public ReportAdvertiserGetListStruct avgClickCost(Float avgClickCost) {
     this.avgClickCost = avgClickCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct ctr (Float ctr) {
+  public ReportAdvertiserGetListStruct ctr(Float ctr) {
     this.ctr = ctr;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct convert (Long convert) {
+  public ReportAdvertiserGetListStruct convert(Long convert) {
     this.convert = convert;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct convertCost (Float convertCost) {
+  public ReportAdvertiserGetListStruct convertCost(Float convertCost) {
     this.convertCost = convertCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct convertRate (Float convertRate) {
+  public ReportAdvertiserGetListStruct convertRate(Float convertRate) {
     this.convertRate = convertRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct deepConvert (Long deepConvert) {
+  public ReportAdvertiserGetListStruct deepConvert(Long deepConvert) {
     this.deepConvert = deepConvert;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct deepConvertCost (Float deepConvertCost) {
+  public ReportAdvertiserGetListStruct deepConvertCost(Float deepConvertCost) {
     this.deepConvertCost = deepConvertCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct deepConvertRate (Float deepConvertRate) {
+  public ReportAdvertiserGetListStruct deepConvertRate(Float deepConvertRate) {
     this.deepConvertRate = deepConvertRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionConvert (Long attributionConvert) {
+  public ReportAdvertiserGetListStruct attributionConvert(Long attributionConvert) {
     this.attributionConvert = attributionConvert;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionConvertCost (Float attributionConvertCost) {
+  public ReportAdvertiserGetListStruct attributionConvertCost(Float attributionConvertCost) {
     this.attributionConvertCost = attributionConvertCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionDeepConvert (Long attributionDeepConvert) {
+  public ReportAdvertiserGetListStruct attributionDeepConvert(Long attributionDeepConvert) {
     this.attributionDeepConvert = attributionDeepConvert;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionDeepConvertCost (Float attributionDeepConvertCost) {
+  public ReportAdvertiserGetListStruct attributionDeepConvertCost(Float attributionDeepConvertCost) {
     this.attributionDeepConvertCost = attributionDeepConvertCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadStart (Long downloadStart) {
+  public ReportAdvertiserGetListStruct downloadStart(Long downloadStart) {
     this.downloadStart = downloadStart;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadStartCost (Float downloadStartCost) {
+  public ReportAdvertiserGetListStruct downloadStartCost(Float downloadStartCost) {
     this.downloadStartCost = downloadStartCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadStartRate (Float downloadStartRate) {
+  public ReportAdvertiserGetListStruct downloadStartRate(Float downloadStartRate) {
     this.downloadStartRate = downloadStartRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadFinish (Long downloadFinish) {
+  public ReportAdvertiserGetListStruct downloadFinish(Long downloadFinish) {
     this.downloadFinish = downloadFinish;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadFinishCost (Float downloadFinishCost) {
+  public ReportAdvertiserGetListStruct downloadFinishCost(Float downloadFinishCost) {
     this.downloadFinishCost = downloadFinishCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct downloadFinishRate (Float downloadFinishRate) {
+  public ReportAdvertiserGetListStruct downloadFinishRate(Float downloadFinishRate) {
     this.downloadFinishRate = downloadFinishRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickInstall (Long clickInstall) {
+  public ReportAdvertiserGetListStruct clickInstall(Long clickInstall) {
     this.clickInstall = clickInstall;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct installFinish (Long installFinish) {
+  public ReportAdvertiserGetListStruct installFinish(Long installFinish) {
     this.installFinish = installFinish;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct installFinishCost (Float installFinishCost) {
+  public ReportAdvertiserGetListStruct installFinishCost(Float installFinishCost) {
     this.installFinishCost = installFinishCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct installFinishRate (Float installFinishRate) {
+  public ReportAdvertiserGetListStruct installFinishRate(Float installFinishRate) {
     this.installFinishRate = installFinishRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct active (Long active) {
+  public ReportAdvertiserGetListStruct active(Long active) {
     this.active = active;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activeCost (Float activeCost) {
+  public ReportAdvertiserGetListStruct activeCost(Float activeCost) {
     this.activeCost = activeCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activeRate (Float activeRate) {
+  public ReportAdvertiserGetListStruct activeRate(Float activeRate) {
     this.activeRate = activeRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct register (Long register) {
+  public ReportAdvertiserGetListStruct register(Long register) {
     this.register = register;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activeRegisterCost (Float activeRegisterCost) {
+  public ReportAdvertiserGetListStruct activeRegisterCost(Float activeRegisterCost) {
     this.activeRegisterCost = activeRegisterCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activeRegisterRate (Float activeRegisterRate) {
+  public ReportAdvertiserGetListStruct activeRegisterRate(Float activeRegisterRate) {
     this.activeRegisterRate = activeRegisterRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct nextDayOpen (Long nextDayOpen) {
+  public ReportAdvertiserGetListStruct nextDayOpen(Long nextDayOpen) {
     this.nextDayOpen = nextDayOpen;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct nextDayOpenCost (Float nextDayOpenCost) {
+  public ReportAdvertiserGetListStruct nextDayOpenCost(Float nextDayOpenCost) {
     this.nextDayOpenCost = nextDayOpenCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct nextDayOpenRate (Float nextDayOpenRate) {
+  public ReportAdvertiserGetListStruct nextDayOpenRate(Float nextDayOpenRate) {
     this.nextDayOpenRate = nextDayOpenRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionNextDayOpenCnt (Long attributionNextDayOpenCnt) {
+  public ReportAdvertiserGetListStruct attributionNextDayOpenCnt(Long attributionNextDayOpenCnt) {
     this.attributionNextDayOpenCnt = attributionNextDayOpenCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionNextDayOpenCost (Float attributionNextDayOpenCost) {
+  public ReportAdvertiserGetListStruct attributionNextDayOpenCost(Float attributionNextDayOpenCost) {
     this.attributionNextDayOpenCost = attributionNextDayOpenCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionNextDayOpenRate (Float attributionNextDayOpenRate) {
+  public ReportAdvertiserGetListStruct attributionNextDayOpenRate(Float attributionNextDayOpenRate) {
     this.attributionNextDayOpenRate = attributionNextDayOpenRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gameAddiction (Long gameAddiction) {
+  public ReportAdvertiserGetListStruct gameAddiction(Long gameAddiction) {
     this.gameAddiction = gameAddiction;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gameAddictionCost (Float gameAddictionCost) {
+  public ReportAdvertiserGetListStruct gameAddictionCost(Float gameAddictionCost) {
     this.gameAddictionCost = gameAddictionCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gameAddictionRate (Float gameAddictionRate) {
+  public ReportAdvertiserGetListStruct gameAddictionRate(Float gameAddictionRate) {
     this.gameAddictionRate = gameAddictionRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct payCount (Long payCount) {
+  public ReportAdvertiserGetListStruct payCount(Long payCount) {
     this.payCount = payCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activePayCost (Float activePayCost) {
+  public ReportAdvertiserGetListStruct activePayCost(Float activePayCost) {
     this.activePayCost = activePayCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct activePayRate (Float activePayRate) {
+  public ReportAdvertiserGetListStruct activePayRate(Float activePayRate) {
     this.activePayRate = activePayRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCompletion (Long loanCompletion) {
+  public ReportAdvertiserGetListStruct loanCompletion(Long loanCompletion) {
     this.loanCompletion = loanCompletion;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCompletionCost (Float loanCompletionCost) {
+  public ReportAdvertiserGetListStruct loanCompletionCost(Float loanCompletionCost) {
     this.loanCompletionCost = loanCompletionCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCompletionRate (Float loanCompletionRate) {
+  public ReportAdvertiserGetListStruct loanCompletionRate(Float loanCompletionRate) {
     this.loanCompletionRate = loanCompletionRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct preLoanCredit (Long preLoanCredit) {
+  public ReportAdvertiserGetListStruct preLoanCredit(Long preLoanCredit) {
     this.preLoanCredit = preLoanCredit;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct preLoanCreditCost (Float preLoanCreditCost) {
+  public ReportAdvertiserGetListStruct preLoanCreditCost(Float preLoanCreditCost) {
     this.preLoanCreditCost = preLoanCreditCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCredit (Long loanCredit) {
+  public ReportAdvertiserGetListStruct loanCredit(Long loanCredit) {
     this.loanCredit = loanCredit;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCreditCost (Float loanCreditCost) {
+  public ReportAdvertiserGetListStruct loanCreditCost(Float loanCreditCost) {
     this.loanCreditCost = loanCreditCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct loanCreditRate (Float loanCreditRate) {
+  public ReportAdvertiserGetListStruct loanCreditRate(Float loanCreditRate) {
     this.loanCreditRate = loanCreditRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inAppUv (Long inAppUv) {
+  public ReportAdvertiserGetListStruct inAppUv(Long inAppUv) {
     this.inAppUv = inAppUv;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inAppDetailUv (Long inAppDetailUv) {
+  public ReportAdvertiserGetListStruct inAppDetailUv(Long inAppDetailUv) {
     this.inAppDetailUv = inAppDetailUv;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inAppCart (Long inAppCart) {
+  public ReportAdvertiserGetListStruct inAppCart(Long inAppCart) {
     this.inAppCart = inAppCart;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inAppPay (Long inAppPay) {
+  public ReportAdvertiserGetListStruct inAppPay(Long inAppPay) {
     this.inAppPay = inAppPay;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct inAppOrder (Long inAppOrder) {
+  public ReportAdvertiserGetListStruct inAppOrder(Long inAppOrder) {
     this.inAppOrder = inAppOrder;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionGamePay7dCount (Long attributionGamePay7dCount) {
+  public ReportAdvertiserGetListStruct attributionGamePay7dCount(Long attributionGamePay7dCount) {
     this.attributionGamePay7dCount = attributionGamePay7dCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionGamePay7dCost (Float attributionGamePay7dCost) {
+  public ReportAdvertiserGetListStruct attributionGamePay7dCost(Float attributionGamePay7dCost) {
     this.attributionGamePay7dCost = attributionGamePay7dCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionActivePay7dPerCount (Long attributionActivePay7dPerCount) {
+  public ReportAdvertiserGetListStruct attributionActivePay7dPerCount(Long attributionActivePay7dPerCount) {
     this.attributionActivePay7dPerCount = attributionActivePay7dPerCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gamePayCost (Long gamePayCost) {
+  public ReportAdvertiserGetListStruct gamePayCost(Long gamePayCost) {
     this.gamePayCost = gamePayCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct gamePayCount (Long gamePayCount) {
+  public ReportAdvertiserGetListStruct gamePayCount(Long gamePayCount) {
     this.gamePayCount = gamePayCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct phone (Long phone) {
+  public ReportAdvertiserGetListStruct phone(Long phone) {
     this.phone = phone;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct form (Long form) {
+  public ReportAdvertiserGetListStruct form(Long form) {
     this.form = form;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct mapSearch (Long mapSearch) {
+  public ReportAdvertiserGetListStruct mapSearch(Long mapSearch) {
     this.mapSearch = mapSearch;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct button (Long button) {
+  public ReportAdvertiserGetListStruct button(Long button) {
     this.button = button;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct view (Long view) {
+  public ReportAdvertiserGetListStruct view(Long view) {
     this.view = view;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct download (Long download) {
+  public ReportAdvertiserGetListStruct download(Long download) {
     this.download = download;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct qq (Long qq) {
+  public ReportAdvertiserGetListStruct qq(Long qq) {
     this.qq = qq;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lottery (Long lottery) {
+  public ReportAdvertiserGetListStruct lottery(Long lottery) {
     this.lottery = lottery;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct vote (Long vote) {
+  public ReportAdvertiserGetListStruct vote(Long vote) {
     this.vote = vote;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct message (Long message) {
+  public ReportAdvertiserGetListStruct message(Long message) {
     this.message = message;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct redirect (Long redirect) {
+  public ReportAdvertiserGetListStruct redirect(Long redirect) {
     this.redirect = redirect;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct shopping (Long shopping) {
+  public ReportAdvertiserGetListStruct shopping(Long shopping) {
     this.shopping = shopping;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct consult (Long consult) {
+  public ReportAdvertiserGetListStruct consult(Long consult) {
     this.consult = consult;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechat (Long wechat) {
+  public ReportAdvertiserGetListStruct wechat(Long wechat) {
     this.wechat = wechat;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct phoneConfirm (Long phoneConfirm) {
+  public ReportAdvertiserGetListStruct phoneConfirm(Long phoneConfirm) {
     this.phoneConfirm = phoneConfirm;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct phoneConnect (Long phoneConnect) {
+  public ReportAdvertiserGetListStruct phoneConnect(Long phoneConnect) {
     this.phoneConnect = phoneConnect;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct consultEffective (Long consultEffective) {
+  public ReportAdvertiserGetListStruct consultEffective(Long consultEffective) {
     this.consultEffective = consultEffective;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct coupon (Long coupon) {
+  public ReportAdvertiserGetListStruct coupon(Long coupon) {
     this.coupon = coupon;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct couponSinglePage (Long couponSinglePage) {
+  public ReportAdvertiserGetListStruct couponSinglePage(Long couponSinglePage) {
     this.couponSinglePage = couponSinglePage;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct redirectToShop (Long redirectToShop) {
+  public ReportAdvertiserGetListStruct redirectToShop(Long redirectToShop) {
     this.redirectToShop = redirectToShop;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct poiCollect (Long poiCollect) {
+  public ReportAdvertiserGetListStruct poiCollect(Long poiCollect) {
     this.poiCollect = poiCollect;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct poiAddressClick (Long poiAddressClick) {
+  public ReportAdvertiserGetListStruct poiAddressClick(Long poiAddressClick) {
     this.poiAddressClick = poiAddressClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanOrderCnt (Long lubanOrderCnt) {
+  public ReportAdvertiserGetListStruct lubanOrderCnt(Long lubanOrderCnt) {
     this.lubanOrderCnt = lubanOrderCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanOrderStatAmount (Float lubanOrderStatAmount) {
+  public ReportAdvertiserGetListStruct lubanOrderStatAmount(Float lubanOrderStatAmount) {
     this.lubanOrderStatAmount = lubanOrderStatAmount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanOrderRoi (Float lubanOrderRoi) {
+  public ReportAdvertiserGetListStruct lubanOrderRoi(Float lubanOrderRoi) {
     this.lubanOrderRoi = lubanOrderRoi;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveEnterCnt (Long lubanLiveEnterCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveEnterCnt(Long lubanLiveEnterCnt) {
     this.lubanLiveEnterCnt = lubanLiveEnterCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct liveWatchOneMinuteCount (Long liveWatchOneMinuteCount) {
+  public ReportAdvertiserGetListStruct liveWatchOneMinuteCount(Long liveWatchOneMinuteCount) {
     this.liveWatchOneMinuteCount = liveWatchOneMinuteCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveFollowCnt (Long lubanLiveFollowCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveFollowCnt(Long lubanLiveFollowCnt) {
     this.lubanLiveFollowCnt = lubanLiveFollowCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct liveFansClubJoinCnt (Long liveFansClubJoinCnt) {
+  public ReportAdvertiserGetListStruct liveFansClubJoinCnt(Long liveFansClubJoinCnt) {
     this.liveFansClubJoinCnt = liveFansClubJoinCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveCommentCnt (Long lubanLiveCommentCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveCommentCnt(Long lubanLiveCommentCnt) {
     this.lubanLiveCommentCnt = lubanLiveCommentCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveShareCnt (Long lubanLiveShareCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveShareCnt(Long lubanLiveShareCnt) {
     this.lubanLiveShareCnt = lubanLiveShareCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveGiftCnt (Long lubanLiveGiftCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveGiftCnt(Long lubanLiveGiftCnt) {
     this.lubanLiveGiftCnt = lubanLiveGiftCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveGiftAmount (Float lubanLiveGiftAmount) {
+  public ReportAdvertiserGetListStruct lubanLiveGiftAmount(Float lubanLiveGiftAmount) {
     this.lubanLiveGiftAmount = lubanLiveGiftAmount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveSlidecartClickCnt (Long lubanLiveSlidecartClickCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveSlidecartClickCnt(Long lubanLiveSlidecartClickCnt) {
     this.lubanLiveSlidecartClickCnt = lubanLiveSlidecartClickCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLiveClickProductCnt (Long lubanLiveClickProductCnt) {
+  public ReportAdvertiserGetListStruct lubanLiveClickProductCnt(Long lubanLiveClickProductCnt) {
     this.lubanLiveClickProductCnt = lubanLiveClickProductCnt;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLivePayOrderCount (Long lubanLivePayOrderCount) {
+  public ReportAdvertiserGetListStruct lubanLivePayOrderCount(Long lubanLivePayOrderCount) {
     this.lubanLivePayOrderCount = lubanLivePayOrderCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct lubanLivePayOrderStatCost (Float lubanLivePayOrderStatCost) {
+  public ReportAdvertiserGetListStruct lubanLivePayOrderStatCost(Float lubanLivePayOrderStatCost) {
     this.lubanLivePayOrderStatCost = lubanLivePayOrderStatCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct liveComponentClickCount (Long liveComponentClickCount) {
+  public ReportAdvertiserGetListStruct liveComponentClickCount(Long liveComponentClickCount) {
     this.liveComponentClickCount = liveComponentClickCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct liveComponentClickCost (Float liveComponentClickCost) {
+  public ReportAdvertiserGetListStruct liveComponentClickCost(Float liveComponentClickCost) {
     this.liveComponentClickCost = liveComponentClickCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct liveComponentClickRate (Float liveComponentClickRate) {
+  public ReportAdvertiserGetListStruct liveComponentClickRate(Float liveComponentClickRate) {
     this.liveComponentClickRate = liveComponentClickRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatLoginCount (Long wechatLoginCount) {
+  public ReportAdvertiserGetListStruct wechatLoginCount(Long wechatLoginCount) {
     this.wechatLoginCount = wechatLoginCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatLogin30dCount (Long attributionWechatLogin30dCount) {
+  public ReportAdvertiserGetListStruct attributionWechatLogin30dCount(Long attributionWechatLogin30dCount) {
     this.attributionWechatLogin30dCount = attributionWechatLogin30dCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatLoginCost (Float wechatLoginCost) {
+  public ReportAdvertiserGetListStruct wechatLoginCost(Float wechatLoginCost) {
     this.wechatLoginCost = wechatLoginCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatLogin30dCost (Float attributionWechatLogin30dCost) {
+  public ReportAdvertiserGetListStruct attributionWechatLogin30dCost(Float attributionWechatLogin30dCost) {
     this.attributionWechatLogin30dCost = attributionWechatLogin30dCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatFirstPayCount (Long wechatFirstPayCount) {
+  public ReportAdvertiserGetListStruct wechatFirstPayCount(Long wechatFirstPayCount) {
     this.wechatFirstPayCount = wechatFirstPayCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dCount (Long attributionWechatFirstPay30dCount) {
+  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dCount(Long attributionWechatFirstPay30dCount) {
     this.attributionWechatFirstPay30dCount = attributionWechatFirstPay30dCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatFirstPayCost (Float wechatFirstPayCost) {
+  public ReportAdvertiserGetListStruct wechatFirstPayCost(Float wechatFirstPayCost) {
     this.wechatFirstPayCost = wechatFirstPayCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dCost (Float attributionWechatFirstPay30dCost) {
+  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dCost(Float attributionWechatFirstPay30dCost) {
     this.attributionWechatFirstPay30dCost = attributionWechatFirstPay30dCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatFirstPayRate (Float wechatFirstPayRate) {
+  public ReportAdvertiserGetListStruct wechatFirstPayRate(Float wechatFirstPayRate) {
     this.wechatFirstPayRate = wechatFirstPayRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dRate (Float attributionWechatFirstPay30dRate) {
+  public ReportAdvertiserGetListStruct attributionWechatFirstPay30dRate(Float attributionWechatFirstPay30dRate) {
     this.attributionWechatFirstPay30dRate = attributionWechatFirstPay30dRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wechatPayAmount (Float wechatPayAmount) {
+  public ReportAdvertiserGetListStruct wechatPayAmount(Float wechatPayAmount) {
     this.wechatPayAmount = wechatPayAmount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatPay30dAmount (Float attributionWechatPay30dAmount) {
+  public ReportAdvertiserGetListStruct attributionWechatPay30dAmount(Float attributionWechatPay30dAmount) {
     this.attributionWechatPay30dAmount = attributionWechatPay30dAmount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct attributionWechatPay30dRoi (Float attributionWechatPay30dRoi) {
+  public ReportAdvertiserGetListStruct attributionWechatPay30dRoi(Float attributionWechatPay30dRoi) {
     this.attributionWechatPay30dRoi = attributionWechatPay30dRoi;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct phoneEffective (Long phoneEffective) {
+  public ReportAdvertiserGetListStruct phoneEffective(Long phoneEffective) {
     this.phoneEffective = phoneEffective;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct totalPlay (Long totalPlay) {
+  public ReportAdvertiserGetListStruct totalPlay(Long totalPlay) {
     this.totalPlay = totalPlay;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct validPlay (Long validPlay) {
+  public ReportAdvertiserGetListStruct validPlay(Long validPlay) {
     this.validPlay = validPlay;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct validPlayCost (Float validPlayCost) {
+  public ReportAdvertiserGetListStruct validPlayCost(Float validPlayCost) {
     this.validPlayCost = validPlayCost;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct validPlayRate (Float validPlayRate) {
+  public ReportAdvertiserGetListStruct validPlayRate(Float validPlayRate) {
     this.validPlayRate = validPlayRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct play25FeedBreak (Long play25FeedBreak) {
+  public ReportAdvertiserGetListStruct play25FeedBreak(Long play25FeedBreak) {
     this.play25FeedBreak = play25FeedBreak;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct play50FeedBreak (Long play50FeedBreak) {
+  public ReportAdvertiserGetListStruct play50FeedBreak(Long play50FeedBreak) {
     this.play50FeedBreak = play50FeedBreak;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct play75FeedBreak (Long play75FeedBreak) {
+  public ReportAdvertiserGetListStruct play75FeedBreak(Long play75FeedBreak) {
     this.play75FeedBreak = play75FeedBreak;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct play100FeedBreak (Long play100FeedBreak) {
+  public ReportAdvertiserGetListStruct play100FeedBreak(Long play100FeedBreak) {
     this.play100FeedBreak = play100FeedBreak;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct averagePlayTimePerPlay (Float averagePlayTimePerPlay) {
+  public ReportAdvertiserGetListStruct averagePlayTimePerPlay(Float averagePlayTimePerPlay) {
     this.averagePlayTimePerPlay = averagePlayTimePerPlay;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct playOverRate (Float playOverRate) {
+  public ReportAdvertiserGetListStruct playOverRate(Float playOverRate) {
     this.playOverRate = playOverRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wifiPlayRate (Float wifiPlayRate) {
+  public ReportAdvertiserGetListStruct wifiPlayRate(Float wifiPlayRate) {
     this.wifiPlayRate = wifiPlayRate;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct wifiPlay (Long wifiPlay) {
+  public ReportAdvertiserGetListStruct wifiPlay(Long wifiPlay) {
     this.wifiPlay = wifiPlay;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct playDurationSum (Long playDurationSum) {
+  public ReportAdvertiserGetListStruct playDurationSum(Long playDurationSum) {
     this.playDurationSum = playDurationSum;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct advancedCreativePhoneClick (Long advancedCreativePhoneClick) {
+  public ReportAdvertiserGetListStruct advancedCreativePhoneClick(Long advancedCreativePhoneClick) {
     this.advancedCreativePhoneClick = advancedCreativePhoneClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct advancedCreativeCounselClick (Long advancedCreativeCounselClick) {
+  public ReportAdvertiserGetListStruct advancedCreativeCounselClick(Long advancedCreativeCounselClick) {
     this.advancedCreativeCounselClick = advancedCreativeCounselClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct advancedCreativeFormClick (Long advancedCreativeFormClick) {
+  public ReportAdvertiserGetListStruct advancedCreativeFormClick(Long advancedCreativeFormClick) {
     this.advancedCreativeFormClick = advancedCreativeFormClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct advancedCreativeCouponAddition (Long advancedCreativeCouponAddition) {
+  public ReportAdvertiserGetListStruct advancedCreativeCouponAddition(Long advancedCreativeCouponAddition) {
     this.advancedCreativeCouponAddition = advancedCreativeCouponAddition;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct advancedCreativeFormSubmit (Long advancedCreativeFormSubmit) {
+  public ReportAdvertiserGetListStruct advancedCreativeFormSubmit(Long advancedCreativeFormSubmit) {
     this.advancedCreativeFormSubmit = advancedCreativeFormSubmit;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct cardShow (Long cardShow) {
+  public ReportAdvertiserGetListStruct cardShow(Long cardShow) {
     this.cardShow = cardShow;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct share (Long share) {
+  public ReportAdvertiserGetListStruct share(Long share) {
     this.share = share;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct comment (Long comment) {
+  public ReportAdvertiserGetListStruct comment(Long comment) {
     this.comment = comment;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct like (Long like) {
+  public ReportAdvertiserGetListStruct like(Long like) {
     this.like = like;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct follow (Long follow) {
+  public ReportAdvertiserGetListStruct follow(Long follow) {
     this.follow = follow;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct homeVisited (Long homeVisited) {
+  public ReportAdvertiserGetListStruct homeVisited(Long homeVisited) {
     this.homeVisited = homeVisited;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct iesChallengeClick (Long iesChallengeClick) {
+  public ReportAdvertiserGetListStruct iesChallengeClick(Long iesChallengeClick) {
     this.iesChallengeClick = iesChallengeClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct iesMusicClick (Long iesMusicClick) {
+  public ReportAdvertiserGetListStruct iesMusicClick(Long iesMusicClick) {
     this.iesMusicClick = iesMusicClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct locationClick (Long locationClick) {
+  public ReportAdvertiserGetListStruct locationClick(Long locationClick) {
     this.locationClick = locationClick;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct messageAction (Long messageAction) {
+  public ReportAdvertiserGetListStruct messageAction(Long messageAction) {
     this.messageAction = messageAction;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickLandingPage (Long clickLandingPage) {
+  public ReportAdvertiserGetListStruct clickLandingPage(Long clickLandingPage) {
     this.clickLandingPage = clickLandingPage;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickShopwindow (Long clickShopwindow) {
+  public ReportAdvertiserGetListStruct clickShopwindow(Long clickShopwindow) {
     this.clickShopwindow = clickShopwindow;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickWebsite (Long clickWebsite) {
+  public ReportAdvertiserGetListStruct clickWebsite(Long clickWebsite) {
     this.clickWebsite = clickWebsite;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickDownload (Long clickDownload) {
+  public ReportAdvertiserGetListStruct clickDownload(Long clickDownload) {
     this.clickDownload = clickDownload;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct clickCallDy (Long clickCallDy) {
+  public ReportAdvertiserGetListStruct clickCallDy(Long clickCallDy) {
     this.clickCallDy = clickCallDy;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct submitCertificationCount (Long submitCertificationCount) {
+  public ReportAdvertiserGetListStruct submitCertificationCount(Long submitCertificationCount) {
     this.submitCertificationCount = submitCertificationCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct approvalCount (Long approvalCount) {
+  public ReportAdvertiserGetListStruct approvalCount(Long approvalCount) {
     this.approvalCount = approvalCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct firstRentalOrderCount (Long firstRentalOrderCount) {
+  public ReportAdvertiserGetListStruct firstRentalOrderCount(Long firstRentalOrderCount) {
     this.firstRentalOrderCount = firstRentalOrderCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct firstOrderCount (Long firstOrderCount) {
+  public ReportAdvertiserGetListStruct firstOrderCount(Long firstOrderCount) {
     this.firstOrderCount = firstOrderCount;
     return this;
   }
 
-  public ReportAdvertiserGetListStruct commuteFirstPayCount (Long commuteFirstPayCount) {
+  public ReportAdvertiserGetListStruct commuteFirstPayCount(Long commuteFirstPayCount) {
     this.commuteFirstPayCount = commuteFirstPayCount;
     return this;
   }

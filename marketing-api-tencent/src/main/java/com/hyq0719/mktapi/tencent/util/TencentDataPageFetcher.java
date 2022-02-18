@@ -14,8 +14,8 @@ import java.util.List;
 public class TencentDataPageFetcher implements DataPageFetcher {
 
   public static <R, T extends IPage> List<R> fetchData(
-          TencentApiRequest<T, ConfigResponse<PageResponseData<R>>> handler,
-          ApiRequestAdvice apiRequestAdvice, T request) {
+    TencentApiRequest<T, ConfigResponse<PageResponseData<R>>> handler,
+    ApiRequestAdvice apiRequestAdvice, T request) {
     List<R> details = null;
     try {
       ConfigResponse<PageResponseData<R>> business = handler.execute(request, apiRequestAdvice);

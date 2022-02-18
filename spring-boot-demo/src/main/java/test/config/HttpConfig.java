@@ -26,10 +26,10 @@ public class HttpConfig {
   @Bean
   public RequestConfig requestConfig() {
     return RequestConfig.custom()
-            .setSocketTimeout(20000)
-            .setConnectTimeout(20000)
-            .setConnectionRequestTimeout(20000)
-            .build();
+      .setSocketTimeout(20000)
+      .setConnectTimeout(20000)
+      .setConnectionRequestTimeout(20000)
+      .build();
   }
 
   @Bean(name = "CloseableHttpClient")

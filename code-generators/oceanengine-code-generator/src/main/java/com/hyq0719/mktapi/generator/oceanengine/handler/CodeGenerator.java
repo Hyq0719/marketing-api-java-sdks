@@ -57,7 +57,7 @@ public class CodeGenerator {
       if (template.equals("template" + File.separator + key + ".java.vm")) {
         GeneratorConfigEntity.JavaMap javaMap = GENERATOR_ENTITY.getGeneratorJavaMap().get(key);
         map.put(packagePath + javaMap.getPackageName().replace(".", File.separator) + File.separator + className
-                + ".java", true);
+          + ".java", true);
         return map;
       }
     }
@@ -209,8 +209,8 @@ public class CodeGenerator {
     Map<String, GeneratorConfigEntity.JavaMap> generatorJavaMap = GENERATOR_ENTITY.getGeneratorJavaMap();
     GeneratorConfigEntity.JavaMap request = generatorJavaMap.get("default");
     BaseClassInfo bci = new BaseClassInfo().author(person.getAuthor()).email(person.getEmail())
-            .datetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()))
-            .packageName(request.getPackageName()).comments("");
+      .datetime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()))
+      .packageName(request.getPackageName()).comments("");
 
     //设置velocity资源加载器
     Properties prop = new Properties();

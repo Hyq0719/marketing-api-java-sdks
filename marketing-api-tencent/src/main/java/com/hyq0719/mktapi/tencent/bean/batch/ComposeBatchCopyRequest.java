@@ -79,7 +79,7 @@ public class ComposeBatchCopyRequest {
   }
 
   public void setCampaignMap(
-          Map<Long, CampaignsAddRequest> campaignMap) {
+    Map<Long, CampaignsAddRequest> campaignMap) {
     this.campaignMap = campaignMap;
   }
 
@@ -88,7 +88,7 @@ public class ComposeBatchCopyRequest {
   }
 
   public void setAdgroupMap(
-          Map<Long, AdgroupsAddRequest> adgroupMap) {
+    Map<Long, AdgroupsAddRequest> adgroupMap) {
     this.adgroupMap = adgroupMap;
   }
 
@@ -97,7 +97,7 @@ public class ComposeBatchCopyRequest {
   }
 
   public void setAdcreativeMap(
-          Map<Long, AdcreativesAddRequest> adcreativeMap) {
+    Map<Long, AdcreativesAddRequest> adcreativeMap) {
     this.adcreativeMap = adcreativeMap;
   }
 

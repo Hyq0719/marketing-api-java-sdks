@@ -65,9 +65,9 @@ public class AccountServiceApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/majordomo/advertiser/select/", method = RequestConstants.GET, usePostBody =
-          false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class MajordomoAdvertiserSelect
-          extends OceanApiRequest<ConfigRequest, OceanResponse<PageResponseData<MajordomoAdvertiserSelectStruct>>> {
+    extends OceanApiRequest<ConfigRequest, OceanResponse<PageResponseData<MajordomoAdvertiserSelectStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest configRequest) {
@@ -79,7 +79,7 @@ public class AccountServiceApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/advertiser/fund/get/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdvertiserFundGet extends OceanApiRequest<ConfigRequest, OceanResponse<AdvertiserFundGetStruct>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -92,9 +92,9 @@ public class AccountServiceApi extends AbstractOceanApi {
   }
 
   @ApiRequestMapping(value = "/advertiser/fund/daily_stat/", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdvertiserFundDailyStat extends OceanApiRequest<AdvertiserFundDailyStatRequest,
-          OceanResponse<PageResponseData<AdvertiserFundDailyStatReponseStruct>>> {
+    OceanResponse<PageResponseData<AdvertiserFundDailyStatReponseStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 AdvertiserFundDailyStatRequest advertiserFundDailyStatRequest) {

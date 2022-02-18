@@ -44,7 +44,7 @@ public enum TargetingPkgSourceType {
   public static class Adapter extends TypeAdapter<TargetingPkgSourceType> {
     @Override
     public void write(final JsonWriter jsonWriter, final TargetingPkgSourceType enumeration)
-            throws IOException {
+      throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 

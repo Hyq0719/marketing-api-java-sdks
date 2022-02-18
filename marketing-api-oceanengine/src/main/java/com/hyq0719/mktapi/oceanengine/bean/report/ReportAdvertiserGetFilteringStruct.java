@@ -13,7 +13,6 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 12:50:51
@@ -32,12 +31,12 @@ public class ReportAdvertiserGetFilteringStruct {
   @SerializedName("platform_version")
   private String platformVersion = null;
 
-  public ReportAdvertiserGetFilteringStruct deliveryMode (List<String> deliveryMode) {
+  public ReportAdvertiserGetFilteringStruct deliveryMode(List<String> deliveryMode) {
     this.deliveryMode = deliveryMode;
     return this;
   }
 
-  public ReportAdvertiserGetFilteringStruct platformVersion (String platformVersion) {
+  public ReportAdvertiserGetFilteringStruct platformVersion(String platformVersion) {
     this.platformVersion = platformVersion;
     return this;
   }

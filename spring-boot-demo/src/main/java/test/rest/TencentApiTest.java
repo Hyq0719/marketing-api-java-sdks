@@ -20,28 +20,28 @@ import java.util.List;
 @RestController
 @RequestMapping("tencent")
 public class TencentApiTest {
+  private final long accountId = 0000000L;
   @Resource
   private TencentSdkService tencentSdkService;
-  private long accountId = 0000000L;
 
   @GetMapping("/campaign/get")
   public List<CampaignsGetListStruct> test1() {
     return TencentDataPageFetcher.fetchData(tencentSdkService.getAdManagementApi().campaignsGet(),
-            (apiResponse) -> System.out.println("api.count.tencent"),
-            new ConfigRequest().fields(Arrays.asList("campaign_id", "campaign_name", "configured_status",
-                    "campaign_type", "promoted_object_type", "daily_budget", "budget_reach_date",
-                    "created_time", "last_modified_time", "speed_mode", "is_deleted"))
-                    .accountId(accountId).page(1L).pageSize(500L));
+      (apiResponse) -> System.out.println("api.count.tencent"),
+      new ConfigRequest().fields(Arrays.asList("campaign_id", "campaign_name", "configured_status",
+        "campaign_type", "promoted_object_type", "daily_budget", "budget_reach_date",
+        "created_time", "last_modified_time", "speed_mode", "is_deleted"))
+        .accountId(accountId).page(1L).pageSize(500L));
   }
 
   @GetMapping("/targeting/get")
   public List<TargetingsGetListStruct> test2() {
     TencentApiRequest<ConfigRequest,
-            ConfigResponse<PageResponseData<TargetingsGetListStruct>>>
-            request = tencentSdkService.getAdManagementApi().targetingsGet();
+      ConfigResponse<PageResponseData<TargetingsGetListStruct>>>
+      request = tencentSdkService.getAdManagementApi().targetingsGet();
     return TencentDataPageFetcher.fetchData(request, (apiResponse) -> System.out.println("api.count.tencent"),
-            new ConfigRequest().accountId(accountId).page(1L).pageSize(500L)
-                    .fields(Arrays.asList("targeting_id", "targeting_name", "targeting")));
+      new ConfigRequest().accountId(accountId).page(1L).pageSize(500L)
+        .fields(Arrays.asList("targeting_id", "targeting_name", "targeting")));
   }
 
   @GetMapping("/fund/get")

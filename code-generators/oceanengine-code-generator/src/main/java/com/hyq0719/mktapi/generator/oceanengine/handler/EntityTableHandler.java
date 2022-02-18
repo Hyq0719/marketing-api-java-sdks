@@ -118,7 +118,7 @@ public class EntityTableHandler {
       if (tableElement.getLevel() - 1 > stackLevel) {
         map.computeIfAbsent(lastElement.getPropertyName(), k -> new ArrayList<>());
         stack.push(new TableElement(lastElement.getPropertyName(), "object", lastElement.getDescription(),
-                lastElement.getLevel()));
+          lastElement.getLevel()));
       } else if (stackLevel >= tableElement.getLevel()) {
         while (stackLevel != tableElement.getLevel() - 1) {
           if (stack.pop() == null) {
@@ -151,7 +151,7 @@ public class EntityTableHandler {
     }
     By byDiv = By.tagName("div");
     String property = tdElements.get(0).findElement(byDiv).getText().replace("条件必填", "")
-            .replace("必填", "").replace("废弃", "").trim();
+      .replace("必填", "").replace("废弃", "").trim();
     String type = tdElements.get(1).findElement(byDiv).getText().trim();
     String description = tdElements.get(2).findElement(byDiv).getText().replace("\n", " ").trim();
     //注释限制长度

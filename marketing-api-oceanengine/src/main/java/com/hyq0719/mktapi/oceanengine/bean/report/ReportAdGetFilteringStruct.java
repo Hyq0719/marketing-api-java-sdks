@@ -13,7 +13,6 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 13:21:13
@@ -62,37 +61,37 @@ public class ReportAdGetFilteringStruct {
   @SerializedName("delivery_mode")
   private List<String> deliveryMode = null;
 
-  public ReportAdGetFilteringStruct campaignIds (List<Long> campaignIds) {
+  public ReportAdGetFilteringStruct campaignIds(List<Long> campaignIds) {
     this.campaignIds = campaignIds;
     return this;
   }
 
-  public ReportAdGetFilteringStruct adName (String adName) {
+  public ReportAdGetFilteringStruct adName(String adName) {
     this.adName = adName;
     return this;
   }
 
-  public ReportAdGetFilteringStruct adIds (List<Long> adIds) {
+  public ReportAdGetFilteringStruct adIds(List<Long> adIds) {
     this.adIds = adIds;
     return this;
   }
 
-  public ReportAdGetFilteringStruct pricings (List<String> pricings) {
+  public ReportAdGetFilteringStruct pricings(List<String> pricings) {
     this.pricings = pricings;
     return this;
   }
 
-  public ReportAdGetFilteringStruct landingTypes (List<String> landingTypes) {
+  public ReportAdGetFilteringStruct landingTypes(List<String> landingTypes) {
     this.landingTypes = landingTypes;
     return this;
   }
 
-  public ReportAdGetFilteringStruct status (String status) {
+  public ReportAdGetFilteringStruct status(String status) {
     this.status = status;
     return this;
   }
 
-  public ReportAdGetFilteringStruct deliveryMode (List<String> deliveryMode) {
+  public ReportAdGetFilteringStruct deliveryMode(List<String> deliveryMode) {
     this.deliveryMode = deliveryMode;
     return this;
   }

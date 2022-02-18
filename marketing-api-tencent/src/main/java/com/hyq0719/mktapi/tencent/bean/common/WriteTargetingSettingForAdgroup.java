@@ -657,7 +657,7 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public WriteTargetingSettingForAdgroup addGameConsumptionLevelItem(
-          String gameConsumptionLevelItem) {
+    String gameConsumptionLevelItem) {
     if (this.gameConsumptionLevel == null) {
       this.gameConsumptionLevel = new ArrayList<String>();
     }
@@ -679,13 +679,13 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public WriteTargetingSettingForAdgroup residentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
     return this;
   }
 
   public WriteTargetingSettingForAdgroup addResidentialCommunityPriceItem(
-          ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
+    ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
     if (this.residentialCommunityPrice == null) {
       this.residentialCommunityPrice = new ArrayList<ResidentialCommunityPriceStruct>();
     }
@@ -703,7 +703,7 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public void setResidentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
   }
 
@@ -809,7 +809,7 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public WriteTargetingSettingForAdgroup addExcludedCustomAudienceItem(
-          Long excludedCustomAudienceItem) {
+    Long excludedCustomAudienceItem) {
     if (this.excludedCustomAudience == null) {
       this.excludedCustomAudience = new ArrayList<Long>();
     }
@@ -849,13 +849,13 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public WriteTargetingSettingForAdgroup wechatOfficialAccountCategory(
-          List<Long> wechatOfficialAccountCategory) {
+    List<Long> wechatOfficialAccountCategory) {
     this.wechatOfficialAccountCategory = wechatOfficialAccountCategory;
     return this;
   }
 
   public WriteTargetingSettingForAdgroup addWechatOfficialAccountCategoryItem(
-          Long wechatOfficialAccountCategoryItem) {
+    Long wechatOfficialAccountCategoryItem) {
     if (this.wechatOfficialAccountCategory == null) {
       this.wechatOfficialAccountCategory = new ArrayList<Long>();
     }
@@ -929,7 +929,7 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public WriteTargetingSettingForAdgroup excludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
     return this;
   }
@@ -944,7 +944,7 @@ public class WriteTargetingSettingForAdgroup {
   }
 
   public void setExcludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
   }
 

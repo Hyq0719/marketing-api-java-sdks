@@ -678,7 +678,7 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup addGameConsumptionLevelItem(
-          String gameConsumptionLevelItem) {
+    String gameConsumptionLevelItem) {
     if (this.gameConsumptionLevel == null) {
       this.gameConsumptionLevel = new ArrayList<String>();
     }
@@ -700,13 +700,13 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup residentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
     return this;
   }
 
   public ReadTargetingSettingForAdgroup addResidentialCommunityPriceItem(
-          ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
+    ResidentialCommunityPriceStruct residentialCommunityPriceItem) {
     if (this.residentialCommunityPrice == null) {
       this.residentialCommunityPrice = new ArrayList<ResidentialCommunityPriceStruct>();
     }
@@ -724,7 +724,7 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public void setResidentialCommunityPrice(
-          List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
+    List<ResidentialCommunityPriceStruct> residentialCommunityPrice) {
     this.residentialCommunityPrice = residentialCommunityPrice;
   }
 
@@ -830,7 +830,7 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup addExcludedCustomAudienceItem(
-          Long excludedCustomAudienceItem) {
+    Long excludedCustomAudienceItem) {
     if (this.excludedCustomAudience == null) {
       this.excludedCustomAudience = new ArrayList<Long>();
     }
@@ -870,13 +870,13 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup wechatOfficialAccountCategory(
-          List<Long> wechatOfficialAccountCategory) {
+    List<Long> wechatOfficialAccountCategory) {
     this.wechatOfficialAccountCategory = wechatOfficialAccountCategory;
     return this;
   }
 
   public ReadTargetingSettingForAdgroup addWechatOfficialAccountCategoryItem(
-          Long wechatOfficialAccountCategoryItem) {
+    Long wechatOfficialAccountCategoryItem) {
     if (this.wechatOfficialAccountCategory == null) {
       this.wechatOfficialAccountCategory = new ArrayList<Long>();
     }
@@ -1012,13 +1012,13 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup deprecatedCustomAudience(
-          List<Long> deprecatedCustomAudience) {
+    List<Long> deprecatedCustomAudience) {
     this.deprecatedCustomAudience = deprecatedCustomAudience;
     return this;
   }
 
   public ReadTargetingSettingForAdgroup addDeprecatedCustomAudienceItem(
-          Long deprecatedCustomAudienceItem) {
+    Long deprecatedCustomAudienceItem) {
     if (this.deprecatedCustomAudience == null) {
       this.deprecatedCustomAudience = new ArrayList<Long>();
     }
@@ -1040,13 +1040,13 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup deprecatedExcludedCustomAudience(
-          List<Long> deprecatedExcludedCustomAudience) {
+    List<Long> deprecatedExcludedCustomAudience) {
     this.deprecatedExcludedCustomAudience = deprecatedExcludedCustomAudience;
     return this;
   }
 
   public ReadTargetingSettingForAdgroup addDeprecatedExcludedCustomAudienceItem(
-          Long deprecatedExcludedCustomAudienceItem) {
+    Long deprecatedExcludedCustomAudienceItem) {
     if (this.deprecatedExcludedCustomAudience == null) {
       this.deprecatedExcludedCustomAudience = new ArrayList<Long>();
     }
@@ -1120,7 +1120,7 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public ReadTargetingSettingForAdgroup excludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
     return this;
   }
@@ -1135,7 +1135,7 @@ public class ReadTargetingSettingForAdgroup {
   }
 
   public void setExcludedConvertedAudience(
-          ExcludedConvertedAudienceStruct excludedConvertedAudience) {
+    ExcludedConvertedAudienceStruct excludedConvertedAudience) {
     this.excludedConvertedAudience = excludedConvertedAudience;
   }
 

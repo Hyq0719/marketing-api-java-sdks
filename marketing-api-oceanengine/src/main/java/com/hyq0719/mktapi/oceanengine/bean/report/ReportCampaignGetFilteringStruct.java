@@ -13,7 +13,6 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 12:53:59
@@ -50,27 +49,27 @@ public class ReportCampaignGetFilteringStruct {
   @SerializedName("delivery_mode")
   private List<String> deliveryMode = null;
 
-  public ReportCampaignGetFilteringStruct campaignIds (List<Long> campaignIds) {
+  public ReportCampaignGetFilteringStruct campaignIds(List<Long> campaignIds) {
     this.campaignIds = campaignIds;
     return this;
   }
 
-  public ReportCampaignGetFilteringStruct campaignName (String campaignName) {
+  public ReportCampaignGetFilteringStruct campaignName(String campaignName) {
     this.campaignName = campaignName;
     return this;
   }
 
-  public ReportCampaignGetFilteringStruct landingTypes (List<String> landingTypes) {
+  public ReportCampaignGetFilteringStruct landingTypes(List<String> landingTypes) {
     this.landingTypes = landingTypes;
     return this;
   }
 
-  public ReportCampaignGetFilteringStruct status (String status) {
+  public ReportCampaignGetFilteringStruct status(String status) {
     this.status = status;
     return this;
   }
 
-  public ReportCampaignGetFilteringStruct deliveryMode (List<String> deliveryMode) {
+  public ReportCampaignGetFilteringStruct deliveryMode(List<String> deliveryMode) {
     this.deliveryMode = deliveryMode;
     return this;
   }

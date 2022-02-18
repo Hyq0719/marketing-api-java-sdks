@@ -96,7 +96,7 @@ public class TargetingsGetListStruct {
   }
 
   public TargetingsGetListStruct isIncludeUnsupportedTargeting(
-          Boolean isIncludeUnsupportedTargeting) {
+    Boolean isIncludeUnsupportedTargeting) {
     this.isIncludeUnsupportedTargeting = isIncludeUnsupportedTargeting;
     return this;
   }

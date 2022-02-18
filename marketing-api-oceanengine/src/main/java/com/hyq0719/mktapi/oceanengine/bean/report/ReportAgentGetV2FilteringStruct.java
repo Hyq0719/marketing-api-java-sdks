@@ -13,7 +13,6 @@ import lombok.Data;
 import java.util.List;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 13:05:11
@@ -74,47 +73,47 @@ public class ReportAgentGetV2FilteringStruct {
   @SerializedName("end_audit_pass_time")
   private String endAuditPassTime = null;
 
-  public ReportAgentGetV2FilteringStruct advertiserIds (List<Long> advertiserIds) {
+  public ReportAgentGetV2FilteringStruct advertiserIds(List<Long> advertiserIds) {
     this.advertiserIds = advertiserIds;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct companyName (String companyName) {
+  public ReportAgentGetV2FilteringStruct companyName(String companyName) {
     this.companyName = companyName;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct active (String active) {
+  public ReportAgentGetV2FilteringStruct active(String active) {
     this.active = active;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct firstIndustry (String firstIndustry) {
+  public ReportAgentGetV2FilteringStruct firstIndustry(String firstIndustry) {
     this.firstIndustry = firstIndustry;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct secondIndustry (String secondIndustry) {
+  public ReportAgentGetV2FilteringStruct secondIndustry(String secondIndustry) {
     this.secondIndustry = secondIndustry;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct accountSource (String accountSource) {
+  public ReportAgentGetV2FilteringStruct accountSource(String accountSource) {
     this.accountSource = accountSource;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct accountStatus (String accountStatus) {
+  public ReportAgentGetV2FilteringStruct accountStatus(String accountStatus) {
     this.accountStatus = accountStatus;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct startAuditPassTime (String startAuditPassTime) {
+  public ReportAgentGetV2FilteringStruct startAuditPassTime(String startAuditPassTime) {
     this.startAuditPassTime = startAuditPassTime;
     return this;
   }
 
-  public ReportAgentGetV2FilteringStruct endAuditPassTime (String endAuditPassTime) {
+  public ReportAgentGetV2FilteringStruct endAuditPassTime(String endAuditPassTime) {
     this.endAuditPassTime = endAuditPassTime;
     return this;
   }

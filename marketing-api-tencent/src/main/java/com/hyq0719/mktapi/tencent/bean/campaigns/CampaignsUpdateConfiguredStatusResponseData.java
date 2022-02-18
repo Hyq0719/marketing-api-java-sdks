@@ -26,13 +26,13 @@ public class CampaignsUpdateConfiguredStatusResponseData {
   private List<CampaignsUpdateConfiguredStatusListStruct> list = null;
 
   public CampaignsUpdateConfiguredStatusResponseData list(
-          List<CampaignsUpdateConfiguredStatusListStruct> list) {
+    List<CampaignsUpdateConfiguredStatusListStruct> list) {
     this.list = list;
     return this;
   }
 
   public CampaignsUpdateConfiguredStatusResponseData addListItem(
-          CampaignsUpdateConfiguredStatusListStruct listItem) {
+    CampaignsUpdateConfiguredStatusListStruct listItem) {
     if (this.list == null) {
       this.list = new ArrayList<CampaignsUpdateConfiguredStatusListStruct>();
     }

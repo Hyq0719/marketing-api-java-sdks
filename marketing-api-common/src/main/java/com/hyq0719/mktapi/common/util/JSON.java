@@ -30,13 +30,13 @@ public class JSON {
 
   public JSON() {
     gson =
-            createGson()
-                    .registerTypeAdapter(Date.class, dateTypeAdapter)
-                    .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
-                    .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
-                    .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
-                    .registerTypeAdapter(byte[].class, byteArrayAdapter)
-                    .create();
+      createGson()
+        .registerTypeAdapter(Date.class, dateTypeAdapter)
+        .registerTypeAdapter(java.sql.Date.class, sqlDateTypeAdapter)
+        .registerTypeAdapter(OffsetDateTime.class, offsetDateTimeTypeAdapter)
+        .registerTypeAdapter(LocalDate.class, localDateTypeAdapter)
+        .registerTypeAdapter(byte[].class, byteArrayAdapter)
+        .create();
   }
 
   public static GsonBuilder createGson() {
@@ -48,7 +48,7 @@ public class JSON {
     JsonElement element = readElement.getAsJsonObject().get(discriminatorField);
     if (null == element) {
       throw new IllegalArgumentException(
-              "missing discriminator field: <" + discriminatorField + ">");
+        "missing discriminator field: <" + discriminatorField + ">");
     }
     return element.getAsString();
   }
@@ -57,7 +57,7 @@ public class JSON {
     Class clazz = (Class) classByDiscriminatorValue.get(discriminatorValue.toUpperCase());
     if (null == clazz) {
       throw new IllegalArgumentException(
-              "cannot determine model class of name: <" + discriminatorValue + ">");
+        "cannot determine model class of name: <" + discriminatorValue + ">");
     }
     return clazz;
   }

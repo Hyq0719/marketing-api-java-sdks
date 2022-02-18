@@ -4,9 +4,9 @@ import com.hyq0719.mktapi.common.executor.http.OkhttpHttpHandler;
 import com.hyq0719.mktapi.common.token.ITokenCronService;
 import com.hyq0719.mktapi.common.token.cache.ITokenLocalCache;
 import com.hyq0719.mktapi.vivo.VivoApiClient;
-import com.hyq0719.mktapi.vivo.token.VivoExternalTokenService;
 import com.hyq0719.mktapi.vivo.VivoRetryStrategy;
 import com.hyq0719.mktapi.vivo.service.VivoSdkService;
+import com.hyq0719.mktapi.vivo.token.VivoExternalTokenService;
 import com.hyq0719.spring.starter.mktapi.production.properties.SdkProperties;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -73,7 +73,7 @@ public class VivoAutoConfiguration implements CommandLineRunner {
       throw new RuntimeException("vivo cron is null");
     }
     ITokenCronService simpleCronService = new ITokenCronService(vivoExternalTokenService, vivoCache(),
-            sdkProperties.getVivo().getCron());
+      sdkProperties.getVivo().getCron());
     simpleCronService.run();
     vivoTrigger = simpleCronService;
     return simpleCronService;

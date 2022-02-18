@@ -358,13 +358,13 @@ public class AdcreativeCreativeElementsReadMp {
   }
 
   public AdcreativeCreativeElementsReadMp elementStory(
-          List<AdcreativeElementStoryArrayItem> elementStory) {
+    List<AdcreativeElementStoryArrayItem> elementStory) {
     this.elementStory = elementStory;
     return this;
   }
 
   public AdcreativeCreativeElementsReadMp addElementStoryItem(
-          AdcreativeElementStoryArrayItem elementStoryItem) {
+    AdcreativeElementStoryArrayItem elementStoryItem) {
     if (this.elementStory == null) {
       this.elementStory = new ArrayList<AdcreativeElementStoryArrayItem>();
     }
@@ -672,7 +672,7 @@ public class AdcreativeCreativeElementsReadMp {
   }
 
   public AdcreativeCreativeElementsReadMp videoPopupButton(
-          AdcreativeVideoPopupButton videoPopupButton) {
+    AdcreativeVideoPopupButton videoPopupButton) {
     this.videoPopupButton = videoPopupButton;
     return this;
   }
@@ -1195,7 +1195,7 @@ public class AdcreativeCreativeElementsReadMp {
   }
 
   public AdcreativeCreativeElementsReadMp countdownExpiringTimestamp(
-          Long countdownExpiringTimestamp) {
+    Long countdownExpiringTimestamp) {
     this.countdownExpiringTimestamp = countdownExpiringTimestamp;
     return this;
   }

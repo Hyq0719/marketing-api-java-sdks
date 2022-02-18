@@ -12,7 +12,6 @@ import com.hyq0719.mktapi.oceanengine.bean.TokenKey;
 import lombok.Data;
 
 /**
- * 
  * @author hyq0719
  * @email yueqi.huang@qq.com
  * @date 2022-02-17 13:05:11
@@ -55,32 +54,32 @@ public class ReportAgentGetV2Request implements TokenKey {
   @SerializedName("page_size")
   private Long pageSize = null;
 
-  public ReportAgentGetV2Request agentId (Long agentId) {
+  public ReportAgentGetV2Request agentId(Long agentId) {
     this.agentId = agentId;
     return this;
   }
 
-  public ReportAgentGetV2Request startDate (String startDate) {
+  public ReportAgentGetV2Request startDate(String startDate) {
     this.startDate = startDate;
     return this;
   }
 
-  public ReportAgentGetV2Request endDate (String endDate) {
+  public ReportAgentGetV2Request endDate(String endDate) {
     this.endDate = endDate;
     return this;
   }
 
-  public ReportAgentGetV2Request reportAgentGetV2Filtering (ReportAgentGetV2FilteringStruct reportAgentGetV2Filtering) {
+  public ReportAgentGetV2Request reportAgentGetV2Filtering(ReportAgentGetV2FilteringStruct reportAgentGetV2Filtering) {
     this.reportAgentGetV2Filtering = reportAgentGetV2Filtering;
     return this;
   }
 
-  public ReportAgentGetV2Request page (Long page) {
+  public ReportAgentGetV2Request page(Long page) {
     this.page = page;
     return this;
   }
 
-  public ReportAgentGetV2Request pageSize (Long pageSize) {
+  public ReportAgentGetV2Request pageSize(Long pageSize) {
     this.pageSize = pageSize;
     return this;
   }

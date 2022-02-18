@@ -26,13 +26,13 @@ public class AdgroupsUpdateConfiguredStatusResponseData {
   private List<AdgroupsUpdateConfiguredStatusListStruct> list = null;
 
   public AdgroupsUpdateConfiguredStatusResponseData list(
-          List<AdgroupsUpdateConfiguredStatusListStruct> list) {
+    List<AdgroupsUpdateConfiguredStatusListStruct> list) {
     this.list = list;
     return this;
   }
 
   public AdgroupsUpdateConfiguredStatusResponseData addListItem(
-          AdgroupsUpdateConfiguredStatusListStruct listItem) {
+    AdgroupsUpdateConfiguredStatusListStruct listItem) {
     if (this.list == null) {
       this.list = new ArrayList<AdgroupsUpdateConfiguredStatusListStruct>();
     }

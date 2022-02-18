@@ -284,7 +284,7 @@ public class AdcreativesUpdateRequest implements TokenKey {
   }
 
   public AdcreativesUpdateRequest qqMiniGameTrackingQueryString(
-          String qqMiniGameTrackingQueryString) {
+    String qqMiniGameTrackingQueryString) {
     this.qqMiniGameTrackingQueryString = qqMiniGameTrackingQueryString;
     return this;
   }
@@ -447,7 +447,7 @@ public class AdcreativesUpdateRequest implements TokenKey {
   }
 
   public AdcreativesUpdateRequest revisedAdcreativeSpec(
-          RevisedAdcreativeSpec revisedAdcreativeSpec) {
+    RevisedAdcreativeSpec revisedAdcreativeSpec) {
     this.revisedAdcreativeSpec = revisedAdcreativeSpec;
     return this;
   }
@@ -698,7 +698,7 @@ public class AdcreativesUpdateRequest implements TokenKey {
   }
 
   public AdcreativesUpdateRequest adcreativeElements(
-          AdcreativeCreativeElementsMp adcreativeElements) {
+    AdcreativeCreativeElementsMp adcreativeElements) {
     this.adcreativeElements = adcreativeElements;
     return this;
   }

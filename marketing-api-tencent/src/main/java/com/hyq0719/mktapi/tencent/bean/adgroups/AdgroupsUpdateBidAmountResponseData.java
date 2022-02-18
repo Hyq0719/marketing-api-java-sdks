@@ -31,7 +31,7 @@ public class AdgroupsUpdateBidAmountResponseData {
   }
 
   public AdgroupsUpdateBidAmountResponseData addListItem(
-          AdgroupsUpdateBidAmountListStruct listItem) {
+    AdgroupsUpdateBidAmountListStruct listItem) {
     if (this.list == null) {
       this.list = new ArrayList<AdgroupsUpdateBidAmountListStruct>();
     }

@@ -299,7 +299,7 @@ public class AdManagementApi extends AbstractTencentApi {
       synchronized (CampaignsUpdateConfiguredStatus.class) {
         if (campaignsUpdateConfiguredStatus == null) {
           campaignsUpdateConfiguredStatus = (CampaignsUpdateConfiguredStatus) init(
-                  CampaignsUpdateConfiguredStatus.class);
+            CampaignsUpdateConfiguredStatus.class);
         }
       }
     }
@@ -311,7 +311,7 @@ public class AdManagementApi extends AbstractTencentApi {
       synchronized (AdgroupsUpdateConfiguredStatus.class) {
         if (adgroupsUpdateConfiguredStatus == null) {
           adgroupsUpdateConfiguredStatus = (AdgroupsUpdateConfiguredStatus) init(
-                  AdgroupsUpdateConfiguredStatus.class);
+            AdgroupsUpdateConfiguredStatus.class);
         }
       }
     }
@@ -352,9 +352,9 @@ public class AdManagementApi extends AbstractTencentApi {
   }
 
   @ApiRequestMapping(value = "/campaigns/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "v1.3")
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN}, version = "v1.3")
   public class CampaignsGet
-          extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<CampaignsGetListStruct>>> {
+    extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<CampaignsGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -366,7 +366,7 @@ public class AdManagementApi extends AbstractTencentApi {
       List<FilteringStruct> filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarCollectionQueryParams.addAll(
-                parameterToPairs(MULTI, FILTERING, filtering));
+          parameterToPairs(MULTI, FILTERING, filtering));
       }
       Long page = configRequest.getPage();
       if (page != null) {
@@ -402,18 +402,18 @@ public class AdManagementApi extends AbstractTencentApi {
 
   @ApiRequestMapping(value = "/campaigns/update", method = RequestConstants.POST)
   public class CampaignsUpdate
-          extends TencentApiRequest<CampaignsUpdateRequest, ConfigResponse<CampaignsUpdateResponseData>> {
+    extends TencentApiRequest<CampaignsUpdateRequest, ConfigResponse<CampaignsUpdateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/campaigns/delete", method = RequestConstants.POST)
   public class CampaignsDelete
-          extends TencentApiRequest<CampaignsDeleteRequest, ConfigResponse<CampaignsDeleteResponseData>> {
+    extends TencentApiRequest<CampaignsDeleteRequest, ConfigResponse<CampaignsDeleteResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   private class AdgroupsGet
-          extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<AdgroupsGetListStruct>>> {
+    extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<AdgroupsGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -425,7 +425,7 @@ public class AdManagementApi extends AbstractTencentApi {
       List<FilteringStruct> filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarCollectionQueryParams.addAll(
-                parameterToPairs(MULTI, FILTERING, filtering));
+          parameterToPairs(MULTI, FILTERING, filtering));
       }
       Long page = configRequest.getPage();
       if (page != null) {
@@ -451,7 +451,7 @@ public class AdManagementApi extends AbstractTencentApi {
       Long accountId = configRequest.getAccountId();
       if (accountId == null) {
         throw new ApiException(
-                "Missing the required parameter 'accountId' when calling adgroupsGet(Async)");
+          "Missing the required parameter 'accountId' when calling adgroupsGet(Async)");
       }
     }
   }
@@ -462,18 +462,18 @@ public class AdManagementApi extends AbstractTencentApi {
 
   @ApiRequestMapping(value = "/adgroups/update", method = RequestConstants.POST)
   private class AdgroupsUpdate
-          extends TencentApiRequest<AdgroupsUpdateRequest, ConfigResponse<AdgroupsUpdateResponseData>> {
+    extends TencentApiRequest<AdgroupsUpdateRequest, ConfigResponse<AdgroupsUpdateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/delete", method = RequestConstants.POST)
   private class AdgroupsDelete
-          extends TencentApiRequest<AdgroupsDeleteRequest, ConfigResponse<AdgroupsDeleteResponseData>> {
+    extends TencentApiRequest<AdgroupsDeleteRequest, ConfigResponse<AdgroupsDeleteResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adcreatives/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class AdcreativesGet
-          extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<AdcreativesGetListStruct>>> {
+    extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<AdcreativesGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -485,7 +485,7 @@ public class AdManagementApi extends AbstractTencentApi {
       List<FilteringStruct> filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarCollectionQueryParams.addAll(
-                parameterToPairs(MULTI, FILTERING, filtering));
+          parameterToPairs(MULTI, FILTERING, filtering));
       }
       Long page = configRequest.getPage();
       if (page != null) {
@@ -502,7 +502,7 @@ public class AdManagementApi extends AbstractTencentApi {
       Boolean linkPageTypeCompatible = configRequest.getLinkPageTypeCompatible();
       if (linkPageTypeCompatible != null) {
         localVarQueryParams.addAll(
-                parameterToPair("link_page_type_compatible", linkPageTypeCompatible));
+          parameterToPair("link_page_type_compatible", linkPageTypeCompatible));
       }
       List<String> fields = configRequest.getFields();
       if (fields == null || fields.isEmpty()) {
@@ -514,21 +514,21 @@ public class AdManagementApi extends AbstractTencentApi {
 
   @ApiRequestMapping(value = "/adcreatives/add", method = RequestConstants.POST)
   public class AdcreativesAdd
-          extends TencentApiRequest<AdcreativesAddRequest, ConfigResponse<AdcreativesAddResponseData>> {
+    extends TencentApiRequest<AdcreativesAddRequest, ConfigResponse<AdcreativesAddResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adcreatives/update", method = RequestConstants.POST)
   public class AdcreativesUpdate
-          extends TencentApiRequest<AdcreativesUpdateRequest, ConfigResponse<AdcreativesUpdateResponseData>> {
+    extends TencentApiRequest<AdcreativesUpdateRequest, ConfigResponse<AdcreativesUpdateResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adcreatives/delete", method = RequestConstants.POST)
   public class AdcreativesDelete
-          extends TencentApiRequest<AdcreativesDeleteRequest, ConfigResponse<AdcreativesDeleteResponseData>> {
+    extends TencentApiRequest<AdcreativesDeleteRequest, ConfigResponse<AdcreativesDeleteResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ads/get", method = RequestConstants.GET, usePostBody = false, contentTypes = {
-          RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   private class AdsGet extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<AdsGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
@@ -540,7 +540,7 @@ public class AdManagementApi extends AbstractTencentApi {
       List<FilteringStruct> filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarCollectionQueryParams.addAll(
-                parameterToPairs(MULTI, FILTERING, filtering));
+          parameterToPairs(MULTI, FILTERING, filtering));
       }
       Long page = configRequest.getPage();
       if (page != null) {
@@ -575,9 +575,9 @@ public class AdManagementApi extends AbstractTencentApi {
   }
 
   @ApiRequestMapping(value = "/targetings/get", method = RequestConstants.GET, usePostBody = false,
-          contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class TargetingsGet
-          extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<TargetingsGetListStruct>>> {
+    extends TencentApiRequest<ConfigRequest, ConfigResponse<PageResponseData<TargetingsGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
                                 ConfigRequest configRequest) {
@@ -588,7 +588,7 @@ public class AdManagementApi extends AbstractTencentApi {
       List<FilteringStruct> filtering = configRequest.getFiltering();
       if (filtering != null) {
         localVarCollectionQueryParams.addAll(
-                parameterToPairs(MULTI, FILTERING, filtering));
+          parameterToPairs(MULTI, FILTERING, filtering));
       }
       Long page = configRequest.getPage();
       if (page != null) {
@@ -609,49 +609,49 @@ public class AdManagementApi extends AbstractTencentApi {
 
   @ApiRequestMapping(value = "/advertiser/update_daily_budget", method = RequestConstants.POST)
   public class AdvertiserUpdateDailyBudget
-          extends TencentApiRequest<AdvertiserUpdateDailyBudgetRequest,
-          ConfigResponse<AdvertiserUpdateDailyBudgetResponseData>> {
+    extends TencentApiRequest<AdvertiserUpdateDailyBudgetRequest,
+    ConfigResponse<AdvertiserUpdateDailyBudgetResponseData>> {
   }
 
   @ApiRequestMapping(value = "/campaigns/update_daily_budget", method = RequestConstants.POST)
   public class CampaignsUpdateDailyBudget
-          extends TencentApiRequest<CampaignsUpdateDailyBudgetRequest,
-          ConfigResponse<CampaignsUpdateDailyBudgetResponseData>> {
+    extends TencentApiRequest<CampaignsUpdateDailyBudgetRequest,
+    ConfigResponse<CampaignsUpdateDailyBudgetResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/update_daily_budget", method = RequestConstants.POST)
   private class AdgroupsUpdateDailyBudget
-          extends TencentApiRequest<AdgroupsUpdateDailyBudgetRequest,
-          ConfigResponse<AdgroupsUpdateDailyBudgetResponseData>> {
+    extends TencentApiRequest<AdgroupsUpdateDailyBudgetRequest,
+    ConfigResponse<AdgroupsUpdateDailyBudgetResponseData>> {
   }
 
   @ApiRequestMapping(value = "/campaigns/update_configured_status", method = RequestConstants.POST)
   public class CampaignsUpdateConfiguredStatus
-          extends TencentApiRequest<CampaignsUpdateConfiguredStatusRequest,
-          ConfigResponse<CampaignsUpdateConfiguredStatusResponseData>> {
+    extends TencentApiRequest<CampaignsUpdateConfiguredStatusRequest,
+    ConfigResponse<CampaignsUpdateConfiguredStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/update_configured_status", method = RequestConstants.POST)
   private class AdgroupsUpdateConfiguredStatus
-          extends TencentApiRequest<AdgroupsUpdateConfiguredStatusRequest,
-          ConfigResponse<AdgroupsUpdateConfiguredStatusResponseData>> {
+    extends TencentApiRequest<AdgroupsUpdateConfiguredStatusRequest,
+    ConfigResponse<AdgroupsUpdateConfiguredStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/ads/update_configured_status", method = RequestConstants.POST)
   private class AdsUpdateConfiguredStatus
-          extends TencentApiRequest<AdsUpdateConfiguredStatusRequest,
-          ConfigResponse<AdsUpdateConfiguredStatusResponseData>> {
+    extends TencentApiRequest<AdsUpdateConfiguredStatusRequest,
+    ConfigResponse<AdsUpdateConfiguredStatusResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/update_datetime", method = RequestConstants.POST)
   private class AdgroupsUpdateDatetime
-          extends TencentApiRequest<AdgroupsUpdateDatetimeRequest,
-          ConfigResponse<AdgroupsUpdateDatetimeResponseData>> {
+    extends TencentApiRequest<AdgroupsUpdateDatetimeRequest,
+    ConfigResponse<AdgroupsUpdateDatetimeResponseData>> {
   }
 
   @ApiRequestMapping(value = "/adgroups/update_bid_amount", method = RequestConstants.POST)
   private class AdgroupsUpdateBidAmount
-          extends TencentApiRequest<AdgroupsUpdateBidAmountRequest, ConfigResponse<AdgroupsUpdateBidAmountResponseData>> {
+    extends TencentApiRequest<AdgroupsUpdateBidAmountRequest, ConfigResponse<AdgroupsUpdateBidAmountResponseData>> {
   }
 
 }
