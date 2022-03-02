@@ -27,9 +27,13 @@ public class VivoRetryStrategy implements RetryStrategy {
     return retryCount;
   }
 
+  /**
+   * @param code 请求返回码
+   * @return 重试条件：服务异常或请求失败
+   */
   @Override
   public Boolean retryCondition(Long code) {
-    return code == 70100 || code == 70103;
+    return code == 70110 || code == 70111;
   }
 
   @Override
