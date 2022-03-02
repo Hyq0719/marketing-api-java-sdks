@@ -1,21 +1,22 @@
-package test.token;
+package test.token.bean;
 
 import com.hyq0719.mktapi.common.token.IToken;
 import lombok.Data;
 
 @Data
-public class OceanTokenImpl implements IToken {
-  private String advertiserId;
-  private String accessToken;
+public class TencentToken implements IToken {
 
-  public OceanTokenImpl(String advertiserId, String accessToken) {
-    this.advertiserId = advertiserId;
+  private String accessToken;
+  private String accountId;
+
+  public TencentToken(String accessToken, String accountId) {
     this.accessToken = accessToken;
+    this.accountId = accountId;
   }
 
   @Override
   public String getTokenKey() {
-    return advertiserId;
+    return accountId;
   }
 
   @Override
@@ -27,4 +28,5 @@ public class OceanTokenImpl implements IToken {
   public Object getConfig() {
     return null;
   }
+
 }

@@ -4,7 +4,7 @@ import com.hyq0719.mktapi.common.token.IToken;
 import com.hyq0719.mktapi.vivo.token.VivoExternalTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import test.token.VivoTokenImpl;
+import test.token.bean.VivoToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class VivoTokenService extends VivoExternalTokenService {
   public List<IToken> refreshAllToken() {
     log.info("TencentTokenService refreshAllToken");
     List<IToken> tokens = new ArrayList<>();
-    tokens.add(new VivoTokenImpl("0000000000", "0000000000"));
+    tokens.add(new VivoToken("0000000000", "0000000000"));
     return tokens;
   }
 
@@ -31,6 +31,6 @@ public class VivoTokenService extends VivoExternalTokenService {
    */
   @Override
   public IToken refreshToken(String tokenKey) {
-    return new VivoTokenImpl("0000000000", "0000000000");
+    return new VivoToken("0000000000", "0000000000");
   }
 }

@@ -1,4 +1,4 @@
-package test.rest;
+package test.controller;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
 import com.hyq0719.mktapi.vivo.bean.common.VivoResponse;
@@ -7,6 +7,7 @@ import com.hyq0719.mktapi.vivo.bean.dataQuery.AdstatementSummaryQueryRequest;
 import com.hyq0719.mktapi.vivo.bean.dataQuery.AdstatementSummaryQueryResponseData;
 import com.hyq0719.mktapi.vivo.bean.promotionService.*;
 import com.hyq0719.mktapi.vivo.service.VivoSdkService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("vivo")
+@Api(tags = "VIVO")
 public class VivoApiTest {
   private final String advertiserId = "00000000";
   @Resource

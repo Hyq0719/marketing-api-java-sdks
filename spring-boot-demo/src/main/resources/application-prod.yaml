@@ -1,0 +1,60 @@
+server:
+ port: 8080
+
+## 应用配置
+app:
+  debug-mode: false
+  # RedisClient 配置
+  redis-client:
+    host: 127.0.0.1
+    port: 6379
+    password:
+  # 广告渠道
+  channels:
+    - tencent
+    - ocean_engine
+    - kuaishou
+    - vivo
+    - huawei
+
+mktapi:
+  # SDK配置
+  sdk:
+    # 磁力引擎
+    kuaishou:
+      cron: 0,30 * * * * ?
+      enable-retry: true
+      retry-count: 3
+    # 巨量引擎
+    oceanengine:
+      cron: 0,30 * * * * ?
+      enable-retry: true
+      retry-count: 3
+    # vivo商业开放平台
+    vivo:
+      cron: 0,30 * * * * ?
+      enable-retry: true
+      retry-count: 3
+    # 腾讯广告
+    tencent:
+      cron: 0,30 * * * * ?
+      enable-retry: true
+      retry-count: 3
+
+  auth:
+    # vivo商业开放平台
+    vivo:
+      cron: 0,30 * * * * ?
+      configs:
+        # your-advertiserId
+        000000:
+          clientId: 000000
+          secret: your-secret
+    # 巨量引擎
+    ocean:
+      cron: 0,30 * * * * ?
+      configs:
+        # your-advertiserId
+        000000:
+          clientId: 000000
+          secret: your-secret

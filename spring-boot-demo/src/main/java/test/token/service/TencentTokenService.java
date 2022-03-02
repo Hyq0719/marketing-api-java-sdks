@@ -4,7 +4,7 @@ import com.hyq0719.mktapi.common.token.IToken;
 import com.hyq0719.mktapi.tencent.token.TencentExternalTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import test.token.TencentTokenImpl;
+import test.token.bean.TencentToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +19,7 @@ public class TencentTokenService extends TencentExternalTokenService {
   public List<IToken> refreshAllToken() {
     log.info("TencentTokenService refreshAllToken");
     List<IToken> tokens = new ArrayList<>();
-    tokens.add(new TencentTokenImpl("0000000000", "0000000000"));
+    tokens.add(new TencentToken("0000000000", "0000000000"));
     return tokens;
   }
 
@@ -31,6 +31,6 @@ public class TencentTokenService extends TencentExternalTokenService {
    */
   @Override
   public IToken refreshToken(String tokenKey) {
-    return new TencentTokenImpl("0000000000", "0000000000");
+    return new TencentToken("0000000000", "0000000000");
   }
 }
