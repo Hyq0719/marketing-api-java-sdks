@@ -10,7 +10,7 @@ import com.hyq0719.mktapi.oceanengine.OceanApiRequest;
 import com.hyq0719.mktapi.oceanengine.OceanDefaultFields;
 import com.hyq0719.mktapi.oceanengine.bean.ad.*;
 import com.hyq0719.mktapi.oceanengine.bean.campaign.*;
-import com.hyq0719.mktapi.oceanengine.bean.common.ConfigRequest;
+import com.hyq0719.mktapi.oceanengine.bean.common.OceanRequest;
 import com.hyq0719.mktapi.oceanengine.bean.common.OceanResponse;
 import com.hyq0719.mktapi.oceanengine.bean.common.PageResponseData;
 import com.hyq0719.mktapi.oceanengine.bean.creative.*;
@@ -216,29 +216,29 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/campaign/get", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class CampaignGet extends OceanApiRequest<ConfigRequest<CampaignGetFilteringStruct>,
+  public class CampaignGet extends OceanApiRequest<OceanRequest<CampaignGetFilteringStruct>,
     OceanResponse<PageResponseData<CampaignGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<CampaignGetFilteringStruct> configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest<CampaignGetFilteringStruct> oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      CampaignGetFilteringStruct filtering = configRequest.getFiltering();
+      CampaignGetFilteringStruct filtering = oceanRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
-      Long page = configRequest.getPage();
+      Long page = oceanRequest.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = configRequest.getPageSize();
+      Long pageSize = oceanRequest.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
       }
-      List<String> fields = configRequest.getFields();
+      List<String> fields = oceanRequest.getFields();
       if (fields == null) {
         fields = OceanDefaultFields.BASE_CAMPAIGN_GET_FIEDS;
       }
@@ -261,28 +261,28 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/ad/get/", method = RequestConstants.GET, usePostBody = false, contentTypes = {
     RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class AdGet extends OceanApiRequest<ConfigRequest<AdGetFilteringStruct>,
+  public class AdGet extends OceanApiRequest<OceanRequest<AdGetFilteringStruct>,
     OceanResponse<PageResponseData<AdGetResponseListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<AdGetFilteringStruct> configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest<AdGetFilteringStruct> oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      AdGetFilteringStruct filtering = configRequest.getFiltering();
+      AdGetFilteringStruct filtering = oceanRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
-      Long page = configRequest.getPage();
+      Long page = oceanRequest.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = configRequest.getPageSize();
+      Long pageSize = oceanRequest.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
       }
-      List<String> fields = configRequest.getFields();
+      List<String> fields = oceanRequest.getFields();
       if (fields != null) {
         localVarCollectionQueryParams.addAll(parameterToPairs("multi", "fields", fields));
       }
@@ -349,28 +349,28 @@ public class AdServingApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/creative/get/", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class CreativeGet extends OceanApiRequest<ConfigRequest<CreativeGetFilteringStruct>,
+  public class CreativeGet extends OceanApiRequest<OceanRequest<CreativeGetFilteringStruct>,
     OceanResponse<PageResponseData<CreativeGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<CreativeGetFilteringStruct> configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest<CreativeGetFilteringStruct> oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      CreativeGetFilteringStruct filtering = configRequest.getFiltering();
+      CreativeGetFilteringStruct filtering = oceanRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
-      Long page = configRequest.getPage();
+      Long page = oceanRequest.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = configRequest.getPageSize();
+      Long pageSize = oceanRequest.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
       }
-      List<String> fields = configRequest.getFields();
+      List<String> fields = oceanRequest.getFields();
       if (fields != null) {
         localVarCollectionQueryParams.addAll(parameterToPairs("multi", "fields", fields));
       }

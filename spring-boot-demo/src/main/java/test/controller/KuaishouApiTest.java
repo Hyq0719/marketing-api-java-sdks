@@ -1,4 +1,4 @@
-package test.rest;
+package test.controller;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
 import com.hyq0719.mktapi.kuaishou.bean.advertiser.AdvertiserInfoRequest;
@@ -10,6 +10,7 @@ import com.hyq0719.mktapi.kuaishou.bean.report.ReportCampaignReportResponseStruc
 import com.hyq0719.mktapi.kuaishou.bean.report.ReportUnitReportRequest;
 import com.hyq0719.mktapi.kuaishou.bean.report.ReportUnitReportResponseStruct;
 import com.hyq0719.mktapi.kuaishou.service.KshSdkService;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("ksh")
+@Api(tags = "磁力引擎")
 public class KuaishouApiTest {
   private final Long advertiserId = 0000000L;
   @Resource

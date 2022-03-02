@@ -7,7 +7,7 @@ import com.hyq0719.mktapi.common.constant.RequestConstants;
 import com.hyq0719.mktapi.common.executor.parameter.Pair;
 import com.hyq0719.mktapi.common.util.JsonUtil;
 import com.hyq0719.mktapi.oceanengine.OceanApiRequest;
-import com.hyq0719.mktapi.oceanengine.bean.common.ConfigRequest;
+import com.hyq0719.mktapi.oceanengine.bean.common.OceanRequest;
 import com.hyq0719.mktapi.oceanengine.bean.common.OceanResponse;
 import com.hyq0719.mktapi.oceanengine.bean.common.PageResponseData;
 import com.hyq0719.mktapi.oceanengine.bean.material.*;
@@ -238,24 +238,24 @@ public class MaterialApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/file/image/get/", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class FileImageGet extends OceanApiRequest<ConfigRequest<FileImageGetFilteringStruct>,
+  public class FileImageGet extends OceanApiRequest<OceanRequest<FileImageGetFilteringStruct>,
     OceanResponse<PageResponseData<FileImageGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<FileImageGetFilteringStruct> configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest<FileImageGetFilteringStruct> oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      Long page = configRequest.getPage();
+      Long page = oceanRequest.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = configRequest.getPageSize();
+      Long pageSize = oceanRequest.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
       }
-      FileImageGetFilteringStruct filtering = configRequest.getFiltering();
+      FileImageGetFilteringStruct filtering = oceanRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }
@@ -264,24 +264,24 @@ public class MaterialApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/file/video/get/", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class FileVideoGet extends OceanApiRequest<ConfigRequest<FileVideoGetFilteringStruct>,
+  public class FileVideoGet extends OceanApiRequest<OceanRequest<FileVideoGetFilteringStruct>,
     OceanResponse<PageResponseData<FileVideoGetListStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest<FileVideoGetFilteringStruct> configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest<FileVideoGetFilteringStruct> oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
-      Long page = configRequest.getPage();
+      Long page = oceanRequest.getPage();
       if (page != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE, page));
       }
-      Long pageSize = configRequest.getPageSize();
+      Long pageSize = oceanRequest.getPageSize();
       if (pageSize != null) {
         localVarQueryParams.addAll(parameterToPair(PAGE_SIZE, pageSize));
       }
-      FileVideoGetFilteringStruct filtering = configRequest.getFiltering();
+      FileVideoGetFilteringStruct filtering = oceanRequest.getFiltering();
       if (filtering != null) {
         localVarQueryParams.addAll(parameterToPair(FILTERING, JsonUtil.toJsonString(filtering)));
       }

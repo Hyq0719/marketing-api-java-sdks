@@ -25,7 +25,7 @@ import org.springframework.context.annotation.Import;
 @Slf4j
 public class KshAutoConfiguration implements CommandLineRunner {
 
-  private ITokenCronService clTrigger;
+  private ITokenCronService kshTrigger;
 
   @Bean
   @ConditionalOnMissingBean
@@ -35,7 +35,7 @@ public class KshAutoConfiguration implements CommandLineRunner {
   }
 
   @Bean
-  public KshRetryStrategy clRetryStrategy(SdkProperties sdkProperties) {
+  public KshRetryStrategy kshRetryStrategy(SdkProperties sdkProperties) {
     KshRetryStrategy kshRetryStrategy = new KshRetryStrategy();
     SdkProperties.ChannelConfig kuaishou = sdkProperties.getKuaishou();
     if (kuaishou == null) {
@@ -53,7 +53,7 @@ public class KshAutoConfiguration implements CommandLineRunner {
 
   @Bean
   @ConditionalOnMissingBean
-  public KshApiClient clApiClient(OkhttpHttpHandler okhttpRequestHandler,
+  public KshApiClient kshApiClient(OkhttpHttpHandler okhttpRequestHandler,
                                   KshExternalTokenService kshExternalTokenService) {
     if (okhttpRequestHandler == null) {
       throw new RuntimeException("kuaishou RequestHandler is null");
@@ -65,7 +65,7 @@ public class KshAutoConfiguration implements CommandLineRunner {
   }
 
   @Bean
-  public ITokenCronService clCronService(KshExternalTokenService kshExternalTokenService, SdkProperties sdkProperties) {
+  public ITokenCronService kshCronService(KshExternalTokenService kshExternalTokenService, SdkProperties sdkProperties) {
     String cron = sdkProperties.getKuaishou().getCron();
     if (StringUtils.isEmpty(cron)) {
       throw new RuntimeException("kuaishou cron is null");
@@ -73,15 +73,15 @@ public class KshAutoConfiguration implements CommandLineRunner {
     ITokenCronService simpleCronService = new ITokenCronService(kshExternalTokenService, kuaishouCache(),
       sdkProperties.getKuaishou().getCron());
     simpleCronService.run();
-    clTrigger = simpleCronService;
+    kshTrigger = simpleCronService;
     return simpleCronService;
   }
 
   @Override
   public void run(String... args) {
-    log.info("kuaishouTrigger obj:{}", clTrigger);
+    log.info("kuaishouTrigger obj:{}", kshTrigger);
     try {
-      clTrigger.trigger();
+      kshTrigger.trigger();
     } catch (Exception e) {
       log.info("load data kuaishou failure");
       e.printStackTrace();

@@ -4,7 +4,7 @@ import com.hyq0719.mktapi.common.token.IToken;
 import com.hyq0719.mktapi.kuaishou.token.KshExternalTokenService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import test.token.KshTokenImpl;
+import test.token.bean.KshToken;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +19,8 @@ public class KuaishouTokenService extends KshExternalTokenService {
   public List<IToken> refreshAllToken() {
     log.info("KuaishouTokenService refreshAllToken");
     List<IToken> tokens = new ArrayList<>();
-    tokens.add(new KshTokenImpl("0000000000", "0000000000"));
-    tokens.add(new KshTokenImpl("0000000000", "0000000000"));
+    tokens.add(new KshToken("0000000000", "0000000000"));
+    tokens.add(new KshToken("0000000000", "0000000000"));
     return tokens;
   }
 
@@ -32,6 +32,6 @@ public class KuaishouTokenService extends KshExternalTokenService {
    */
   @Override
   public IToken refreshToken(String tokenKey) {
-    return new KshTokenImpl("0000000000", "0000000000");
+    return new KshToken("0000000000", "0000000000");
   }
 }

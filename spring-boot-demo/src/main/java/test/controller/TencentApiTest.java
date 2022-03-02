@@ -1,4 +1,4 @@
-package test.rest;
+package test.controller;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
 import com.hyq0719.mktapi.tencent.TencentApiRequest;
@@ -9,6 +9,7 @@ import com.hyq0719.mktapi.tencent.bean.common.PageResponseData;
 import com.hyq0719.mktapi.tencent.bean.targetings.TargetingsGetListStruct;
 import com.hyq0719.mktapi.tencent.service.TencentSdkService;
 import com.hyq0719.mktapi.tencent.util.TencentDataPageFetcher;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("tencent")
+@Api(tags = "腾讯广告")
 public class TencentApiTest {
   private final long accountId = 0000000L;
   @Resource

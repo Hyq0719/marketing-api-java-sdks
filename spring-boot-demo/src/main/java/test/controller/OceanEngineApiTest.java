@@ -1,7 +1,8 @@
-package test.rest;
+package test.controller;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
-import com.hyq0719.mktapi.oceanengine.bean.common.ConfigRequest;
+import com.hyq0719.mktapi.oceanengine.bean.advertiser.MajordomoAdvertiserSelectStruct;
+import com.hyq0719.mktapi.oceanengine.bean.common.OceanRequest;
 import com.hyq0719.mktapi.oceanengine.bean.common.OceanResponse;
 import com.hyq0719.mktapi.oceanengine.bean.material.FileImageAdGetRequest;
 import com.hyq0719.mktapi.oceanengine.bean.material.FileImageAdRequest;
@@ -9,6 +10,8 @@ import com.hyq0719.mktapi.oceanengine.bean.material.FileVideoAdGetRequest;
 import com.hyq0719.mktapi.oceanengine.bean.material.ToolsVideoCoverSuggestRequest;
 import com.hyq0719.mktapi.oceanengine.bean.report.ReportRequest;
 import com.hyq0719.mktapi.oceanengine.service.OceanSdkService;
+import com.hyq0719.mktapi.oceanengine.util.OceanDataPageFetcher;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +20,12 @@ import test.util.FileUtil;
 import javax.annotation.Resource;
 import java.io.File;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("ocean")
+@Api(tags = "巨量引擎")
 public class OceanEngineApiTest {
 
   private final Long advertiserId = 00000000L;
@@ -56,19 +62,19 @@ public class OceanEngineApiTest {
 
   @GetMapping("/campaign/get/")
   public OceanResponse campaignGet() throws ApiException {
-    ConfigRequest request = new ConfigRequest().advertiserId(advertiserId).page(1L).pageSize(100L);
+    OceanRequest request = new OceanRequest().advertiserId(advertiserId).page(1L).pageSize(100L);
     return oceanSdkService.getAdServingApi().campaignGet().execute(request);
   }
 
   @GetMapping("/file/image/get")
   public OceanResponse fileImageGet() throws ApiException {
-    ConfigRequest request = new ConfigRequest().advertiserId(testId).page(1L).pageSize(100L);
+    OceanRequest request = new OceanRequest().advertiserId(testId).page(1L).pageSize(100L);
     return oceanSdkService.getMaterialApi().fileImageGet().execute(request);
   }
 
   @GetMapping("/file/video/get")
   public OceanResponse fileVideoGet() throws ApiException {
-    ConfigRequest request = new ConfigRequest().advertiserId(testId).page(1L).pageSize(100L);
+    OceanRequest request = new OceanRequest().advertiserId(testId).page(1L).pageSize(100L);
     return oceanSdkService.getMaterialApi().fileVideoGet().execute(request);
   }
 
