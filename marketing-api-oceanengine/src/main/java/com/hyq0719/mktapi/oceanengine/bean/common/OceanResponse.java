@@ -58,6 +58,10 @@ public class OceanResponse<T> implements CodeKey {
     return message;
   }
 
+  public boolean isSuccessful() {
+    return code.equals(0L);
+  }
+
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */

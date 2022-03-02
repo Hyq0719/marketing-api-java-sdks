@@ -7,7 +7,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class ConfigRequest<F> implements IPage {
+public class OceanRequest<F> implements IPage {
   @SerializedName("advertiser_id")
   private Long advertiserId = null;
 
@@ -23,27 +23,27 @@ public class ConfigRequest<F> implements IPage {
   @SerializedName("page_size")
   private Long pageSize = null;
 
-  public ConfigRequest advertiserId(Long advertiserId) {
+  public OceanRequest advertiserId(Long advertiserId) {
     this.advertiserId = advertiserId;
     return this;
   }
 
-  public ConfigRequest filtering(F filtering) {
+  public OceanRequest filtering(F filtering) {
     this.filtering = filtering;
     return this;
   }
 
-  public ConfigRequest fields(List<String> fields) {
+  public OceanRequest fields(List<String> fields) {
     this.fields = fields;
     return this;
   }
 
-  public ConfigRequest page(Long page) {
+  public OceanRequest page(Long page) {
     this.page = page;
     return this;
   }
 
-  public ConfigRequest pageSize(Long pageSize) {
+  public OceanRequest pageSize(Long pageSize) {
     this.pageSize = pageSize;
     return this;
   }

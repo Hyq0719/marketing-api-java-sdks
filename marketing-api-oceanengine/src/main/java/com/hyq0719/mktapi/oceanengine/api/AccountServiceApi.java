@@ -10,7 +10,7 @@ import com.hyq0719.mktapi.oceanengine.bean.advertiser.AdvertiserFundDailyStatRep
 import com.hyq0719.mktapi.oceanengine.bean.advertiser.AdvertiserFundDailyStatRequest;
 import com.hyq0719.mktapi.oceanengine.bean.advertiser.AdvertiserFundGetStruct;
 import com.hyq0719.mktapi.oceanengine.bean.advertiser.MajordomoAdvertiserSelectStruct;
-import com.hyq0719.mktapi.oceanengine.bean.common.ConfigRequest;
+import com.hyq0719.mktapi.oceanengine.bean.common.OceanRequest;
 import com.hyq0719.mktapi.oceanengine.bean.common.OceanResponse;
 import com.hyq0719.mktapi.oceanengine.bean.common.PageResponseData;
 
@@ -67,11 +67,11 @@ public class AccountServiceApi extends AbstractOceanApi {
   @ApiRequestMapping(value = "/majordomo/advertiser/select/", method = RequestConstants.GET, usePostBody =
     false, contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class MajordomoAdvertiserSelect
-    extends OceanApiRequest<ConfigRequest, OceanResponse<PageResponseData<MajordomoAdvertiserSelectStruct>>> {
+    extends OceanApiRequest<OceanRequest, OceanResponse<PageResponseData<MajordomoAdvertiserSelectStruct>>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
@@ -80,11 +80,11 @@ public class AccountServiceApi extends AbstractOceanApi {
 
   @ApiRequestMapping(value = "/advertiser/fund/get/", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class AdvertiserFundGet extends OceanApiRequest<ConfigRequest, OceanResponse<AdvertiserFundGetStruct>> {
+  public class AdvertiserFundGet extends OceanApiRequest<OceanRequest, OceanResponse<AdvertiserFundGetStruct>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest configRequest) {
-      Long advertiserId = configRequest.getAdvertiserId();
+                                OceanRequest oceanRequest) {
+      Long advertiserId = oceanRequest.getAdvertiserId();
       if (advertiserId != null) {
         localVarQueryParams.addAll(parameterToPair(ADVERTISER_ID, advertiserId));
       }
