@@ -23,7 +23,7 @@ import java.util.List;
 /**
  * CampaignsAddResponse
  */
-public class ConfigResponse<T> implements CodeKey {
+public class TencentResponse<T> implements CodeKey {
   @SerializedName("code")
   private Long code = null;
 
@@ -39,7 +39,7 @@ public class ConfigResponse<T> implements CodeKey {
   @SerializedName("data")
   private T data = null;
 
-  public ConfigResponse code(Long code) {
+  public TencentResponse code(Long code) {
     this.code = code;
     return this;
   }
@@ -57,7 +57,7 @@ public class ConfigResponse<T> implements CodeKey {
     this.code = code;
   }
 
-  public ConfigResponse message(String message) {
+  public TencentResponse message(String message) {
     this.message = message;
     return this;
   }
@@ -75,7 +75,7 @@ public class ConfigResponse<T> implements CodeKey {
     this.message = message;
   }
 
-  public ConfigResponse messageCn(String messageCn) {
+  public TencentResponse messageCn(String messageCn) {
     this.messageCn = messageCn;
     return this;
   }
@@ -93,12 +93,12 @@ public class ConfigResponse<T> implements CodeKey {
     this.messageCn = messageCn;
   }
 
-  public ConfigResponse errors(List<ApiErrorStruct> errors) {
+  public TencentResponse errors(List<ApiErrorStruct> errors) {
     this.errors = errors;
     return this;
   }
 
-  public ConfigResponse addErrorsItem(ApiErrorStruct errorsItem) {
+  public TencentResponse addErrorsItem(ApiErrorStruct errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<ApiErrorStruct>();
     }
@@ -119,7 +119,7 @@ public class ConfigResponse<T> implements CodeKey {
     this.errors = errors;
   }
 
-  public ConfigResponse data(T data) {
+  public TencentResponse data(T data) {
     this.data = data;
     return this;
   }
@@ -153,6 +153,9 @@ public class ConfigResponse<T> implements CodeKey {
     return message;
   }
 
+  public boolean isSuccessful() {
+    return code.equals(0L);
+  }
   /**
    * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
