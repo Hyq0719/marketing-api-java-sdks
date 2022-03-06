@@ -51,7 +51,7 @@ public class Util {
    */
   public static Result<AuthToken> refreshForTest(AuthToken authToken) {
     String s = String.valueOf(System.currentTimeMillis());
-    AuthToken newAuthToken = authToken.newToken("access " + s, "refresh " + s, Long.valueOf(s + 100000));
+    AuthToken newAuthToken = authToken.newToken("access " + s, "refresh " + s);
     return Result.ofSuccessful(newAuthToken);
   }
 }

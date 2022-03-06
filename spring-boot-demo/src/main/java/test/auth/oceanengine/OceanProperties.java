@@ -21,7 +21,7 @@ public class OceanProperties {
 
   @Data
   public static class OceanOAuth2Config {
-    private long clientId;
+    private String clientId;
     private String secret;
   }
 }

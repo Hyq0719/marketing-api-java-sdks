@@ -26,20 +26,20 @@ public class KuaishouApiTest {
   private KshSdkService kshSdkService;
 
   @GetMapping("/report/campaign_report")
-  public KshResponse<PageResponseData<ReportCampaignReportResponseStruct>> test1() throws ApiException {
+  public KshResponse<PageResponseData<ReportCampaignReportResponseStruct>> reportCampaignReport() throws ApiException {
     return kshSdkService.getDataReportApi().reportCampaignReport().execute(new ReportCampaignReportRequest()
       .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23"));
   }
 
   @GetMapping("/report/unit_report")
-  public KshResponse<PageResponseData<ReportUnitReportResponseStruct>> test2() throws ApiException {
+  public KshResponse<PageResponseData<ReportUnitReportResponseStruct>> reportUnitReport() throws ApiException {
     return kshSdkService.getDataReportApi().reportUnitReport()
       .execute(new ReportUnitReportRequest()
         .advertiserId(advertiserId).startDate("2021-12-23").endDate("2021-12-23").page(1));
   }
 
-  @GetMapping("/report/creative_report")
-  public KshResponse<AdvertiserInfoResponseStruct> test3() throws ApiException {
+  @GetMapping("/advertiser/info")
+  public KshResponse<AdvertiserInfoResponseStruct> advertiserInfo() throws ApiException {
     return kshSdkService.getAccountServiceApi().advertiserInfo().execute(
       new AdvertiserInfoRequest().advertiserId(advertiserId));
   }

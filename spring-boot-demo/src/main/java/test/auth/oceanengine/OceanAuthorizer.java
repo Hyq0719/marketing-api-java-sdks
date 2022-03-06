@@ -60,7 +60,7 @@ public class OceanAuthorizer implements TokenAuthorizer {
       return Util.authorizeForTest(advertiserId, authCode, channel());
     }
     AccessTokenRequest request = new AccessTokenRequest();
-    request.appId(config.getClientId()).secret(config.getSecret()).grantType("auth_code").authCode(authCode);
+    request.appId(Long.valueOf(config.getClientId())).secret(config.getSecret()).grantType("auth_code").authCode(authCode);
     try {
       OceanResponse<AccessTokenResponseData> response = oceanSdkService.getTokenApi().accessToken().execute(request);
       if (!response.isSuccessful()) {
@@ -72,8 +72,9 @@ public class OceanAuthorizer implements TokenAuthorizer {
       authToken.setAdvertiserId(advertiserId);
       authToken.setAccessToken(data.getAccessToken());
       authToken.setRefreshToken(data.getRefreshToken());
-      authToken.setCreateTime(System.currentTimeMillis());
-      authToken.setRefreshTime(data.getRefreshTokenExpiresIn());
+      long now = System.currentTimeMillis();
+      authToken.setCreateTime(now);
+      authToken.setRefreshTime(now);
       return Result.ofSuccessful(authToken);
     } catch (ApiException e) {
       e.printStackTrace();
@@ -93,7 +94,7 @@ public class OceanAuthorizer implements TokenAuthorizer {
     }
 
     RefreshTokenRequest request = new RefreshTokenRequest();
-    request.appId(config.getClientId()).secret(config.getSecret())
+    request.appId(Long.valueOf(config.getClientId())).secret(config.getSecret())
       .refreshToken(authToken.getRefreshToken()).grantType("auth_code");
     try {
       OceanResponse<RefreshTokenResponseData> response = oceanSdkService.getTokenApi().refreshToken().execute(request);
@@ -101,7 +102,7 @@ public class OceanAuthorizer implements TokenAuthorizer {
         return Result.ofFail();
       }
       RefreshTokenResponseData data = response.getData();
-      AuthToken newAuthToken = authToken.newToken(data.getAccessToken(), data.getRefreshToken(), data.getRefreshTokenExpiresIn());
+      AuthToken newAuthToken = authToken.newToken(data.getAccessToken(), data.getRefreshToken());
       return Result.ofSuccessful(newAuthToken);
     } catch (ApiException e) {
       e.printStackTrace();

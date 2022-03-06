@@ -87,12 +87,31 @@ public class AuthWebController {
   /**
    * 手动刷新渠道授权
    *
+   * @param channel      广告渠道（腾讯广告、巨量引擎等）
+   * @param advertiserId 广告主账号
+   * @return
+   */
+  @ApiOperation("手动刷新广告主授权")
+  @GetMapping("/refreshAuthToken/{channel}/{advertiserId}")
+  public Object refreshAuthToken(@PathVariable("channel") String channel, @PathVariable("advertiserId") String advertiserId) {
+    log.info("receive refresh auth token request. channel: {}", channel);
+
+    if (!isSupportChannel(channel)) {
+      return "unsupported channel: " + channel;
+    }
+    Result<AuthToken> result = authService.refreshForAdvertiser(channel, advertiserId);
+    return result.successful() ? "Success" : "Fail";
+  }
+
+  /**
+   * 手动刷新渠道授权
+   *
    * @param channel 广告渠道（腾讯广告、巨量引擎等）
    * @return
    */
   @ApiOperation("手动刷新授权")
   @GetMapping("/refreshAuthToken/{channel}")
-  public Object refreshAuthToken(@PathVariable("channel") String channel) {
+  public Object refreshAuthTokenByChannel(@PathVariable("channel") String channel) {
     log.info("receive refresh auth token request. channel: {}", channel);
 
     if (!isSupportChannel(channel)) {
