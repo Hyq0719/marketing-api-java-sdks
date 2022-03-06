@@ -6,6 +6,9 @@ import test.auth.oceanengine.OceanAuthorizer;
 import test.auth.oceanengine.OceanProperties;
 import test.auth.oceanengine.OceanRefreshCronService;
 import test.auth.repo.RedisTokenRepo;
+import test.auth.tencent.TencentAuthorizer;
+import test.auth.tencent.TencentProperties;
+import test.auth.tencent.TencentRefreshCronService;
 import test.auth.vivo.VivoAuthorizer;
 import test.auth.vivo.VivoProperties;
 import test.auth.vivo.VivoRefreshCronService;
@@ -27,6 +30,13 @@ public class RefreshTokenConfiguration {
   @Bean
   public OceanRefreshCronService oceanRefreshCronService(OceanAuthorizer oceanAuthorizer, OceanProperties oceanProperties, RedisTokenRepo repo, RedisClient redis) {
     OceanRefreshCronService refreshCronService = new OceanRefreshCronService(oceanAuthorizer, oceanProperties, repo, redis);
+    refreshCronService.run();
+    return refreshCronService;
+  }
+
+  @Bean
+  public TencentRefreshCronService tencentRefreshCronService(TencentAuthorizer tencentAuthorizer, TencentProperties tencentProperties, RedisTokenRepo repo, RedisClient redis) {
+    TencentRefreshCronService refreshCronService = new TencentRefreshCronService(tencentAuthorizer, tencentProperties, repo, redis);
     refreshCronService.run();
     return refreshCronService;
   }

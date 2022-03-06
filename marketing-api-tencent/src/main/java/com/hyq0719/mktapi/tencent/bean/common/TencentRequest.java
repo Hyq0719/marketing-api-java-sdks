@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * CampaignsAddResponse
  */
-public class ConfigRequest implements IPage {
+public class TencentRequest implements IPage {
   @SerializedName("page_size")
   Long pageSize;
   @SerializedName("is_deleted")
@@ -37,37 +37,37 @@ public class ConfigRequest implements IPage {
   @SerializedName("page")
   private Long page;
 
-  public ConfigRequest accountId(Long accountId) {
+  public TencentRequest accountId(Long accountId) {
     this.accountId = accountId;
     return this;
   }
 
-  public ConfigRequest filtering(List<FilteringStruct> filtering) {
+  public TencentRequest filtering(List<FilteringStruct> filtering) {
     this.filtering = filtering;
     return this;
   }
 
-  public ConfigRequest page(Long page) {
+  public TencentRequest page(Long page) {
     this.page = page;
     return this;
   }
 
-  public ConfigRequest pageSize(Long pageSize) {
+  public TencentRequest pageSize(Long pageSize) {
     this.pageSize = pageSize;
     return this;
   }
 
-  public ConfigRequest isDeleted(Boolean isDeleted) {
+  public TencentRequest isDeleted(Boolean isDeleted) {
     this.isDeleted = isDeleted;
     return this;
   }
 
-  public ConfigRequest linkPageTypeCompatible(Boolean linkPageTypeCompatible) {
+  public TencentRequest linkPageTypeCompatible(Boolean linkPageTypeCompatible) {
     this.linkPageTypeCompatible = linkPageTypeCompatible;
     return this;
   }
 
-  public ConfigRequest fields(List<String> fields) {
+  public TencentRequest fields(List<String> fields) {
     this.fields = fields;
     return this;
   }

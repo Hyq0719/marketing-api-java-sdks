@@ -1,6 +1,7 @@
 package test.auth.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -14,6 +15,7 @@ import test.auth.repo.RedisTokenRepo;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 认证授权服务
@@ -93,6 +95,38 @@ public class AuthService implements ApplicationContextAware {
       refreshTokens.put(tokenResult.data(), tokenResult.successful());
     }
     return refreshTokens;
+  }
+
+  /**
+   * 刷新渠道授权
+   *
+   * @param channel      广告渠道
+   * @param advertiserId 广告主账号
+   * @return 刷新结果和token
+   */
+  public Result<AuthToken> refreshForAdvertiser(String channel, String advertiserId) {
+    List<AuthToken> authTokens = repo.findByChannel(channel);
+    if (StringUtils.isEmpty(advertiserId)) {
+      log.warn("refreshForAdvertiser : advertiserId null");
+      return Result.ofFail();
+    }
+    AuthToken target = null;
+    for (AuthToken authToken : authTokens) {
+      if (advertiserId.equals(authToken.getAdvertiserId())) {
+        target = authToken;
+      }
+    }
+    if (Objects.isNull(target)) {
+      log.warn("refreshForChannel : no token found for {} : {}", channel, advertiserId);
+      return Result.ofFail();
+    }
+    TokenAuthorizer authorizer = authorizerMap.get(channel);
+    Result<AuthToken> tokenResult = authorizer.refresh(target);
+    if (tokenResult.successful()) {
+      repo.saveOrUpdate(tokenResult.data());
+      return tokenResult;
+    }
+    return Result.ofFail();
   }
 
   @Override

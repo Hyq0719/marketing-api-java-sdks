@@ -43,7 +43,7 @@ public class OceanDataPageFetcher implements DataPageFetcher {
       Long num = response.getData().getPageInfo().getTotalPage();
       while (num > 1) {
         request.exchangeCurrentPage(num.intValue());
-        response = handler.execute(request, apiRequestAdvice);
+        response = handler.execute(request, apiRequestAdvice, token);
         if (!response.isSuccessful()) {
           break;
         }

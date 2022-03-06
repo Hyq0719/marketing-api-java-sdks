@@ -38,14 +38,14 @@ public class AuthToken {
     return channel + ":" + advertiserId;
   }
 
-  public AuthToken newToken(String accessToken, String refreshToken, Long refreshTime) {
+  public AuthToken newToken(String accessToken, String refreshToken) {
     AuthToken newToken = new AuthToken();
     newToken.setChannel(this.channel);
     newToken.setAdvertiserId(this.advertiserId);
     newToken.setAccessToken(accessToken);
     newToken.setRefreshToken(refreshToken);
-    newToken.setCreateTime(System.currentTimeMillis());
-    newToken.setRefreshTime(refreshTime);
+    newToken.setCreateTime(this.createTime);
+    newToken.setRefreshTime(System.currentTimeMillis());
     return newToken;
   }
 

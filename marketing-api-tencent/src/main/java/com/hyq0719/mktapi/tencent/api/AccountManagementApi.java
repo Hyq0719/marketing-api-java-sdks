@@ -7,8 +7,8 @@ import com.hyq0719.mktapi.common.constant.RequestConstants;
 import com.hyq0719.mktapi.common.executor.parameter.Pair;
 import com.hyq0719.mktapi.tencent.TencentApiRequest;
 import com.hyq0719.mktapi.tencent.TencentDefaultFields;
-import com.hyq0719.mktapi.tencent.bean.common.ConfigRequest;
-import com.hyq0719.mktapi.tencent.bean.common.ConfigResponse;
+import com.hyq0719.mktapi.tencent.bean.common.TencentRequest;
+import com.hyq0719.mktapi.tencent.bean.common.TencentResponse;
 import com.hyq0719.mktapi.tencent.bean.common.ListResponse;
 import com.hyq0719.mktapi.tencent.bean.funds.FundsGetListStruct;
 import com.hyq0719.mktapi.tencent.bean.wechat_funds.WechatFundsGetResponseData;
@@ -54,13 +54,13 @@ public class AccountManagementApi extends AbstractTencentApi {
   @ApiRequestMapping(value = "/funds/get", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {
       RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class FundsGet extends TencentApiRequest<ConfigRequest, ConfigResponse<ListResponse<FundsGetListStruct>>> {
+  public class FundsGet extends TencentApiRequest<TencentRequest, TencentResponse<ListResponse<FundsGetListStruct>>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest configRequest) {
-      Long accountId = configRequest.getAccountId();
-      List<String> fields = configRequest.getFields();
+                                TencentRequest request) {
+      Long accountId = request.getAccountId();
+      List<String> fields = request.getFields();
       if (accountId != null) {
         localVarQueryParams.addAll(parameterToPair(ACCOUNT_ID, accountId));
       }
@@ -73,13 +73,13 @@ public class AccountManagementApi extends AbstractTencentApi {
 
   @ApiRequestMapping(value = "/wechat_funds/get", method = RequestConstants.GET, usePostBody = false,
     contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
-  public class WechatFundsGet extends TencentApiRequest<ConfigRequest, ConfigResponse<WechatFundsGetResponseData>> {
+  public class WechatFundsGet extends TencentApiRequest<TencentRequest, TencentResponse<WechatFundsGetResponseData>> {
 
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
-                                ConfigRequest configRequest) {
-      Long accountId = configRequest.getAccountId();
-      List<String> fields = configRequest.getFields();
+                                TencentRequest request) {
+      Long accountId = request.getAccountId();
+      List<String> fields = request.getFields();
       if (accountId != null) {
         localVarQueryParams.addAll(parameterToPair(ACCOUNT_ID, accountId));
       }

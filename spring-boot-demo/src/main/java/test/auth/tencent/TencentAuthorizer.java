@@ -1,12 +1,10 @@
-package test.auth.vivo;
+package test.auth.tencent;
 
 import com.hyq0719.mktapi.common.exception.ApiException;
-import com.hyq0719.mktapi.vivo.bean.common.VivoResponse;
-import com.hyq0719.mktapi.vivo.bean.token.Oauth2RefreshTokenRequest;
-import com.hyq0719.mktapi.vivo.bean.token.Oauth2RefreshTokenResponseData;
-import com.hyq0719.mktapi.vivo.bean.token.Oauth2TokenRequest;
-import com.hyq0719.mktapi.vivo.bean.token.Oauth2TokenResponseData;
-import com.hyq0719.mktapi.vivo.service.VivoSdkService;
+import com.hyq0719.mktapi.tencent.bean.common.TencentResponse;
+import com.hyq0719.mktapi.tencent.bean.oauth.OauthTokenRequest;
+import com.hyq0719.mktapi.tencent.bean.oauth.OauthTokenResponseData;
+import com.hyq0719.mktapi.tencent.service.TencentSdkService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Component;
 import test.AppProperties;
@@ -21,28 +19,28 @@ import java.util.Map;
 
 /**
  * @author hyq0719
- * @date 2022/2/25 3:45 下午
+ * @date 2022/3/6 10:16 下午
  */
 @Component
-public class VivoAuthorizer implements TokenAuthorizer {
-  private final VivoProperties vivoProperties;
+public class TencentAuthorizer implements TokenAuthorizer {
+  private final TencentProperties tencentProperties;
   @Resource
-  private VivoSdkService vivoSdkService;
+  private TencentSdkService tencentSdkService;
   @Resource
   private AppProperties appProperties;
 
-  public VivoAuthorizer(VivoProperties vivoProperties) {
-    this.vivoProperties = vivoProperties;
+  public TencentAuthorizer(TencentProperties tencentProperties) {
+    this.tencentProperties = tencentProperties;
   }
 
   @Override
   public String channel() {
-    return ChannelConstants.VIVO;
+    return ChannelConstants.TENCENT;
   }
 
   @Override
   public Result<String> parseAuthCode(Map<String, String> params) {
-    String authCode = params.get("code");
+    String authCode = params.get("authorization_code");
     if (StringUtils.isEmpty(authCode)) {
       return Result.ofFail();
     }
@@ -51,7 +49,7 @@ public class VivoAuthorizer implements TokenAuthorizer {
 
   @Override
   public Result<AuthToken> authorize(String advertiserId, String authCode) {
-    VivoProperties.VivoOAuth2Config config = vivoProperties.getConfigs().get(advertiserId);
+    TencentProperties.TencentOAuth2Config config = tencentProperties.getConfigs().get(advertiserId);
     if (config == null) {
       return Result.ofFail();
     }
@@ -59,18 +57,18 @@ public class VivoAuthorizer implements TokenAuthorizer {
     if (isDebugMode()) {
       return Util.authorizeForTest(advertiserId, authCode, channel());
     }
-
-    Oauth2TokenRequest request = new Oauth2TokenRequest();
-    request.clientId(Integer.valueOf(config.getClientId())).clientSecret(config.getSecret()).grantType("code").code(authCode);
+    OauthTokenRequest request = new OauthTokenRequest();
+    request.clientId(Integer.valueOf(config.getClientId())).clientSecret(config.getSecret()).grantType("authorization_code")
+      .authorizationCode(authCode).redirectUri(config.getCallbackUrl());
     try {
-      VivoResponse<Oauth2TokenResponseData> response = vivoSdkService.getTokenApi().oauth2Token().execute(request);
+      TencentResponse<OauthTokenResponseData> response = tencentSdkService.getOauthApi().oauthToken().execute(request);
       if (!response.isSuccessful()) {
         return Result.ofFail();
       }
-      Oauth2TokenResponseData data = response.getData();
+      OauthTokenResponseData data = response.getData();
       AuthToken authToken = new AuthToken();
       authToken.setChannel(channel());
-      authToken.setAdvertiserId(advertiserId);
+      authToken.setAdvertiserId(data.getAuthorizerInfo().getWechatAccountId());
       authToken.setAccessToken(data.getAccessToken());
       authToken.setRefreshToken(data.getRefreshToken());
       long now = System.currentTimeMillis();
@@ -80,13 +78,12 @@ public class VivoAuthorizer implements TokenAuthorizer {
     } catch (ApiException e) {
       e.printStackTrace();
     }
-
     return Result.ofFail();
   }
 
   @Override
   public Result<AuthToken> refresh(AuthToken authToken) {
-    VivoProperties.VivoOAuth2Config config = vivoProperties.getConfigs().get(authToken.getAdvertiserId());
+    TencentProperties.TencentOAuth2Config config = tencentProperties.getConfigs().get(authToken.getAdvertiserId());
     if (config == null) {
       return Result.ofFail();
     }
@@ -95,14 +92,15 @@ public class VivoAuthorizer implements TokenAuthorizer {
       return Util.refreshForTest(authToken);
     }
 
-    Oauth2RefreshTokenRequest request = new Oauth2RefreshTokenRequest();
-    request.clientId(config.getClientId()).clientSecret(config.getSecret()).refreshToken(authToken.getRefreshToken());
+    OauthTokenRequest request = new OauthTokenRequest();
+    request.clientId(Integer.valueOf(config.getClientId())).clientSecret(config.getSecret())
+      .grantType("refresh_token").refreshToken(authToken.getRefreshToken());
     try {
-      VivoResponse<Oauth2RefreshTokenResponseData> response = vivoSdkService.getTokenApi().oauth2RefreshToken().execute(request);
+      TencentResponse<OauthTokenResponseData> response = tencentSdkService.getOauthApi().oauthToken().execute(request);
       if (!response.isSuccessful()) {
         return Result.ofFail();
       }
-      Oauth2RefreshTokenResponseData data = response.getData();
+      OauthTokenResponseData data = response.getData();
       AuthToken newAuthToken = authToken.newToken(data.getAccessToken(), data.getRefreshToken());
       return Result.ofSuccessful(newAuthToken);
     } catch (ApiException e) {
@@ -115,5 +113,4 @@ public class VivoAuthorizer implements TokenAuthorizer {
   public boolean isDebugMode() {
     return appProperties.isDebugMode();
   }
-
 }

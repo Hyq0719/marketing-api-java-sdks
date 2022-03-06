@@ -55,6 +55,15 @@ mktapi:
       cron: 0,30 * * * * ?
       configs:
         # your-advertiserId
-        000000:
+        "000000":
           clientId: 000000
           secret: your-secret
+    # 腾讯广告
+    tencent:
+      cron: 0,30 * * * * ?
+      configs:
+        # your-advertiserId
+        "000000":
+          clientId: 000000
+          secret: your-secret
+          callbackUrl: https://www.example.com/response
