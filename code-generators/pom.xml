@@ -25,6 +25,7 @@
   <modules>
     <module>oceanengine-code-generator</module>
     <module>vivo-code-generator</module>
+    <module>tencent-code-generator</module>
   </modules>
 
   <dependencies>
