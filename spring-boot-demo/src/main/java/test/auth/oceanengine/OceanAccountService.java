@@ -27,8 +27,9 @@ public class OceanAccountService {
    * @return 子账号集合
    */
   public List<String> getOceanSubAccounts(String advertiserId, String accessToken) {
-    List<MajordomoAdvertiserSelectStruct> data = OceanDataPageFetcher.fetchData(oceanSdkService.getAccountServiceApi().majordomoAdvertiserSelect(),
-      apiResponse -> System.out.println(apiResponse.getStatusCode()), new OceanRequest().advertiserId(Long.valueOf(advertiserId)), accessToken);
+    List<MajordomoAdvertiserSelectStruct> data = OceanDataPageFetcher.fetchData(
+      oceanSdkService.getAccountServiceApi().majordomoAdvertiserSelect(),
+      apiResponse -> {}, new OceanRequest().advertiserId(Long.valueOf(advertiserId)), accessToken);
     return data.stream().map(x -> String.valueOf(x.getAdvertiserId())).collect(Collectors.toList());
   }
 }

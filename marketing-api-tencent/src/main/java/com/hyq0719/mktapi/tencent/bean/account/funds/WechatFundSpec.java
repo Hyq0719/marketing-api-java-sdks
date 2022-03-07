@@ -10,7 +10,7 @@
  * Do not edit the class manually.
  */
 
-package com.hyq0719.mktapi.tencent.bean.wechat_funds;
+package com.hyq0719.mktapi.tencent.bean.account.funds;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
