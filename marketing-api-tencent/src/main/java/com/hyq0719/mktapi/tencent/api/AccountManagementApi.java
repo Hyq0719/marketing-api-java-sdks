@@ -7,11 +7,14 @@ import com.hyq0719.mktapi.common.constant.RequestConstants;
 import com.hyq0719.mktapi.common.executor.parameter.Pair;
 import com.hyq0719.mktapi.tencent.TencentApiRequest;
 import com.hyq0719.mktapi.tencent.TencentDefaultFields;
+import com.hyq0719.mktapi.tencent.bean.account.adAccount.BusinessManagerRelationsGetListStruct;
+import com.hyq0719.mktapi.tencent.bean.account.adAccount.BusinessManagerRelationsGetRequest;
+import com.hyq0719.mktapi.tencent.bean.account.funds.FundsGetListStruct;
+import com.hyq0719.mktapi.tencent.bean.account.funds.WechatFundsGetResponseData;
+import com.hyq0719.mktapi.tencent.bean.common.ListResponse;
+import com.hyq0719.mktapi.tencent.bean.common.PageResponseData;
 import com.hyq0719.mktapi.tencent.bean.common.TencentRequest;
 import com.hyq0719.mktapi.tencent.bean.common.TencentResponse;
-import com.hyq0719.mktapi.tencent.bean.common.ListResponse;
-import com.hyq0719.mktapi.tencent.bean.funds.FundsGetListStruct;
-import com.hyq0719.mktapi.tencent.bean.wechat_funds.WechatFundsGetResponseData;
 
 import java.util.List;
 
@@ -20,6 +23,10 @@ import java.util.List;
  */
 public class AccountManagementApi extends AbstractTencentApi {
   /**
+   * 广告账号
+   */
+  private volatile BusinessManagerRelationsGet businessManagerRelationsGet;
+  /**
    * 资金账户
    */
   private volatile FundsGet fundsGet;
@@ -27,6 +34,17 @@ public class AccountManagementApi extends AbstractTencentApi {
 
   public AccountManagementApi(ApiClient apiClient, RetryStrategy retryStrategy) {
     super(apiClient, retryStrategy);
+  }
+
+  public BusinessManagerRelationsGet businessManagerRelationsGet() {
+    if (businessManagerRelationsGet == null) {
+      synchronized (BusinessManagerRelationsGet.class) {
+        if (businessManagerRelationsGet == null) {
+          businessManagerRelationsGet = (BusinessManagerRelationsGet) init(BusinessManagerRelationsGet.class);
+        }
+      }
+    }
+    return businessManagerRelationsGet;
   }
 
   public FundsGet fundsGet() {
@@ -49,6 +67,29 @@ public class AccountManagementApi extends AbstractTencentApi {
       }
     }
     return wechatFundsGet;
+  }
+
+  @ApiRequestMapping(value = "/business_manager_relations/get", method = RequestConstants.GET, usePostBody = false,
+    contentTypes = {
+      RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+  public class BusinessManagerRelationsGet extends TencentApiRequest<BusinessManagerRelationsGetRequest,
+    TencentResponse<PageResponseData<BusinessManagerRelationsGetListStruct>>> {
+    @Override
+    public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
+                                BusinessManagerRelationsGetRequest request) {
+      Integer page = request.getPage();
+      if (page != null) {
+        localVarQueryParams.addAll(parameterToPair("page", page));
+      }
+      Integer pageSize = request.getPageSize();
+      if (pageSize != null) {
+        localVarQueryParams.addAll(parameterToPair("page_size", pageSize));
+      }
+      Integer advertiserType = request.getAdvertiserType();
+      if (advertiserType != null) {
+        localVarQueryParams.addAll(parameterToPair("advertiser_type", advertiserType));
+      }
+    }
   }
 
   @ApiRequestMapping(value = "/funds/get", method = RequestConstants.GET, usePostBody = false,

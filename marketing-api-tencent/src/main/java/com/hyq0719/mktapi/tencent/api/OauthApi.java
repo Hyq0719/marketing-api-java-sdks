@@ -50,8 +50,8 @@ public class OauthApi extends AbstractTencentApi {
     return oauthToken;
   }
 
-  @ApiRequestMapping(value = "/authorize", method = RequestConstants.GET, usePostBody = false, version = "oauth",
-    contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
+  @ApiRequestMapping(value = "/authorize", method = RequestConstants.GET, usePostBody = false,
+    host = "developers.e.qq.com", version = "oauth", contentTypes = {RequestConstants.CONTENT_TYPE_TEXT_PLAIN})
   public class OauthAuthorize extends TencentApiRequest<OauthAuthorizeRequest, TencentResponse<String>> {
     @Override
     public void setRequestParam(List<Pair> localVarQueryParams, List<Pair> localVarCollectionQueryParams,
